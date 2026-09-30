@@ -96,3 +96,40 @@ Later:
 - real data if appropriate/allowed
 - external integrations if feasible
 - deployment/testing
+## Current Project State
+
+The GitHub repository and local development workspace have been created.
+
+Current repository structure:
+
+- frontend/
+- backend/
+- docs/
+  - architecture/
+  - requirements/
+- PROJECT_CONTEXT.md
+- README.md
+
+No major application functionality has been implemented yet.
+
+Python, Node.js, and npm are already installed locally.
+
+The next milestone is to establish a minimal working React frontend
+and Python backend before implementing project features.
+
+
+## Development Guardrails
+
+When assisting with this project:
+
+- Read this file before making significant changes.
+- Do not attempt to build the full application at once.
+- Prefer small, understandable, testable changes.
+- Explain important files and implementation decisions.
+- Do not add unnecessary libraries or dependencies.
+- Do not use real student-athlete data during prototype development.
+- Use sample/mock data until explicitly told otherwise.
+- Do not implement external integrations unless explicitly requested.
+- Do not implement authentication or complex permissions yet unless explicitly requested.
+- Preserve the existing repository structure unless there is a strong reason to change it.
+- Prioritize functionality and clarity over visual polish during the first semester.
