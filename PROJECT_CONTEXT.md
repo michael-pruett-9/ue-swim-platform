@@ -100,7 +100,7 @@ Later:
 
 The GitHub repository and local development workspace have been created.
 
-Current repository structure:
+Current repository structure includes:
 
 - frontend/
 - backend/
@@ -110,12 +110,24 @@ Current repository structure:
 - PROJECT_CONTEXT.md
 - README.md
 
-No major application functionality has been implemented yet.
+The React/Vite frontend is initialized and running locally.
 
-Python, Node.js, and npm are already installed locally.
+The Python/FastAPI backend is initialized inside a project virtual
+environment and running locally with Uvicorn.
 
-The next milestone is to establish a minimal working React frontend
-and Python backend before implementing project features.
+The backend currently includes a health-check endpoint:
+
+GET /api/health
+
+which returns:
+
+{"status":"ok"}
+
+The React frontend successfully communicates with the FastAPI backend
+and displays a connected status.
+
+No database, authentication, external integrations, or real
+student-athlete data have been implemented yet.
 
 
 ## Development Guardrails
@@ -133,3 +145,39 @@ When assisting with this project:
 - Do not implement authentication or complex permissions yet unless explicitly requested.
 - Preserve the existing repository structure unless there is a strong reason to change it.
 - Prioritize functionality and clarity over visual polish during the first semester.
+
+
+## Current Milestone - Proof of Concept
+### NEW - October 6, 2026
+
+The current proof-of-concept milestone focuses only on the scheduling
+portion of the project.
+
+Current tasks:
+
+1. Display mock swimmer schedules in the frontend.
+2. Implement and test basic scheduling-conflict detection in Python.
+3. Next, connect the conflict logic to the frontend.
+4. After that, rank possible practice windows by number of conflicts.
+
+For the proof of concept:
+
+- Use only fake/mock swimmer data.
+- Do not add a database yet.
+- Do not add authentication yet.
+- Do not use real athlete schedules.
+- Do not add external integrations.
+- Keep the interface simple and functional.
+
+### Initial Conflict Rules
+
+For the first version:
+
+- Schedules use a weekday plus start and end times.
+- Times use 24-hour HH:MM format.
+- Two time intervals conflict when they actually overlap.
+- If one event ends exactly when another begins, it is not considered
+  a conflict in the initial prototype.
+- Travel or transition time between classes and practice is not yet
+  included.
+- These rules may be revised later based on client feedback.
