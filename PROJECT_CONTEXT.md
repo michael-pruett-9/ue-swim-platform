@@ -147,37 +147,37 @@ When assisting with this project:
 - Prioritize functionality and clarity over visual polish during the first semester.
 
 
-## Current Milestone - Proof of Concept
-### NEW - October 6, 2026
+## Current Proof-of-Concept Status
+### NEW - October 8, 2026
 
-The current proof-of-concept milestone focuses only on the scheduling
-portion of the project.
+Completed:
 
-Current tasks:
+- The React frontend and FastAPI backend run locally.
+- The frontend successfully communicates with the backend.
+- Five fictional swimmers and mock class schedules are displayed.
+- Basic Python scheduling-conflict detection has been implemented.
+- The conflict-detection logic currently passes 13 automated tests.
 
-1. Display mock swimmer schedules in the frontend.
-2. Implement and test basic scheduling-conflict detection in Python.
-3. Next, connect the conflict logic to the frontend.
-4. After that, rank possible practice windows by number of conflicts.
+Current task:
 
-For the proof of concept:
+Connect the existing conflict-detection logic to FastAPI and the React
+frontend.
 
-- Use only fake/mock swimmer data.
-- Do not add a database yet.
-- Do not add authentication yet.
-- Do not use real athlete schedules.
-- Do not add external integrations.
-- Keep the interface simple and functional.
+The proof-of-concept interface should allow a user to:
 
-### Initial Conflict Rules
+1. Select a weekday.
+2. Select a proposed practice start time.
+3. Select a proposed practice end time.
+4. Click a "Check Conflicts" button.
+5. See the number and names of swimmers whose classes overlap the
+   proposed practice.
 
-For the first version:
+For this stage:
 
-- Schedules use a weekday plus start and end times.
-- Times use 24-hour HH:MM format.
-- Two time intervals conflict when they actually overlap.
-- If one event ends exactly when another begins, it is not considered
-  a conflict in the initial prototype.
-- Travel or transition time between classes and practice is not yet
-  included.
-- These rules may be revised later based on client feedback.
+- Reuse the existing mock schedule data.
+- Reuse the existing conflict-detection function.
+- Preserve the /api/health endpoint.
+- Do not add a database.
+- Do not add authentication.
+- Do not use real athlete information.
+- Keep styling simple.
