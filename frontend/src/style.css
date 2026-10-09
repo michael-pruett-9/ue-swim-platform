@@ -3,3 +3,15 @@ body {
   font-family: Arial, sans-serif;
   line-height: 1.5;
 }
+
+.ranking-table {
+  margin-top: 1rem;
+  border-collapse: collapse;
+}
+
+.ranking-table th,
+.ranking-table td {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  text-align: left;
+}

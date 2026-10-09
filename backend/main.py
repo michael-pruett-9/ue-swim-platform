@@ -4,6 +4,7 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field, model_validator
 
 from conflict_detection import find_conflicts
+from practice_ranking import rank_practice_windows
 
 
 Weekday = Literal["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
@@ -42,6 +43,24 @@ class ConflictRequest(BaseModel):
             raise ValueError("Swimmer ids must be unique.")
         return self
 
+class CandidateWindow(BaseModel):
+    startTime: TimeString
+    endTime: TimeString
+
+
+class RankingRequest(BaseModel):
+    swimmers: list[SwimmerSchedule]
+    day: Weekday
+    candidateWindows: list[CandidateWindow]
+
+    @model_validator(mode="after")
+    def check_unique_swimmers(self):
+        ids = [swimmer.id for swimmer in self.swimmers]
+        if len(ids) != len(set(ids)):
+            raise ValueError("Swimmer ids must be unique.")
+        return self
+
+
 app = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)
 
 
@@ -58,6 +77,18 @@ def conflicts(request: ConflictRequest):
             request.day,
             request.practiceStartTime,
             request.practiceEndTime,
+        )
+    except ValueError as error:
+        raise HTTPException(status_code=422, detail=str(error)) from error
+
+
+@app.post("/api/rank-practice-windows")
+def rank_windows(request: RankingRequest):
+    try:
+        return rank_practice_windows(
+            [swimmer.model_dump(exclude_none=True) for swimmer in request.swimmers],
+            request.day,
+            [window.model_dump() for window in request.candidateWindows],
         )
     except ValueError as error:
         raise HTTPException(status_code=422, detail=str(error)) from error

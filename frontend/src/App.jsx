@@ -4,6 +4,15 @@ import { mockSchedules } from './data/mockSchedules.js';
 const weekdays = [...new Set(mockSchedules.flatMap((swimmer) =>
   swimmer.classes.map((entry) => entry.day)))];
 
+const candidateWindows = [
+  { startTime: '06:00', endTime: '07:30' },
+  { startTime: '09:00', endTime: '10:30' },
+  { startTime: '11:00', endTime: '12:30' },
+  { startTime: '13:00', endTime: '14:30' },
+  { startTime: '15:00', endTime: '16:30' },
+  { startTime: '17:00', endTime: '18:30' },
+];
+
 function formatTime(time) {
   const [hours, minutes] = time.split(':');
   const hour = Number(hours);
@@ -18,6 +27,35 @@ export default function App() {
   const [result, setResult] = useState(null);
   const [error, setError] = useState('');
   const [checking, setChecking] = useState(false);
+  const [rankingDay, setRankingDay] = useState(weekdays[0]);
+  const [rankedWindows, setRankedWindows] = useState(null);
+  const [rankingError, setRankingError] = useState('');
+  const [ranking, setRanking] = useState(false);
+
+  async function rankWindows(event) {
+    event.preventDefault();
+    setRankedWindows(null);
+    setRankingError('');
+    setRanking(true);
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 10000);
+
+    try {
+      const response = await fetch('/api/rank-practice-windows', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ swimmers: mockSchedules, day: rankingDay, candidateWindows }),
+        signal: controller.signal,
+      });
+      if (!response.ok) throw new Error('Ranking request failed');
+      setRankedWindows(await response.json());
+    } catch {
+      setRankingError('Could not rank practice windows. Make sure the backend is running and try again.');
+    } finally {
+      clearTimeout(timeout);
+      setRanking(false);
+    }
+  }
 
   function clearResult() {
     setResult(null);
@@ -152,6 +190,54 @@ export default function App() {
                 </ul>
               )}
             </>
+          )}
+        </div>
+      </section>
+      <section>
+        <h2>Rank Practice Windows</h2>
+        <form onSubmit={rankWindows}>
+          <fieldset disabled={ranking}>
+            <legend>Practice window ranking</legend>
+            <p>
+              <label htmlFor="ranking-day">Weekday: </label>
+              <select id="ranking-day" value={rankingDay} onChange={(event) => {
+                setRankingDay(event.target.value);
+                setRankedWindows(null);
+                setRankingError('');
+              }}>
+                {weekdays.map((weekday) => <option key={weekday}>{weekday}</option>)}
+              </select>
+            </p>
+            <button type="submit">Rank Practice Windows</button>
+          </fieldset>
+        </form>
+        {ranking && <p role="status">Ranking practice windows...</p>}
+        {rankingError && <p role="alert">{rankingError}</p>}
+        <div aria-live="polite">
+          {rankedWindows && (
+            <table className="ranking-table">
+              <caption>Ranked practice windows for {rankingDay}</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Rank</th>
+                  <th scope="col">Practice Time</th>
+                  <th scope="col">Conflict Count</th>
+                  <th scope="col">Conflicting Swimmers</th>
+                </tr>
+              </thead>
+              <tbody>
+                {rankedWindows.map((window, index) => (
+                  <tr key={`${window.startTime}-${window.endTime}`}>
+                    <td>{index + 1}</td>
+                    <td>{formatTime(window.startTime)}–{formatTime(window.endTime)}</td>
+                    <td>{window.conflict_count}</td>
+                    <td>{window.conflicting_swimmers.length === 0
+                      ? 'None'
+                      : window.conflicting_swimmers.map((swimmer) => swimmer.name).join(', ')}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           )}
         </div>
       </section>
