@@ -148,29 +148,42 @@ When assisting with this project:
 
 
 ## Prototype v1 - Current Development Step
-### Step 1 - Practice Window Ranking
+### Step 1B - Ranking Integration
 
-The current task is to extend the working scheduling proof of concept
-so that the system can evaluate and rank multiple possible practice
-windows.
+The backend practice-window ranking logic is implemented and tested.
 
-The existing conflict-detection logic should be reused rather than
-rewritten.
+Current task:
 
-For a selected weekday, the ranking feature should:
+Expose the existing ranking logic through FastAPI and display the
+ranked results in the React frontend.
 
-1. Receive several candidate practice windows.
-2. Check each window against the mock swimmer schedules.
-3. Count the number of conflicting swimmers for each window.
-4. Include the conflicting swimmer names for each window.
-5. Sort the windows from lowest number of conflicts to highest.
+The existing:
 
-For ties, preserve the original candidate-window order for now.
+- GET /api/health
+- POST /api/conflicts
+- single-time conflict checker
 
-The first version should use predefined/mock candidate practice
-windows rather than generating every possible time automatically.
+must continue to work.
 
-Do not add a database, real athlete data, authentication, external
-integrations, or advanced scheduling optimization during this step.
+For the first interface, candidate practice windows may be predefined
+mock options rather than automatically generated.
 
-The existing single-time conflict checker must continue to work.
+The coach should be able to select a weekday and request ranked
+practice windows.
+
+Each ranked result should show:
+
+- rank
+- start time
+- end time
+- conflict count
+- conflicting swimmer names
+
+Results should be ordered from the fewest conflicts to the most.
+
+User-facing times should display in 12-hour AM/PM format while
+internal API and scheduling values should remain in 24-hour HH:MM
+format.
+
+A configurable transition/buffer time is planned as the next small
+scheduling enhancement, but should NOT be implemented during Step 1B.
