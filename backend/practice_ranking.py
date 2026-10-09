@@ -1,9 +1,9 @@
 """Rank supplied practice windows using the existing conflict checker."""
 
-from conflict_detection import find_conflicts
+from conflict_detection import find_conflicts, validate_transition_minutes
 
 
-def rank_practice_windows(swimmers, day, candidate_windows):
+def rank_practice_windows(swimmers, day, candidate_windows, transition_minutes=0):
     """Return windows ordered by conflict count, preserving input order for ties.
 
     Swimmers use the same structure as find_conflicts. Each candidate is a
@@ -12,11 +12,15 @@ def rank_practice_windows(swimmers, day, candidate_windows):
     (including names). Inputs are not modified. An empty candidate list returns
     an empty list. Validation of each window is delegated to find_conflicts;
     its ValueError propagates if the day or an examined interval is invalid.
+    transition_minutes defaults to zero and is passed to the shared checker.
     """
+    validate_transition_minutes(transition_minutes)
     swimmers = list(swimmers)
     results = []
     for window in candidate_windows:
-        conflicts = find_conflicts(swimmers, day, window["startTime"], window["endTime"])
+        conflicts = find_conflicts(
+            swimmers, day, window["startTime"], window["endTime"], transition_minutes
+        )
         results.append({
             "startTime": window["startTime"],
             "endTime": window["endTime"],

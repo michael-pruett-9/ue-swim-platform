@@ -35,6 +35,7 @@ class ConflictRequest(BaseModel):
     day: Weekday
     practiceStartTime: TimeString
     practiceEndTime: TimeString
+    transitionMinutes: int = Field(default=0, ge=0, strict=True)
 
     @model_validator(mode="after")
     def check_unique_swimmers(self):
@@ -52,6 +53,7 @@ class RankingRequest(BaseModel):
     swimmers: list[SwimmerSchedule]
     day: Weekday
     candidateWindows: list[CandidateWindow]
+    transitionMinutes: int = Field(default=0, ge=0, strict=True)
 
     @model_validator(mode="after")
     def check_unique_swimmers(self):
@@ -77,6 +79,7 @@ def conflicts(request: ConflictRequest):
             request.day,
             request.practiceStartTime,
             request.practiceEndTime,
+            request.transitionMinutes,
         )
     except ValueError as error:
         raise HTTPException(status_code=422, detail=str(error)) from error
@@ -89,6 +92,7 @@ def rank_windows(request: RankingRequest):
             [swimmer.model_dump(exclude_none=True) for swimmer in request.swimmers],
             request.day,
             [window.model_dump() for window in request.candidateWindows],
+            request.transitionMinutes,
         )
     except ValueError as error:
         raise HTTPException(status_code=422, detail=str(error)) from error

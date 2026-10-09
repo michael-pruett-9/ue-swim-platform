@@ -86,6 +86,40 @@ class ConflictDetectionTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             find_conflicts([swimmer], "Monday", "10:00", "11:00")
 
+    def test_zero_transition_matches_default(self):
+        for start, end in [("09:00", "10:00"), ("11:00", "12:00"), ("10:30", "11:30")]:
+            with self.subTest(start=start):
+                self.assertEqual(
+                    find_conflicts([self.swimmer], "Monday", start, end, 0),
+                    find_conflicts([self.swimmer], "Monday", start, end),
+                )
+
+    def test_transition_after_class(self):
+        for minutes in [5, 10, 15, 30]:
+            for gap in [0, minutes - 1, minutes, minutes + 1]:
+                with self.subTest(minutes=minutes, gap=gap):
+                    result = find_conflicts([self.swimmer], "Monday", f"11:{gap:02d}", "12:00", minutes)
+                    self.assertEqual(result["conflict_count"], int(gap < minutes))
+
+    def test_transition_before_class(self):
+        for minutes in [5, 10, 15, 30]:
+            for gap in [0, minutes - 1, minutes, minutes + 1]:
+                end = "10:00" if gap == 0 else f"09:{60 - gap:02d}"
+                with self.subTest(minutes=minutes, gap=gap):
+                    result = find_conflicts([self.swimmer], "Monday", "08:00", end, minutes)
+                    self.assertEqual(result["conflict_count"], int(gap < minutes))
+
+    def test_all_weekdays_with_transition(self):
+        for day in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]:
+            with self.subTest(day=day):
+                swimmer = mock_swimmer(classes=[mock_class(day=day)])
+                self.assertEqual(find_conflicts([swimmer], day, "11:05", "12:00", 10)["conflict_count"], 1)
+
+    def test_invalid_transition(self):
+        for value in [-1, 1.5, True, "5", None]:
+            with self.subTest(value=value), self.assertRaises(ValueError):
+                find_conflicts([], "Monday", "10:00", "11:00", value)
+
     def test_invalid_weekday(self):
         with self.assertRaises(ValueError):
             find_conflicts([], "Mon", "10:00", "11:00")

@@ -78,6 +78,23 @@ class PracticeRankingTests(unittest.TestCase):
         rank_practice_windows(self.swimmers, "Monday", self.windows)
         self.assertEqual((self.swimmers, self.windows), original)
 
+    def test_transition_changes_ranking(self):
+        windows = [
+            {"startTime": "11:05", "endTime": "12:00"},
+            {"startTime": "13:00", "endTime": "14:00"},
+        ]
+        default = rank_practice_windows(self.swimmers, "Monday", windows)
+        self.assertEqual(default, rank_practice_windows(self.swimmers, "Monday", windows, 0))
+        self.assertEqual([r["startTime"] for r in default], ["11:05", "13:00"])
+        buffered = rank_practice_windows(self.swimmers, "Monday", windows, 10)
+        self.assertEqual([r["startTime"] for r in buffered], ["13:00", "11:05"])
+        self.assertEqual([r["conflict_count"] for r in buffered], [0, 2])
+        self.assertEqual(buffered[1]["conflicting_swimmers"], self.swimmers)
+
+    def test_invalid_transition_with_empty_candidates(self):
+        with self.assertRaises(ValueError):
+            rank_practice_windows([], "Monday", [], -1)
+
     def test_empty_candidates(self):
         self.assertEqual(rank_practice_windows(self.swimmers, "Monday", []), [])
 

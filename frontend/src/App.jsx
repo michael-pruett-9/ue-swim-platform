@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { mockSchedules } from './data/mockSchedules.js';
 
-const weekdays = [...new Set(mockSchedules.flatMap((swimmer) =>
-  swimmer.classes.map((entry) => entry.day)))];
+const weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+const transitionOptions = [0, 5, 10, 15, 30];
 
 const candidateWindows = [
   { startTime: '06:00', endTime: '07:30' },
@@ -27,10 +27,12 @@ export default function App() {
   const [result, setResult] = useState(null);
   const [error, setError] = useState('');
   const [checking, setChecking] = useState(false);
+  const [transitionMinutes, setTransitionMinutes] = useState(0);
   const [rankingDay, setRankingDay] = useState(weekdays[0]);
   const [rankedWindows, setRankedWindows] = useState(null);
   const [rankingError, setRankingError] = useState('');
   const [ranking, setRanking] = useState(false);
+  const [rankingTransitionMinutes, setRankingTransitionMinutes] = useState(0);
 
   async function rankWindows(event) {
     event.preventDefault();
@@ -44,7 +46,10 @@ export default function App() {
       const response = await fetch('/api/rank-practice-windows', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ swimmers: mockSchedules, day: rankingDay, candidateWindows }),
+        body: JSON.stringify({
+          swimmers: mockSchedules, day: rankingDay, candidateWindows,
+          transitionMinutes: rankingTransitionMinutes,
+        }),
         signal: controller.signal,
       });
       if (!response.ok) throw new Error('Ranking request failed');
@@ -73,7 +78,7 @@ export default function App() {
       const response = await fetch('/api/conflicts', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ swimmers: mockSchedules, day, practiceStartTime, practiceEndTime }),
+        body: JSON.stringify({ swimmers: mockSchedules, day, practiceStartTime, practiceEndTime, transitionMinutes }),
         signal: controller.signal,
       });
       if (!response.ok) {
@@ -171,6 +176,17 @@ export default function App() {
                   clearResult();
                 }} />
             </p>
+            <p>
+              <label htmlFor="practice-transition">Required transition time: </label>
+              <select id="practice-transition" value={transitionMinutes} onChange={(event) => {
+                setTransitionMinutes(Number(event.target.value));
+                clearResult();
+              }}>
+                {transitionOptions.map((minutes) => (
+                  <option key={minutes} value={minutes}>{minutes} minutes</option>
+                ))}
+              </select>
+            </p>
             <button type="submit">Check Conflicts</button>
           </fieldset>
         </form>
@@ -206,6 +222,18 @@ export default function App() {
                 setRankingError('');
               }}>
                 {weekdays.map((weekday) => <option key={weekday}>{weekday}</option>)}
+              </select>
+            </p>
+            <p>
+              <label htmlFor="ranking-transition">Required transition time: </label>
+              <select id="ranking-transition" value={rankingTransitionMinutes} onChange={(event) => {
+                setRankingTransitionMinutes(Number(event.target.value));
+                setRankedWindows(null);
+                setRankingError('');
+              }}>
+                {transitionOptions.map((minutes) => (
+                  <option key={minutes} value={minutes}>{minutes} minutes</option>
+                ))}
               </select>
             </p>
             <button type="submit">Rank Practice Windows</button>
