@@ -147,37 +147,30 @@ When assisting with this project:
 - Prioritize functionality and clarity over visual polish during the first semester.
 
 
-## Current Proof-of-Concept Status
-### NEW - October 8, 2026
+## Prototype v1 - Current Development Step
+### Step 1 - Practice Window Ranking
 
-Completed:
+The current task is to extend the working scheduling proof of concept
+so that the system can evaluate and rank multiple possible practice
+windows.
 
-- The React frontend and FastAPI backend run locally.
-- The frontend successfully communicates with the backend.
-- Five fictional swimmers and mock class schedules are displayed.
-- Basic Python scheduling-conflict detection has been implemented.
-- The conflict-detection logic currently passes 13 automated tests.
+The existing conflict-detection logic should be reused rather than
+rewritten.
 
-Current task:
+For a selected weekday, the ranking feature should:
 
-Connect the existing conflict-detection logic to FastAPI and the React
-frontend.
+1. Receive several candidate practice windows.
+2. Check each window against the mock swimmer schedules.
+3. Count the number of conflicting swimmers for each window.
+4. Include the conflicting swimmer names for each window.
+5. Sort the windows from lowest number of conflicts to highest.
 
-The proof-of-concept interface should allow a user to:
+For ties, preserve the original candidate-window order for now.
 
-1. Select a weekday.
-2. Select a proposed practice start time.
-3. Select a proposed practice end time.
-4. Click a "Check Conflicts" button.
-5. See the number and names of swimmers whose classes overlap the
-   proposed practice.
+The first version should use predefined/mock candidate practice
+windows rather than generating every possible time automatically.
 
-For this stage:
+Do not add a database, real athlete data, authentication, external
+integrations, or advanced scheduling optimization during this step.
 
-- Reuse the existing mock schedule data.
-- Reuse the existing conflict-detection function.
-- Preserve the /api/health endpoint.
-- Do not add a database.
-- Do not add authentication.
-- Do not use real athlete information.
-- Keep styling simple.
+The existing single-time conflict checker must continue to work.
