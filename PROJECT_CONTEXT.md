@@ -148,42 +148,64 @@ When assisting with this project:
 
 
 ## Prototype v1 - Current Development Step
-### Step 1B - Ranking Integration
+### Step 1C - Transition Time and Full-Week Scheduling
 
-The backend practice-window ranking logic is implemented and tested.
+Practice-window ranking is now implemented end-to-end.
+
+The system currently supports:
+
+- checking one proposed practice time for conflicts
+- ranking multiple candidate practice windows
+- displaying conflicting swimmer names
+- displaying results in the React frontend
 
 Current task:
 
-Expose the existing ranking logic through FastAPI and display the
-ranked results in the React frontend.
+Add configurable transition time between a swimmer's scheduled
+commitment and practice.
 
-The existing:
+The user should be able to select:
 
-- GET /api/health
-- POST /api/conflicts
-- single-time conflict checker
+- 0 minutes
+- 5 minutes
+- 10 minutes
+- 15 minutes
+- 30 minutes
 
-must continue to work.
+The transition time should apply in both directions:
 
-For the first interface, candidate practice windows may be predefined
-mock options rather than automatically generated.
+- after a class/commitment before practice begins
+- after practice before a class/commitment begins
 
-The coach should be able to select a weekday and request ranked
-practice windows.
+If the available gap is exactly equal to the selected transition
+time, it should be allowed and should NOT count as a conflict.
 
-Each ranked result should show:
+A transition time of 0 minutes must preserve the current conflict
+behavior.
 
-- rank
-- start time
-- end time
-- conflict count
-- conflicting swimmer names
+The single-time conflict checker and practice-window ranking should
+both use the selected transition time.
 
-Results should be ordered from the fewest conflicts to the most.
+Scheduling should support all seven weekdays:
 
-User-facing times should display in 12-hour AM/PM format while
-internal API and scheduling values should remain in 24-hour HH:MM
-format.
+- Monday
+- Tuesday
+- Wednesday
+- Thursday
+- Friday
+- Saturday
+- Sunday
 
-A configurable transition/buffer time is planned as the next small
-scheduling enhancement, but should NOT be implemented during Step 1B.
+Current mock class data does not yet contain realistic information for
+all seven days. The system should still support all seven days so that
+future class schedules, team events, meets, travel, appointments, and
+other commitments can use the same scheduling model.
+
+Do not expand the roster to a full mock team during this step.
+
+A larger mock roster with approximately 20-25 swimmers and Monday-Friday
+class schedules will be added during the dashboard/calendar development
+stage.
+
+Do not add a database, authentication, external integrations, or real
+student-athlete data during this step.
