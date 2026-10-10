@@ -148,46 +148,78 @@ When assisting with this project:
 
 
 ## Prototype v1 - Current Development Step
-### Step 3 - Coach Dashboard and Realistic Mock Team
+### Step 3B - Coach Dashboard and Navigation
 
-The prototype role-selection structure is complete.
+The prototype now contains exactly 20 fictional swimmers with
+Monday-Friday mock class schedules.
 
-Current prototype functionality includes:
+The current Coach page temporarily displays all swimmer schedules
+on one long page. This should now be replaced with a more organized
+Coach prototype interface.
 
-- Coach and Swimmer prototype views
-- individual scheduling conflict checking
-- practice-window ranking
-- configurable transition time
+Create three Coach sections:
+
+1. Dashboard
+2. Scheduling
+3. Roster
+
+### Dashboard
+
+The Coach dashboard should provide a simple overview of the prototype.
+
+It should show summary information such as:
+
+- 20 fictional swimmers
+- scheduling conflict detection available
+- practice-window ranking available
 - Monday-Sunday scheduling support
-- tested FastAPI scheduling endpoints
+- prototype/mock data status
 
-The next milestone is to make the Coach experience resemble a real
-team-management application.
+The dashboard does not need new backend calculations yet.
 
-### Step 3A - Expanded Mock Roster
+### Scheduling
 
-Expand the prototype from 5 fictional swimmers to approximately
-20 fictional swimmers.
+Move the existing scheduling tools into a dedicated Scheduling section.
 
-Each swimmer should have fictional class schedules distributed across
-Monday through Friday.
+Preserve:
 
-Requirements:
+- Check a Practice Time
+- weekday selection
+- transition-time selection
+- conflict results
+- Rank Practice Windows
+- ranked results table
+- existing backend/API behavior
 
-- All names and schedules must remain fictional.
-- Preserve the existing swimmer data structure.
-- Use realistic college class times.
-- Each swimmer should have several classes across the week.
-- Do not use real University of Evansville athlete information.
-- Existing scheduling conflict and ranking functionality must continue
-  to work with the larger roster.
+Do not display all 20 swimmer schedules above the scheduling tools.
 
-The application should NOT permanently display every class for all
-20 swimmers on one long page.
+### Roster
 
-The larger roster will be used by the upcoming Coach dashboard,
-roster view, calendar, scheduling tools, and later performance
-features.
+Create a Coach roster view containing all 20 fictional swimmers.
 
-Do not add real athlete data, authentication, a database, or external
-integrations during this step.
+The coach should be able to select a swimmer and view only that
+swimmer's mock class schedule.
+
+Do not show all 20 full schedules simultaneously.
+
+### Navigation
+
+Use simple React state for Coach navigation.
+
+Do not add React Router yet.
+
+The existing Switch Role functionality must remain available.
+
+Do not change backend scheduling logic.
+
+Do not add:
+
+- real authentication
+- database functionality
+- performance tracking
+- calendar functionality
+- external integrations
+- real athlete data
+
+This step should improve organization and visual structure, but
+full visual polish will occur later.
