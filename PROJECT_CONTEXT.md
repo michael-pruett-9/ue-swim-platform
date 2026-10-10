@@ -148,78 +148,53 @@ When assisting with this project:
 
 
 ## Prototype v1 - Current Development Step
-### Step 3B - Coach Dashboard and Navigation
+### Step 4 - Weekly Calendar
 
-The prototype now contains exactly 20 fictional swimmers with
-Monday-Friday mock class schedules.
+The Coach dashboard, scheduling tools, and roster interface are now
+organized into separate sections.
 
-The current Coach page temporarily displays all swimmer schedules
-on one long page. This should now be replaced with a more organized
-Coach prototype interface.
+The next Prototype v1 feature is a weekly calendar.
 
-Create three Coach sections:
+The calendar should help demonstrate the project's goal of bringing
+different types of team scheduling information into one place.
 
-1. Dashboard
-2. Scheduling
-3. Roster
+### Coach Calendar
 
-### Dashboard
+Add a Calendar section to Coach navigation.
 
-The Coach dashboard should provide a simple overview of the prototype.
+The calendar should display Monday through Sunday.
 
-It should show summary information such as:
+For the prototype, it should use fictional/mock information only.
 
-- 20 fictional swimmers
-- scheduling conflict detection available
-- practice-window ranking available
-- Monday-Sunday scheduling support
-- prototype/mock data status
+Calendar information should include a small set of fictional:
 
-The dashboard does not need new backend calculations yet.
+- team practices
+- meets
+- travel/team events
 
-### Scheduling
+The coach should also be able to select one fictional swimmer and
+overlay that swimmer's class schedule onto the weekly calendar.
 
-Move the existing scheduling tools into a dedicated Scheduling section.
+The calendar should clearly distinguish event types using both text
+labels and visual styling. Do not rely only on color.
 
-Preserve:
+The existing 20-swimmer mock class data should be reused rather than
+duplicated.
 
-- Check a Practice Time
-- weekday selection
-- transition-time selection
-- conflict results
-- Rank Practice Windows
-- ranked results table
-- existing backend/API behavior
+The calendar does not need drag-and-drop, editing, recurring-event
+management, or advanced calendar functionality during Prototype v1.
 
-Do not display all 20 swimmer schedules above the scheduling tools.
-
-### Roster
-
-Create a Coach roster view containing all 20 fictional swimmers.
-
-The coach should be able to select a swimmer and view only that
-swimmer's mock class schedule.
-
-Do not show all 20 full schedules simultaneously.
-
-### Navigation
-
-Use simple React state for Coach navigation.
-
-Do not add React Router yet.
-
-The existing Switch Role functionality must remain available.
-
-Do not change backend scheduling logic.
+No backend scheduling calculations need to change during this step.
 
 Do not add:
 
-- real authentication
+- real athlete information
+- authentication
 - database functionality
+- external calendar integrations
+- ARMS integration
 - performance tracking
-- calendar functionality
-- external integrations
-- real athlete data
+- notifications
 
-This step should improve organization and visual structure, but
-full visual polish will occur later.
+Keep the implementation simple, understandable, and reusable for the
+future Swimmer calendar view.
