@@ -21,3 +21,122 @@ body {
   border: 1px solid #ccc;
   text-align: left;
 }
+
+.coach-app {
+  max-width: 1120px;
+  margin: 0 auto;
+  color: #202b3a;
+}
+
+.coach-header,
+.coach-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.coach-header {
+  justify-content: space-between;
+  border-bottom: 1px solid #d5dce5;
+  padding-bottom: 1rem;
+}
+
+.coach-header h1,
+.panel h3 {
+  margin-top: 0;
+}
+
+.coach-nav {
+  margin: 1.5rem 0;
+}
+
+.coach-app button,
+.coach-app input,
+.coach-app select {
+  font: inherit;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #aeb9c8;
+  border-radius: 4px;
+}
+
+.coach-app button {
+  background: #f4f6f9;
+  color: #202b3a;
+  cursor: pointer;
+}
+
+.coach-app button:hover:not(:disabled) {
+  background: #e4eaf2;
+}
+
+.coach-app button[aria-current="page"],
+.coach-app button[aria-pressed="true"] {
+  background: #263c59;
+  color: white;
+}
+
+.coach-app :focus-visible {
+  outline: 3px solid #587db1;
+  outline-offset: 3px;
+}
+
+.coach-app button:disabled {
+  cursor: wait;
+  opacity: 0.6;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+}
+
+.panel {
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid #d5dce5;
+  border-radius: 6px;
+  background: #fff;
+  min-width: 0;
+}
+
+.roster-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(0, 2fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.roster-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.roster-list button {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 0.4rem;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+.coach-app fieldset {
+  border: 1px solid #d5dce5;
+  min-width: 0;
+}
+
+@media (max-width: 700px) {
+  .roster-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .coach-app input,
+  .coach-app select {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}

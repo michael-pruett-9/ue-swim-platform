@@ -70,6 +70,9 @@ function SwimmerSchedule({ swimmer }) {
 }
 
 function CoachView({ onSwitchRole }) {
+  const [section, setSection] = useState('Dashboard');
+  const [selectedSwimmerId, setSelectedSwimmerId] = useState(mockSchedules[0].id);
+  const selectedSwimmer = mockSchedules.find((swimmer) => swimmer.id === selectedSwimmerId);
   const [status, setStatus] = useState('Checking...');
   const [day, setDay] = useState(weekdays[0]);
   const [practiceStartTime, setPracticeStartTime] = useState('');
@@ -178,17 +181,57 @@ function CoachView({ onSwitchRole }) {
   }, []);
 
   return (
-    <main>
-      <h1>UE Swimming &amp; Diving Scheduling and Performance Platform</h1>
-      <h2>Coach</h2>
-      <button type="button" onClick={onSwitchRole}>Switch Role</button>
+    <main className="coach-app">
+      <header className="coach-header">
+        <div>
+          <h1>UE Swimming &amp; Diving</h1>
+          <p>Scheduling and Performance Platform · Coach Prototype</p>
+        </div>
+        <button type="button" onClick={onSwitchRole}>Switch Role</button>
+      </header>
       <p role="status">Backend: {status}</p>
-      <h2>Mock swimmer schedules</h2>
-      <p>All swimmers and classes below are fictional.</p>
-      {mockSchedules.map((swimmer) => (
-        <SwimmerSchedule key={swimmer.id} swimmer={swimmer} />
-      ))}
-      <section>
+      <nav className="coach-nav" aria-label="Coach navigation">
+        {['Dashboard', 'Scheduling', 'Roster'].map((name) => (
+          <button key={name} type="button" aria-current={section === name ? 'page' : undefined}
+            onClick={() => setSection(name)}>{name}</button>
+        ))}
+      </nav>
+      {section === 'Dashboard' && (
+        <section aria-labelledby="dashboard-heading">
+          <h2 id="dashboard-heading">Dashboard</h2>
+          <p>All current information is fictional/mock prototype data.</p>
+          <div className="summary-grid">
+            <article className="panel"><h3>{mockSchedules.length} Swimmers</h3><p>Fictional mock roster</p></article>
+            <article className="panel"><h3>Conflict Detection</h3><p>Available</p></article>
+            <article className="panel"><h3>Practice Ranking</h3><p>Available</p></article>
+            <article className="panel"><h3>Scheduling Coverage</h3><p>Monday-Sunday</p></article>
+          </div>
+        </section>
+      )}
+      {section === 'Roster' && (
+        <section aria-labelledby="roster-heading">
+          <h2 id="roster-heading">Roster</h2>
+          <p>Fictional prototype data. Select a swimmer to view their class schedule.</p>
+          <div className="roster-layout">
+            <ul className="roster-list" aria-label="Swimmers">
+              {mockSchedules.map((swimmer) => (
+                <li key={swimmer.id}>
+                  <button type="button" aria-pressed={selectedSwimmerId === swimmer.id}
+                    onClick={() => setSelectedSwimmerId(swimmer.id)}>{swimmer.name}</button>
+                </li>
+              ))}
+            </ul>
+            <div className="panel" aria-live="polite">
+              <SwimmerSchedule swimmer={selectedSwimmer} />
+            </div>
+          </div>
+        </section>
+      )}
+      {section === 'Scheduling' && (
+        <section aria-labelledby="scheduling-heading">
+          <h2 id="scheduling-heading">Scheduling</h2>
+          <p>Scheduling calculations currently use all {mockSchedules.length} fictional swimmers.</p>
+      <section className="panel">
         <h2>Check a Practice Time</h2>
         <form onSubmit={checkConflicts}>
           <fieldset disabled={checking}>
@@ -251,7 +294,7 @@ function CoachView({ onSwitchRole }) {
           )}
         </div>
       </section>
-      <section>
+      <section className="panel">
         <h2>Rank Practice Windows</h2>
         <form onSubmit={rankWindows}>
           <fieldset disabled={ranking}>
@@ -283,7 +326,7 @@ function CoachView({ onSwitchRole }) {
         </form>
         {ranking && <p role="status">Ranking practice windows...</p>}
         {rankingError && <p role="alert">{rankingError}</p>}
-        <div aria-live="polite">
+        <div className="table-scroll" aria-live="polite">
           {rankedWindows && (
             <table className="ranking-table">
               <caption>Ranked practice windows for {rankingDay}</caption>
@@ -311,6 +354,8 @@ function CoachView({ onSwitchRole }) {
           )}
         </div>
       </section>
+        </section>
+      )}
     </main>
   );
 }
