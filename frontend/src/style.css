@@ -4,6 +4,12 @@ body {
   line-height: 1.5;
 }
 
+.role-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
 .ranking-table {
   margin-top: 1rem;
   border-collapse: collapse;

@@ -20,6 +20,56 @@ function formatTime(time) {
 }
 
 export default function App() {
+  const [role, setRole] = useState(null);
+
+  if (role === 'coach') {
+    return <CoachView onSwitchRole={() => setRole(null)} />;
+  }
+
+  if (role === 'swimmer') {
+    const swimmer = mockSchedules.find((entry) => entry.id === 'mock-001');
+    return (
+      <main>
+        <h1>UE Swimming &amp; Diving</h1>
+        <p>Scheduling and Performance Platform</p>
+        <h2>Swimmer</h2>
+        <button type="button" onClick={() => setRole(null)}>Switch Role</button>
+        <p>This is fictional/mock data for the prototype.</p>
+        <SwimmerSchedule swimmer={swimmer} />
+        <p>Personal performance and team schedule features will be added later.</p>
+      </main>
+    );
+  }
+
+  return (
+    <main>
+      <h1>UE Swimming &amp; Diving</h1>
+      <p>Scheduling and Performance Platform</p>
+      <div className="role-actions">
+        <button type="button" onClick={() => setRole('coach')}>Continue as Coach</button>
+        <button type="button" onClick={() => setRole('swimmer')}>Continue as Swimmer</button>
+      </div>
+    </main>
+  );
+}
+
+function SwimmerSchedule({ swimmer }) {
+  return (
+    <section>
+      <h3>{swimmer.name}</h3>
+      <ul>
+        {swimmer.classes.map((entry) => (
+          <li key={`${entry.day}-${entry.startTime}-${entry.endTime}`}>
+            {entry.day}: {formatTime(entry.startTime)}–{formatTime(entry.endTime)}
+            {entry.label ? ` — ${entry.label}` : ''}
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+function CoachView({ onSwitchRole }) {
   const [status, setStatus] = useState('Checking...');
   const [day, setDay] = useState(weekdays[0]);
   const [practiceStartTime, setPracticeStartTime] = useState('');
@@ -130,21 +180,13 @@ export default function App() {
   return (
     <main>
       <h1>UE Swimming &amp; Diving Scheduling and Performance Platform</h1>
+      <h2>Coach</h2>
+      <button type="button" onClick={onSwitchRole}>Switch Role</button>
       <p role="status">Backend: {status}</p>
       <h2>Mock swimmer schedules</h2>
       <p>All swimmers and classes below are fictional.</p>
       {mockSchedules.map((swimmer) => (
-        <section key={swimmer.id}>
-          <h3>{swimmer.name}</h3>
-          <ul>
-            {swimmer.classes.map((entry) => (
-              <li key={`${entry.day}-${entry.startTime}-${entry.endTime}`}>
-                {entry.day}: {formatTime(entry.startTime)}–{formatTime(entry.endTime)}
-                {entry.label ? ` — ${entry.label}` : ''}
-              </li>
-            ))}
-          </ul>
-        </section>
+        <SwimmerSchedule key={swimmer.id} swimmer={swimmer} />
       ))}
       <section>
         <h2>Check a Practice Time</h2>
