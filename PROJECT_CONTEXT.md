@@ -148,53 +148,46 @@ When assisting with this project:
 
 
 ## Prototype v1 - Current Development Step
-### Step 2 - Coach and Swimmer Prototype Views
+### Step 3 - Coach Dashboard and Realistic Mock Team
 
-The scheduling foundation for Prototype v1 is now working.
+The prototype role-selection structure is complete.
 
-Completed scheduling functionality includes:
+Current prototype functionality includes:
 
-- individual practice-time conflict checking
+- Coach and Swimmer prototype views
+- individual scheduling conflict checking
 - practice-window ranking
-- conflicting swimmer identification
 - configurable transition time
 - Monday-Sunday scheduling support
-- mock swimmer schedules
 - tested FastAPI scheduling endpoints
 
-Current task:
+The next milestone is to make the Coach experience resemble a real
+team-management application.
 
-Create separate Coach and Swimmer prototype experiences.
+### Step 3A - Expanded Mock Roster
 
-This is NOT real authentication.
+Expand the prototype from 5 fictional swimmers to approximately
+20 fictional swimmers.
 
-The application should begin with a simple role-selection screen:
+Each swimmer should have fictional class schedules distributed across
+Monday through Friday.
 
-- Continue as Coach
-- Continue as Swimmer
+Requirements:
 
-Coach prototype view:
+- All names and schedules must remain fictional.
+- Preserve the existing swimmer data structure.
+- Use realistic college class times.
+- Each swimmer should have several classes across the week.
+- Do not use real University of Evansville athlete information.
+- Existing scheduling conflict and ranking functionality must continue
+  to work with the larger roster.
 
-- should preserve access to the existing scheduling functionality
-- should eventually become the main team management dashboard
+The application should NOT permanently display every class for all
+20 swimmers on one long page.
 
-Swimmer prototype view:
+The larger roster will be used by the upcoming Coach dashboard,
+roster view, calendar, scheduling tools, and later performance
+features.
 
-- should initially represent one fictional swimmer
-- should show only that swimmer's own mock schedule
-- will later include personal performance, goals, and team schedule information
-
-Both views should allow the user to return to role selection.
-
-For this step:
-
-- do not add usernames or passwords
-- do not implement authentication
-- do not add a database
-- do not add external integrations
-- do not add real athlete data
-- do not implement performance tracking yet
-- preserve all working scheduling functionality
-
-A cleaner prototype layout is appropriate now, but major visual polish
-will occur later.
+Do not add real athlete data, authentication, a database, or external
+integrations during this step.
