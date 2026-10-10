@@ -23,13 +23,13 @@ export default function WeeklyCalendar({ weekdays, formatTime, swimmerId, onSwim
     <section aria-labelledby="calendar-heading">
       <h2 id="calendar-heading">Calendar</h2>
       <p>Fictional prototype week. All team events and class schedules are mock data.</p>
-      <p>
+      {onSwimmerChange && <p>
         <label htmlFor="calendar-swimmer">View swimmer classes: </label>
         <select id="calendar-swimmer" value={swimmerId} onChange={(event) => onSwimmerChange(event.target.value)}>
           <option value="">Team events only</option>
           {mockSchedules.map((entry) => <option key={entry.id} value={entry.id}>{entry.name}</option>)}
         </select>
-      </p>
+      </p>}
       <p>{swimmer ? `Team events and classes for ${swimmer.name}.` : 'Showing team events only.'}</p>
       <div className="calendar-scroll" tabIndex={0} role="region" aria-label="Weekly calendar, Monday through Sunday">
         <div className="weekly-board">

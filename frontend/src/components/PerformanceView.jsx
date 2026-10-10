@@ -1,20 +1,14 @@
 import { useState } from 'react';
 import { mockSchedules } from '../data/mockSchedules.js';
-import { mockPerformance, performanceEvents } from '../data/mockPerformance.js';
+import { performanceEvents } from '../data/mockPerformance.js';
+import { formatSwimTime, getSwimmerResults, summarizeEvent } from '../utils/performance.js';
 
-function formatSwimTime(seconds) {
-  const hundredths = Math.round(seconds * 100);
-  const minutes = Math.floor(hundredths / 6000);
-  const remainder = ((hundredths % 6000) / 100).toFixed(2);
-  return minutes ? `${minutes}:${remainder.padStart(5, '0')}` : remainder;
-}
-
-export default function PerformanceView() {
-  const [swimmerId, setSwimmerId] = useState(mockSchedules[0].id);
+export default function PerformanceView({ fixedSwimmerId } = {}) {
+  const [selectedSwimmerId, setSwimmerId] = useState(mockSchedules[0].id);
+  const swimmerId = fixedSwimmerId ?? selectedSwimmerId;
   const [selectedEvent, setSelectedEvent] = useState(performanceEvents[0]);
   const swimmer = mockSchedules.find((entry) => entry.id === swimmerId);
-  const results = mockPerformance.filter((result) => result.swimmerId === swimmerId)
-    .sort((a, b) => a.date.localeCompare(b.date));
+  const results = getSwimmerResults(swimmerId);
   const latest = results[results.length - 1];
   const progression = results.filter((result) => result.event === selectedEvent);
 
@@ -22,12 +16,12 @@ export default function PerformanceView() {
     <section aria-labelledby="performance-heading">
       <h2 id="performance-heading">Performance</h2>
       <p>All performances, meets, and dates are fictional prototype data. Events use short-course yards. Lower times are better.</p>
-      <p>
+      {!fixedSwimmerId && <p>
         <label htmlFor="performance-swimmer">Swimmer: </label>
         <select id="performance-swimmer" value={swimmerId} onChange={(event) => setSwimmerId(event.target.value)}>
           {mockSchedules.map((entry) => <option key={entry.id} value={entry.id}>{entry.name}</option>)}
         </select>
-      </p>
+      </p>}
       <div className="summary-grid">
         <article className="panel"><h3>Swimmer</h3><p>{swimmer.name}</p></article>
         <article className="panel"><h3>Tracked events</h3><p>{new Set(results.map((result) => result.event)).size}</p></article>
@@ -37,9 +31,7 @@ export default function PerformanceView() {
       <div className="summary-grid">
         {performanceEvents.map((event) => {
           const history = results.filter((result) => result.event === event);
-          const earliest = history[0].timeSeconds;
-          const best = Math.min(...history.map((result) => result.timeSeconds));
-          const improvement = earliest - best;
+          const { earliest, best, improvement } = summarizeEvent(history);
           return (
             <article className="panel" key={event}>
               <h4>{event}</h4>

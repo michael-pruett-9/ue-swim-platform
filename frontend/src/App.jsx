@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { mockSchedules } from './data/mockSchedules.js';
 import WeeklyCalendar from './components/WeeklyCalendar.jsx';
 import PerformanceView from './components/PerformanceView.jsx';
+import SwimmerView from './components/SwimmerView.jsx';
 
 const weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 const transitionOptions = [0, 5, 10, 15, 30];
@@ -29,18 +30,7 @@ export default function App() {
   }
 
   if (role === 'swimmer') {
-    const swimmer = mockSchedules.find((entry) => entry.id === 'mock-001');
-    return (
-      <main>
-        <h1>UE Swimming &amp; Diving</h1>
-        <p>Scheduling and Performance Platform</p>
-        <h2>Swimmer</h2>
-        <button type="button" onClick={() => setRole(null)}>Switch Role</button>
-        <p>This is fictional/mock data for the prototype.</p>
-        <SwimmerSchedule swimmer={swimmer} />
-        <p>Personal performance and team schedule features will be added later.</p>
-      </main>
-    );
+    return <SwimmerView onSwitchRole={() => setRole(null)} weekdays={weekdays} formatTime={formatTime} />;
   }
 
   return (

@@ -148,66 +148,105 @@ When assisting with this project:
 
 
 ## Prototype v1 - Current Development Step
-### Step 5 - Performance Tracking
+### Step 6 - Swimmer Dashboard
 
-The scheduling portion of Prototype v1 is now functional.
+The Coach prototype now contains:
 
-Current Coach functionality includes:
+- Dashboard
+- Scheduling
+- Weekly Calendar
+- Performance
+- Roster
 
-- dashboard
-- scheduling conflict detection
-- practice-window ranking
-- configurable transition time
-- weekly calendar
-- 20-swimmer fictional roster
-- individual swimmer schedule viewing
+The next milestone is to turn the current simple Swimmer view into a
+personal swimmer dashboard.
 
-The next milestone is to demonstrate the performance-tracking side
-of the platform.
+For Prototype v1, Mock Swimmer Alpha may remain the fictional swimmer
+represented by the Swimmer role.
 
-### Performance Prototype
+The Swimmer experience should reuse existing mock data and components
+where practical.
 
-Add a Performance section to the Coach application.
+### Swimmer Navigation
 
-Use fictional/mock swimming results only.
+Create three Swimmer sections:
 
-The prototype should allow the coach to select a fictional swimmer
-and view basic swimming performance information.
+1. Dashboard
+2. Calendar
+3. Performance
 
-The first performance prototype should include:
+Use React state rather than React Router.
 
-- swimmer
-- event
-- result/time
-- meet/date label
-- personal best
-- recent performance
-- simple improvement/progression information
+### Swimmer Dashboard
 
-Use common swimming events such as:
+The personal dashboard should summarize information relevant to the
+fictional swimmer.
 
-- 50 Freestyle
-- 100 Freestyle
-- 200 Freestyle
+Include simple prototype information such as:
 
-The performance prototype does not need advanced analytics yet.
+- swimmer name
+- upcoming class/team schedule information
+- number of tracked swimming events
+- personal-best summary
+- clear indication that all data is fictional/mock prototype data
 
-The purpose is to demonstrate how results that would eventually come
-from systems such as SwimCloud could be organized and analyzed inside
-the platform.
+The swimmer must not see Coach-only scheduling tools such as team
+practice-window ranking.
 
-No external SwimCloud connection should be implemented yet.
+### Swimmer Calendar
 
-All performance information must remain fictional.
+Reuse the weekly calendar concept.
+
+The Swimmer calendar should automatically display:
+
+- that swimmer's fictional classes
+- fictional team practices
+- meets
+- team/travel events
+
+The swimmer should not need to select themselves from a roster.
+
+### Swimmer Performance
+
+Reuse the existing fictional performance dataset and performance
+logic.
+
+Show only the current fictional swimmer's performance.
+
+Include:
+
+- tracked events
+- personal bests
+- most recent performances
+- improvement information
+- results history
+- simple event progression
+
+Do not allow the swimmer to browse other swimmers' performance data.
+
+### Future Performance Refinement
+
+The current performance prototype intentionally uses only 50, 100,
+and 200 Freestyle for all fictional swimmers.
+
+A later refinement should expand the swimming event catalog and assign
+different realistic event profiles to different swimmers.
+
+Future mock data should use plausible short-course-yard swimming times
+while remaining entirely fictional.
+
+Do not use real University of Evansville athlete results.
+
+### Constraints
 
 Do not add:
 
-- real athlete results
-- scraping
-- external APIs
+- real authentication
+- real student-athlete data
 - database functionality
-- authentication
-- predictive analytics
+- external integrations
+- SwimCloud scraping
+- notifications
+- advanced analytics
 
-The mock performance dataset should be reusable later in the Swimmer
-dashboard.
+Preserve all existing Coach functionality.
