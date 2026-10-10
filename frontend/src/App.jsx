@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { mockSchedules } from './data/mockSchedules.js';
 import WeeklyCalendar from './components/WeeklyCalendar.jsx';
+import PerformanceView from './components/PerformanceView.jsx';
 
 const weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 const transitionOptions = [0, 5, 10, 15, 30];
@@ -193,7 +194,7 @@ function CoachView({ onSwitchRole }) {
       </header>
       <p role="status">Backend: {status}</p>
       <nav className="coach-nav" aria-label="Coach navigation">
-        {['Dashboard', 'Scheduling', 'Calendar', 'Roster'].map((name) => (
+        {['Dashboard', 'Scheduling', 'Calendar', 'Performance', 'Roster'].map((name) => (
           <button key={name} type="button" aria-current={section === name ? 'page' : undefined}
             onClick={() => setSection(name)}>{name}</button>
         ))}
@@ -214,6 +215,7 @@ function CoachView({ onSwitchRole }) {
         <WeeklyCalendar weekdays={weekdays} formatTime={formatTime}
           swimmerId={calendarSwimmerId} onSwimmerChange={setCalendarSwimmerId} />
       )}
+      {section === 'Performance' && <PerformanceView />}
       {section === 'Roster' && (
         <section aria-labelledby="roster-heading">
           <h2 id="roster-heading">Roster</h2>
