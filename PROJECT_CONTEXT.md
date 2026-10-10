@@ -148,53 +148,66 @@ When assisting with this project:
 
 
 ## Prototype v1 - Current Development Step
-### Step 4 - Weekly Calendar
+### Step 5 - Performance Tracking
 
-The Coach dashboard, scheduling tools, and roster interface are now
-organized into separate sections.
+The scheduling portion of Prototype v1 is now functional.
 
-The next Prototype v1 feature is a weekly calendar.
+Current Coach functionality includes:
 
-The calendar should help demonstrate the project's goal of bringing
-different types of team scheduling information into one place.
+- dashboard
+- scheduling conflict detection
+- practice-window ranking
+- configurable transition time
+- weekly calendar
+- 20-swimmer fictional roster
+- individual swimmer schedule viewing
 
-### Coach Calendar
+The next milestone is to demonstrate the performance-tracking side
+of the platform.
 
-Add a Calendar section to Coach navigation.
+### Performance Prototype
 
-The calendar should display Monday through Sunday.
+Add a Performance section to the Coach application.
 
-For the prototype, it should use fictional/mock information only.
+Use fictional/mock swimming results only.
 
-Calendar information should include a small set of fictional:
+The prototype should allow the coach to select a fictional swimmer
+and view basic swimming performance information.
 
-- team practices
-- meets
-- travel/team events
+The first performance prototype should include:
 
-The coach should also be able to select one fictional swimmer and
-overlay that swimmer's class schedule onto the weekly calendar.
+- swimmer
+- event
+- result/time
+- meet/date label
+- personal best
+- recent performance
+- simple improvement/progression information
 
-The calendar should clearly distinguish event types using both text
-labels and visual styling. Do not rely only on color.
+Use common swimming events such as:
 
-The existing 20-swimmer mock class data should be reused rather than
-duplicated.
+- 50 Freestyle
+- 100 Freestyle
+- 200 Freestyle
 
-The calendar does not need drag-and-drop, editing, recurring-event
-management, or advanced calendar functionality during Prototype v1.
+The performance prototype does not need advanced analytics yet.
 
-No backend scheduling calculations need to change during this step.
+The purpose is to demonstrate how results that would eventually come
+from systems such as SwimCloud could be organized and analyzed inside
+the platform.
+
+No external SwimCloud connection should be implemented yet.
+
+All performance information must remain fictional.
 
 Do not add:
 
-- real athlete information
-- authentication
+- real athlete results
+- scraping
+- external APIs
 - database functionality
-- external calendar integrations
-- ARMS integration
-- performance tracking
-- notifications
+- authentication
+- predictive analytics
 
-Keep the implementation simple, understandable, and reusable for the
-future Swimmer calendar view.
+The mock performance dataset should be reusable later in the Swimmer
+dashboard.
