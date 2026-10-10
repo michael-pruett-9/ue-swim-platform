@@ -148,64 +148,53 @@ When assisting with this project:
 
 
 ## Prototype v1 - Current Development Step
-### Step 1C - Transition Time and Full-Week Scheduling
+### Step 2 - Coach and Swimmer Prototype Views
 
-Practice-window ranking is now implemented end-to-end.
+The scheduling foundation for Prototype v1 is now working.
 
-The system currently supports:
+Completed scheduling functionality includes:
 
-- checking one proposed practice time for conflicts
-- ranking multiple candidate practice windows
-- displaying conflicting swimmer names
-- displaying results in the React frontend
+- individual practice-time conflict checking
+- practice-window ranking
+- conflicting swimmer identification
+- configurable transition time
+- Monday-Sunday scheduling support
+- mock swimmer schedules
+- tested FastAPI scheduling endpoints
 
 Current task:
 
-Add configurable transition time between a swimmer's scheduled
-commitment and practice.
+Create separate Coach and Swimmer prototype experiences.
 
-The user should be able to select:
+This is NOT real authentication.
 
-- 0 minutes
-- 5 minutes
-- 10 minutes
-- 15 minutes
-- 30 minutes
+The application should begin with a simple role-selection screen:
 
-The transition time should apply in both directions:
+- Continue as Coach
+- Continue as Swimmer
 
-- after a class/commitment before practice begins
-- after practice before a class/commitment begins
+Coach prototype view:
 
-If the available gap is exactly equal to the selected transition
-time, it should be allowed and should NOT count as a conflict.
+- should preserve access to the existing scheduling functionality
+- should eventually become the main team management dashboard
 
-A transition time of 0 minutes must preserve the current conflict
-behavior.
+Swimmer prototype view:
 
-The single-time conflict checker and practice-window ranking should
-both use the selected transition time.
+- should initially represent one fictional swimmer
+- should show only that swimmer's own mock schedule
+- will later include personal performance, goals, and team schedule information
 
-Scheduling should support all seven weekdays:
+Both views should allow the user to return to role selection.
 
-- Monday
-- Tuesday
-- Wednesday
-- Thursday
-- Friday
-- Saturday
-- Sunday
+For this step:
 
-Current mock class data does not yet contain realistic information for
-all seven days. The system should still support all seven days so that
-future class schedules, team events, meets, travel, appointments, and
-other commitments can use the same scheduling model.
+- do not add usernames or passwords
+- do not implement authentication
+- do not add a database
+- do not add external integrations
+- do not add real athlete data
+- do not implement performance tracking yet
+- preserve all working scheduling functionality
 
-Do not expand the roster to a full mock team during this step.
-
-A larger mock roster with approximately 20-25 swimmers and Monday-Friday
-class schedules will be added during the dashboard/calendar development
-stage.
-
-Do not add a database, authentication, external integrations, or real
-student-athlete data during this step.
+A cleaner prototype layout is appropriate now, but major visual polish
+will occur later.
