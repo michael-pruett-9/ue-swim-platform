@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { mockSchedules } from './data/mockSchedules.js';
+import WeeklyCalendar from './components/WeeklyCalendar.jsx';
 
 const weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 const transitionOptions = [0, 5, 10, 15, 30];
@@ -71,6 +72,7 @@ function SwimmerSchedule({ swimmer }) {
 
 function CoachView({ onSwitchRole }) {
   const [section, setSection] = useState('Dashboard');
+  const [calendarSwimmerId, setCalendarSwimmerId] = useState('');
   const [selectedSwimmerId, setSelectedSwimmerId] = useState(mockSchedules[0].id);
   const selectedSwimmer = mockSchedules.find((swimmer) => swimmer.id === selectedSwimmerId);
   const [status, setStatus] = useState('Checking...');
@@ -191,7 +193,7 @@ function CoachView({ onSwitchRole }) {
       </header>
       <p role="status">Backend: {status}</p>
       <nav className="coach-nav" aria-label="Coach navigation">
-        {['Dashboard', 'Scheduling', 'Roster'].map((name) => (
+        {['Dashboard', 'Scheduling', 'Calendar', 'Roster'].map((name) => (
           <button key={name} type="button" aria-current={section === name ? 'page' : undefined}
             onClick={() => setSection(name)}>{name}</button>
         ))}
@@ -207,6 +209,10 @@ function CoachView({ onSwitchRole }) {
             <article className="panel"><h3>Scheduling Coverage</h3><p>Monday-Sunday</p></article>
           </div>
         </section>
+      )}
+      {section === 'Calendar' && (
+        <WeeklyCalendar weekdays={weekdays} formatTime={formatTime}
+          swimmerId={calendarSwimmerId} onSwimmerChange={setCalendarSwimmerId} />
       )}
       {section === 'Roster' && (
         <section aria-labelledby="roster-heading">

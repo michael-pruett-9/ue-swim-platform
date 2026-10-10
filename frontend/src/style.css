@@ -124,6 +124,66 @@ body {
   overflow-x: auto;
 }
 
+.calendar-scroll {
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+
+.weekly-board {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(145px, 1fr));
+  gap: 0.6rem;
+}
+
+.calendar-day {
+  padding: 0.6rem;
+  background: #f4f6f9;
+  border: 1px solid #d5dce5;
+  border-radius: 6px;
+  min-width: 0;
+}
+
+.calendar-day h3 {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+}
+
+.calendar-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.calendar-card {
+  margin-bottom: 0.75rem;
+  padding: 0.65rem;
+  background: white;
+  border: 1px solid #d5dce5;
+  border-left: 4px solid #697586;
+  border-radius: 4px;
+  overflow-wrap: anywhere;
+}
+
+.calendar-type {
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.calendar-card h4 {
+  margin: 0.4rem 0;
+  font-size: 0.95rem;
+}
+
+.calendar-card p {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.calendar-practice { border-left-color: #32688b; }
+.calendar-meet { border-left-color: #70508d; }
+.calendar-team-event { border-left-color: #987022; }
+.calendar-class { border-left-color: #397358; }
+
 .coach-app fieldset {
   border: 1px solid #d5dce5;
   min-width: 0;
