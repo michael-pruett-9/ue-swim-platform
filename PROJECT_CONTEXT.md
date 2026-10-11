@@ -148,56 +148,29 @@ When assisting with this project:
 
 
 ## Prototype v1 - Current Development Step
-### Step 7B - Prototype Visual Polish
+### Step 7C - Scheduling Time Input Polish
 
-The core prototype functionality is now implemented.
+The visual prototype is substantially complete.
 
-Current prototype functionality includes:
+One usability issue remains in the Coach Scheduling screen:
+browser-native time inputs are visually inconsistent with the rest
+of the prototype and are awkward to use.
 
-- Coach and Swimmer prototype roles
-- 20 fictional swimmers
-- weekly class schedules
-- conflict detection
-- configurable transition time
-- ranked practice windows
-- Coach dashboard
-- roster browsing
-- weekly team calendar
-- Coach performance browsing
-- Swimmer dashboard
-- Swimmer calendar
-- Swimmer performance
-- realistic fictional swimming event specialties and results
+Replace only the practice start/end time controls with a simple,
+reusable 12-hour time selector.
 
-The next step is a coordinated visual polish pass.
+The selector should display:
 
-The prototype should begin to look like a believable University of
-Evansville Swimming & Diving web platform while remaining clearly
-identified as a prototype using fictional data.
+- hour (1-12)
+- minute (00-55 in 5-minute increments)
+- AM/PM
 
-Visual goals:
+Internally the application must continue using 24-hour HH:MM strings
+for API requests and scheduling calculations.
 
-- clean and modern layout
-- consistent spacing
-- strong page hierarchy
-- readable typography
-- consistent cards, forms, buttons, and tables
-- University of Evansville-inspired purple accents
-- clear active navigation
-- clearer Coach and Swimmer identity
-- clearer success, warning, conflict, and status information
-- responsive behavior for reasonable laptop/tablet widths
+Do not modify backend scheduling logic, API contracts, datasets,
+ranking logic, or transition-time behavior.
 
-Use plain CSS and the existing React structure.
+Do not add dependencies.
 
-Do not add a UI framework or new dependency.
-
-Do not redesign or change the underlying functionality.
-
-Do not use the official UE logo unless an approved asset is later
-provided.
-
-Prioritize usability and professionalism over decorative effects.
-
-The application should still clearly state that prototype data is
-fictional/mock data.
+This is a small usability/presentation improvement, not a redesign.

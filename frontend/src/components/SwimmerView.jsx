@@ -19,7 +19,8 @@ export default function SwimmerView({ swimmerId, onSwitchRole, weekdays, formatT
       <header className="coach-header">
         <div>
           <h1>UE Swimming &amp; Diving</h1>
-          <p>Scheduling and Performance Platform · Swimmer Prototype</p>
+          <p>Scheduling and Performance Platform</p>
+          <span className="role-badge swimmer-badge">Swimmer Prototype</span>
         </div>
         <button type="button" onClick={onSwitchRole}>Switch Role</button>
       </header>

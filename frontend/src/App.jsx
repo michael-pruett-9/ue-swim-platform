@@ -3,6 +3,7 @@ import { mockSchedules } from './data/mockSchedules.js';
 import WeeklyCalendar from './components/WeeklyCalendar.jsx';
 import PerformanceView from './components/PerformanceView.jsx';
 import SwimmerView from './components/SwimmerView.jsx';
+import TimeSelector from './components/TimeSelector.jsx';
 
 const weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 const transitionOptions = [0, 5, 10, 15, 30];
@@ -35,7 +36,8 @@ export default function App() {
   }
 
   return (
-    <main>
+    <main className="landing">
+      <span className="role-badge">Prototype · Fictional data</span>
       <h1>UE Swimming &amp; Diving</h1>
       <p>Scheduling and Performance Platform</p>
       <p>Fictional swimmer selection for this prototype only.</p>
@@ -188,11 +190,12 @@ function CoachView({ onSwitchRole }) {
       <header className="coach-header">
         <div>
           <h1>UE Swimming &amp; Diving</h1>
-          <p>Scheduling and Performance Platform · Coach Prototype</p>
+          <p>Scheduling and Performance Platform</p>
+          <span className="role-badge">Coach Prototype</span>
         </div>
         <button type="button" onClick={onSwitchRole}>Switch Role</button>
       </header>
-      <p role="status">Backend: {status}</p>
+      <p className={`backend-status ${status === 'Connected' ? 'status-success' : ''}`} role="status">Backend: {status}</p>
       <nav className="coach-nav" aria-label="Coach navigation">
         {['Dashboard', 'Scheduling', 'Calendar', 'Performance', 'Roster'].map((name) => (
           <button key={name} type="button" aria-current={section === name ? 'page' : undefined}
@@ -253,22 +256,16 @@ function CoachView({ onSwitchRole }) {
                 {weekdays.map((weekday) => <option key={weekday}>{weekday}</option>)}
               </select>
             </p>
-            <p>
-              <label htmlFor="practice-start">Start time: </label>
-              <input id="practice-start" type="time" required step="60"
-                value={practiceStartTime} onChange={(event) => {
-                  setPracticeStartTime(event.target.value);
+              <TimeSelector id="practice-start" label="Start time"
+                value={practiceStartTime} onChange={(value) => {
+                  setPracticeStartTime(value);
                   clearResult();
                 }} />
-            </p>
-            <p>
-              <label htmlFor="practice-end">End time: </label>
-              <input id="practice-end" type="time" required step="60"
-                value={practiceEndTime} onChange={(event) => {
-                  setPracticeEndTime(event.target.value);
+              <TimeSelector id="practice-end" label="End time"
+                value={practiceEndTime} onChange={(value) => {
+                  setPracticeEndTime(value);
                   clearResult();
                 }} />
-            </p>
             <p>
               <label htmlFor="practice-transition">Required transition time: </label>
               <select id="practice-transition" value={transitionMinutes} onChange={(event) => {
@@ -285,10 +282,11 @@ function CoachView({ onSwitchRole }) {
         </form>
         {checking && <p role="status">Checking conflicts...</p>}
         {error && <p role="alert">{error}</p>}
-        <div aria-live="polite">
+        <div className={result ? `result-panel ${result.conflict_count === 0 ? 'result-success' : 'result-conflict'}` : undefined} aria-live="polite">
           {result && (
             <>
               <p>Conflict count: {result.conflict_count}</p>
+              {result.conflict_count > 0 && <strong>Conflicts found — review the swimmers below.</strong>}
               {result.conflict_count === 0 ? (
                 <p>No swimmers have a conflict with this practice time.</p>
               ) : (
@@ -348,10 +346,10 @@ function CoachView({ onSwitchRole }) {
               </thead>
               <tbody>
                 {rankedWindows.map((window, index) => (
-                  <tr key={`${window.startTime}-${window.endTime}`}>
-                    <td>{index + 1}</td>
+                  <tr className={index === 0 ? 'best-window' : undefined} key={`${window.startTime}-${window.endTime}`}>
+                    <td>{index + 1}{index === 0 && <span className="rank-label">Top ranked</span>}</td>
                     <td>{formatTime(window.startTime)}–{formatTime(window.endTime)}</td>
-                    <td>{window.conflict_count}</td>
+                    <td><span className={window.conflict_count === 0 ? 'count-success' : 'count-conflict'}>{window.conflict_count}</span></td>
                     <td>{window.conflicting_swimmers.length === 0
                       ? 'None'
                       : window.conflicting_swimmers.map((swimmer) => swimmer.name).join(', ')}</td>
