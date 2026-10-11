@@ -24,19 +24,29 @@ function formatTime(time) {
 
 export default function App() {
   const [role, setRole] = useState(null);
+  const [swimmerId, setSwimmerId] = useState('mock-001');
 
   if (role === 'coach') {
     return <CoachView onSwitchRole={() => setRole(null)} />;
   }
 
   if (role === 'swimmer') {
-    return <SwimmerView onSwitchRole={() => setRole(null)} weekdays={weekdays} formatTime={formatTime} />;
+    return <SwimmerView swimmerId={swimmerId} onSwitchRole={() => setRole(null)} weekdays={weekdays} formatTime={formatTime} />;
   }
 
   return (
     <main>
       <h1>UE Swimming &amp; Diving</h1>
       <p>Scheduling and Performance Platform</p>
+      <p>Fictional swimmer selection for this prototype only.</p>
+      <p>
+        <label htmlFor="prototype-swimmer">Fictional swimmer: </label>
+        <select id="prototype-swimmer" value={swimmerId} onChange={(event) => setSwimmerId(event.target.value)}>
+          {mockSchedules.map((swimmer) => (
+            <option key={swimmer.id} value={swimmer.id}>{swimmer.name}</option>
+          ))}
+        </select>
+      </p>
       <div className="role-actions">
         <button type="button" onClick={() => setRole('coach')}>Continue as Coach</button>
         <button type="button" onClick={() => setRole('swimmer')}>Continue as Swimmer</button>

@@ -6,12 +6,10 @@ import { formatSwimTime, getSwimmerResults, summarizeEvent } from '../utils/perf
 import WeeklyCalendar from './WeeklyCalendar.jsx';
 import PerformanceView from './PerformanceView.jsx';
 
-const currentSwimmerId = 'mock-001';
-
-export default function SwimmerView({ onSwitchRole, weekdays, formatTime }) {
+export default function SwimmerView({ swimmerId, onSwitchRole, weekdays, formatTime }) {
   const [section, setSection] = useState('Dashboard');
-  const swimmer = mockSchedules.find((entry) => entry.id === currentSwimmerId);
-  const results = getSwimmerResults(currentSwimmerId);
+  const swimmer = mockSchedules.find((entry) => entry.id === swimmerId);
+  const results = getSwimmerResults(swimmerId);
   // Team events have weekdays, not dates: show the first event in the sample week.
   const firstEvent = [...mockTeamEvents].sort((a, b) =>
     weekdays.indexOf(a.day) - weekdays.indexOf(b.day) || a.startTime.localeCompare(b.startTime))[0];
@@ -25,7 +23,7 @@ export default function SwimmerView({ onSwitchRole, weekdays, formatTime }) {
         </div>
         <button type="button" onClick={onSwitchRole}>Switch Role</button>
       </header>
-      <p>Mock Swimmer Alpha — all information is fictional/mock prototype data.</p>
+      <p>{swimmer.name} — all information is fictional/mock prototype data.</p>
       <nav className="coach-nav" aria-label="Swimmer navigation">
         {['Dashboard', 'Calendar', 'Performance'].map((name) => (
           <button key={name} type="button" aria-current={section === name ? 'page' : undefined}
@@ -58,9 +56,9 @@ export default function SwimmerView({ onSwitchRole, weekdays, formatTime }) {
         </section>
       )}
       {section === 'Calendar' && (
-        <WeeklyCalendar weekdays={weekdays} formatTime={formatTime} swimmerId={currentSwimmerId} />
+        <WeeklyCalendar weekdays={weekdays} formatTime={formatTime} swimmerId={swimmerId} />
       )}
-      {section === 'Performance' && <PerformanceView fixedSwimmerId={currentSwimmerId} />}
+      {section === 'Performance' && <PerformanceView fixedSwimmerId={swimmerId} />}
     </main>
   );
 }
