@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { mockSchedules } from '../data/mockSchedules.js';
 import { mockTeamEvents } from '../data/mockTeamEvents.js';
-import { performanceEvents } from '../data/mockPerformance.js';
 import { formatSwimTime, getSwimmerResults, summarizeEvent } from '../utils/performance.js';
 import WeeklyCalendar from './WeeklyCalendar.jsx';
 import PerformanceView from './PerformanceView.jsx';
@@ -10,6 +9,7 @@ export default function SwimmerView({ swimmerId, onSwitchRole, weekdays, formatT
   const [section, setSection] = useState('Dashboard');
   const swimmer = mockSchedules.find((entry) => entry.id === swimmerId);
   const results = getSwimmerResults(swimmerId);
+  const performanceEvents = [...new Set(results.map((result) => result.event))];
   // Team events have weekdays, not dates: show the first event in the sample week.
   const firstEvent = [...mockTeamEvents].sort((a, b) =>
     weekdays.indexOf(a.day) - weekdays.indexOf(b.day) || a.startTime.localeCompare(b.startTime))[0];

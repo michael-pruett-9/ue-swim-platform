@@ -1,16 +1,17 @@
 import { useState } from 'react';
 import { mockSchedules } from '../data/mockSchedules.js';
-import { performanceEvents } from '../data/mockPerformance.js';
 import { formatSwimTime, getSwimmerResults, summarizeEvent } from '../utils/performance.js';
 
 export default function PerformanceView({ fixedSwimmerId } = {}) {
   const [selectedSwimmerId, setSwimmerId] = useState(mockSchedules[0].id);
   const swimmerId = fixedSwimmerId ?? selectedSwimmerId;
-  const [selectedEvent, setSelectedEvent] = useState(performanceEvents[0]);
+  const [selectedEvent, setSelectedEvent] = useState('');
   const swimmer = mockSchedules.find((entry) => entry.id === swimmerId);
   const results = getSwimmerResults(swimmerId);
+  const performanceEvents = [...new Set(results.map((result) => result.event))];
+  const activeEvent = performanceEvents.includes(selectedEvent) ? selectedEvent : performanceEvents[0];
   const latest = results[results.length - 1];
-  const progression = results.filter((result) => result.event === selectedEvent);
+  const progression = results.filter((result) => result.event === activeEvent);
 
   return (
     <section aria-labelledby="performance-heading">
@@ -60,7 +61,7 @@ export default function PerformanceView({ fixedSwimmerId } = {}) {
       <section className="panel">
         <h3>Simple progression</h3>
         <label htmlFor="progression-event">Event: </label>
-        <select id="progression-event" value={selectedEvent} onChange={(event) => setSelectedEvent(event.target.value)}>
+        <select id="progression-event" value={activeEvent} onChange={(event) => setSelectedEvent(event.target.value)}>
           {performanceEvents.map((event) => <option key={event}>{event}</option>)}
         </select>
         <ol>{progression.map((result) => (
