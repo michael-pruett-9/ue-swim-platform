@@ -148,40 +148,66 @@ When assisting with this project:
 
 
 ## Prototype v1 - Current Development Step
-### Step 6B - Prototype Swimmer Identity Selection
+### Step 7A - Realistic Prototype Performance Data
 
-The Swimmer prototype now contains:
+The initial performance proof of concept used the same three events
+for every swimmer.
 
-- Dashboard
-- Calendar
-- Performance
+The next prototype improvement should make the fictional swimming
+performance data more realistic.
 
-The current implementation is fixed to Mock Swimmer Alpha.
+Use the standard short-course-yard individual swimming event catalog:
 
-For prototype demonstration purposes, allow a fictional swimmer identity
-to be selected before entering Swimmer mode.
+- 50 Freestyle
+- 100 Freestyle
+- 200 Freestyle
+- 500 Freestyle
+- 1000 Freestyle
+- 1650 Freestyle
+- 100 Backstroke
+- 200 Backstroke
+- 100 Breaststroke
+- 200 Breaststroke
+- 100 Butterfly
+- 200 Butterfly
+- 200 IM
+- 400 IM
 
-This is NOT real authentication.
+Individual swimmers should NOT all have the same event list.
 
-The purpose is only to demonstrate how different swimmers would see
-their own personalized information.
+The 20 fictional swimmers should represent different swimming
+specialties such as:
 
-### Prototype Swimmer Selection
+- sprint freestyle
+- mid-distance freestyle
+- distance freestyle
+- backstroke
+- breaststroke
+- butterfly
+- individual medley
+- multi-event swimmers
 
-When choosing the Swimmer role from the initial landing screen:
+Most swimmers should have approximately 3-5 tracked events.
 
-- allow selection of one of the 20 fictional swimmers
-- enter Swimmer mode using that selected swimmer
-- display only that swimmer's schedule
-- display only that swimmer's performance information
-- display that swimmer's personal dashboard
+Performance times should be plausible short-course-yard collegiate
+swimming times and should remain fictional.
 
-Once inside Swimmer mode, do not provide controls for browsing other
-swimmers.
+Each tracked event should continue to contain multiple meet results so
+that:
 
-To change fictional swimmer identity, the user should return using
-Switch Role and select a different swimmer.
+- personal best
+- most recent result
+- improvement
+- performance history
 
-Coach mode should remain unchanged.
+can still be calculated.
 
-Do not implement real login/authentication yet.
+Do not use real UE athlete results.
+
+Do not add relays yet.
+
+Do not add diving performance tracking yet.
+
+This step should primarily improve the mock performance dataset.
+Existing Coach and Swimmer performance interfaces should continue to
+work with swimmers having different event lists.
