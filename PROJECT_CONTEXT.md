@@ -148,66 +148,56 @@ When assisting with this project:
 
 
 ## Prototype v1 - Current Development Step
-### Step 7A - Realistic Prototype Performance Data
+### Step 7B - Prototype Visual Polish
 
-The initial performance proof of concept used the same three events
-for every swimmer.
+The core prototype functionality is now implemented.
 
-The next prototype improvement should make the fictional swimming
-performance data more realistic.
+Current prototype functionality includes:
 
-Use the standard short-course-yard individual swimming event catalog:
+- Coach and Swimmer prototype roles
+- 20 fictional swimmers
+- weekly class schedules
+- conflict detection
+- configurable transition time
+- ranked practice windows
+- Coach dashboard
+- roster browsing
+- weekly team calendar
+- Coach performance browsing
+- Swimmer dashboard
+- Swimmer calendar
+- Swimmer performance
+- realistic fictional swimming event specialties and results
 
-- 50 Freestyle
-- 100 Freestyle
-- 200 Freestyle
-- 500 Freestyle
-- 1000 Freestyle
-- 1650 Freestyle
-- 100 Backstroke
-- 200 Backstroke
-- 100 Breaststroke
-- 200 Breaststroke
-- 100 Butterfly
-- 200 Butterfly
-- 200 IM
-- 400 IM
+The next step is a coordinated visual polish pass.
 
-Individual swimmers should NOT all have the same event list.
+The prototype should begin to look like a believable University of
+Evansville Swimming & Diving web platform while remaining clearly
+identified as a prototype using fictional data.
 
-The 20 fictional swimmers should represent different swimming
-specialties such as:
+Visual goals:
 
-- sprint freestyle
-- mid-distance freestyle
-- distance freestyle
-- backstroke
-- breaststroke
-- butterfly
-- individual medley
-- multi-event swimmers
+- clean and modern layout
+- consistent spacing
+- strong page hierarchy
+- readable typography
+- consistent cards, forms, buttons, and tables
+- University of Evansville-inspired purple accents
+- clear active navigation
+- clearer Coach and Swimmer identity
+- clearer success, warning, conflict, and status information
+- responsive behavior for reasonable laptop/tablet widths
 
-Most swimmers should have approximately 3-5 tracked events.
+Use plain CSS and the existing React structure.
 
-Performance times should be plausible short-course-yard collegiate
-swimming times and should remain fictional.
+Do not add a UI framework or new dependency.
 
-Each tracked event should continue to contain multiple meet results so
-that:
+Do not redesign or change the underlying functionality.
 
-- personal best
-- most recent result
-- improvement
-- performance history
+Do not use the official UE logo unless an approved asset is later
+provided.
 
-can still be calculated.
+Prioritize usability and professionalism over decorative effects.
 
-Do not use real UE athlete results.
-
-Do not add relays yet.
-
-Do not add diving performance tracking yet.
-
-This step should primarily improve the mock performance dataset.
-Existing Coach and Swimmer performance interfaces should continue to
-work with swimmers having different event lists.
+The application should still clearly state that prototype data is
+fictional/mock data.
