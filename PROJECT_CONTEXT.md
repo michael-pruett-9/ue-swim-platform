@@ -1,4 +1,4 @@
-# Project Context
+﻿# Project Context
 
 ## Project
 UE Swimming & Diving Scheduling and Performance Platform
@@ -32,7 +32,7 @@ Because UE does not have one protected athletics practice period,
 coaches manually compare swimmers' class schedules when determining
 practice times.
 
-## Core Features
+## Planned Overall Feature Scope
 
 1. Unified scheduling and calendar
 2. Scheduling conflict detection and coach availability dashboard
@@ -42,7 +42,7 @@ practice times.
 
 ## MVP Priority
 
-The first prototype should focus on:
+The initial prototype priorities were (now implemented with fictional data):
 
 1. displaying sample swimmer schedules
 2. detecting schedule conflicts
@@ -98,37 +98,24 @@ Later:
 - deployment/testing
 ## Current Project State
 
-The GitHub repository and local development workspace have been created.
+A working local Prototype v1 is implemented as of October 2026. React/Vite
+communicates with Python/FastAPI through the Vite development proxy. The
+backend runs in backend/.venv with Uvicorn.
 
-Current repository structure includes:
+Current endpoints:
+- GET /api/health
+- POST /api/conflicts
+- POST /api/rank-practice-windows
 
-- frontend/
-- backend/
-- docs/
-  - architecture/
-  - requirements/
-- PROJECT_CONTEXT.md
-- README.md
+Coach and Swimmer prototype views, 20 fictional swimmers, full-week scheduling
+support, transition-aware conflict checking and ranking, weekly calendar,
+performance histories, roster browsing, and visual polish are implemented.
+See Working Prototype v1 below and README.md for the current feature inventory
+and exact startup/test commands.
 
-The React/Vite frontend is initialized and running locally.
-
-The Python/FastAPI backend is initialized inside a project virtual
-environment and running locally with Uvicorn.
-
-The backend currently includes a health-check endpoint:
-
-GET /api/health
-
-which returns:
-
-{"status":"ok"}
-
-The React frontend successfully communicates with the FastAPI backend
-and displays a connected status.
-
-No database, authentication, external integrations, or real
-student-athlete data have been implemented yet.
-
+No database, authentication, external integrations, real athlete data, or
+production deployment setup is implemented. The role selector is a local UI
+demonstration, not an access-control boundary.
 
 ## Development Guardrails
 
@@ -137,6 +124,8 @@ When assisting with this project:
 - Read this file before making significant changes.
 - Do not attempt to build the full application at once.
 - Prefer small, understandable, testable changes.
+- Preserve existing working features and API behavior unless explicitly asked to change them.
+- Run relevant backend tests and frontend build/checks after code changes; report results and limitations.
 - Explain important files and implementation decisions.
 - Do not add unnecessary libraries or dependencies.
 - Do not use real student-athlete data during prototype development.
@@ -147,30 +136,54 @@ When assisting with this project:
 - Prioritize functionality and clarity over visual polish during the first semester.
 
 
-## Prototype v1 - Current Development Step
-### Step 7C - Scheduling Time Input Polish
+## Working Prototype v1 - October 2026
 
-The visual prototype is substantially complete.
+Implemented functionality:
 
-One usability issue remains in the Coach Scheduling screen:
-browser-native time inputs are visually inconsistent with the rest
-of the prototype and are awkward to use.
+- React/Vite frontend and Python/FastAPI backend with a working /api connection.
+- Coach and Swimmer prototype roles, Switch Role, and fictional swimmer identity
+  selection on the landing screen. Navigation uses React state, not routing.
+- Exactly 20 fictional swimmers with Monday-Friday class schedules.
+- Monday-Sunday scheduling support, single-practice conflict detection, and
+  configurable transition time (UI options: 0, 5, 10, 15, 30 minutes).
+- Required gaps apply before and after practice on the selected day. Exact gaps
+  are allowed; zero transition retains the original overlap rules.
+- Ranking of predefined candidate practice windows by conflicting-swimmer count,
+  preserving original order for ties and reusing the conflict checker.
+- Coach Dashboard, Scheduling, Calendar, Performance, and Roster sections.
+- Coach roster selection with one swimmer's class schedule displayed at a time.
+- Weekly Coach calendar with fictional practices, a meet, team travel, and an
+  optional selected-swimmer class overlay from the existing schedule dataset.
+- Swimmer Dashboard, Calendar, and Performance restricted in the UI to the
+  fictional identity selected before entering Swimmer mode.
+- Fictional SCY specialties spanning freestyle, backstroke, breaststroke,
+  butterfly, and IM. Each swimmer has 3-5 tracked events with three chronological
+  fictional meet results per event, stored as numeric seconds.
+- Personal best, most recent time, improvement in seconds/percentage, results
+  history, and simple progression lists; lower swimming times are better.
+- Responsive purple-and-neutral prototype styling with explicit status labels.
+- Reusable hour/minute/AM-PM controls in Coach Scheduling, including required
+  placeholders and five-minute choices. API times remain 24-hour HH:MM strings.
+- Backend unittest coverage for conflict logic, transitions, ranking, and APIs;
+  frontend production build checking through npm run build.
 
-Replace only the practice start/end time controls with a simple,
-reusable 12-hour time selector.
+All athlete-related information remains fictional/mock data. Calendar team
+events are display data and are not automatically included in the scheduling
+API requests. Scheduling does not support overnight intervals or cross-day
+transition checks. Calendar data is an undated sample week, not a live calendar.
+The Swimmer dashboard labels the first event in that mock week accordingly.
+Performance calculations use local mock data; there is no SwimCloud connection.
 
-The selector should display:
+## Completed Milestones and Future Direction
 
-- hour (1-12)
-- minute (00-55 in 5-minute increments)
-- AM/PM
+Steps through 7C are complete: setup, conflict checking, ranking, transition
+time, role views, roster expansion, Coach organization, calendar, performance,
+Swimmer dashboard and identity selection, varied SCY event profiles, visual
+polish, and scheduling time-control polish.
 
-Internally the application must continue using 24-hour HH:MM strings
-for API requests and scheduling calculations.
-
-Do not modify backend scheduling logic, API contracts, datasets,
-ranking logic, or transition-time behavior.
-
-Do not add dependencies.
-
-This is a small usability/presentation improvement, not a redesign.
+There is no automatically authorized next implementation step. Continue with
+small, explicitly requested improvements while preserving the working prototype.
+Future directions include relational persistence, authentication and real role
+permissions, athlete/team goals, optional practice tracking, approved imports
+if feasible, additional testing, deployment, and continued UI refinement.
+These directions are not implemented features.
