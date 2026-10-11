@@ -6,7 +6,7 @@ A two-semester senior Computer Science project for the University of Evansville 
 
 ## Prototype Screenshot
 
-![Coach Dashboard](docs/screenshots/coach-dashboard.png)
+![Coach Dashboard](docs/screenshots/Coach_Dashboard.png)
 
 ## Project Goal / Problem
 
