@@ -2,7 +2,7 @@
 
 A two-semester senior Computer Science project for the University of Evansville Swimming & Diving team. The working local prototype brings scheduling tools and fictional swimming performance histories into separate Coach and Swimmer experiences.
 
-## Prototype Screenshot
+
 
 ## Prototype Screenshot
 
