@@ -4,7 +4,7 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field, model_validator
 
 from conflict_detection import find_conflicts
-from practice_ranking import rank_practice_windows
+from practice_ranking import rank_practice_windows, recommend_practice_windows
 
 
 Weekday = Literal["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
@@ -63,6 +63,22 @@ class RankingRequest(BaseModel):
         return self
 
 
+class RecommendationRequest(BaseModel):
+    swimmers: list[SwimmerSchedule]
+    day: Weekday
+    earliestStartTime: TimeString
+    latestEndTime: TimeString
+    practiceDurationMinutes: int = Field(strict=True)
+    transitionMinutes: int = Field(default=0, ge=0, strict=True)
+
+    @model_validator(mode="after")
+    def check_unique_swimmers(self):
+        ids = [swimmer.id for swimmer in self.swimmers]
+        if len(ids) != len(set(ids)):
+            raise ValueError("Swimmer ids must be unique.")
+        return self
+
+
 app = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)
 
 
@@ -92,6 +108,21 @@ def rank_windows(request: RankingRequest):
             [swimmer.model_dump(exclude_none=True) for swimmer in request.swimmers],
             request.day,
             [window.model_dump() for window in request.candidateWindows],
+            request.transitionMinutes,
+        )
+    except ValueError as error:
+        raise HTTPException(status_code=422, detail=str(error)) from error
+
+
+@app.post("/api/recommend-practice-windows")
+def recommend_windows(request: RecommendationRequest):
+    try:
+        return recommend_practice_windows(
+            [swimmer.model_dump(exclude_none=True) for swimmer in request.swimmers],
+            request.day,
+            request.earliestStartTime,
+            request.latestEndTime,
+            request.practiceDurationMinutes,
             request.transitionMinutes,
         )
     except ValueError as error:
