@@ -106,6 +106,7 @@ Current endpoints:
 - GET /api/health
 - POST /api/conflicts
 - POST /api/rank-practice-windows
+- POST /api/recommend-practice-windows
 
 Coach and Swimmer prototype views, 20 fictional swimmers, full-week scheduling
 support, transition-aware conflict checking and ranking, weekly calendar,
@@ -148,8 +149,18 @@ Implemented functionality:
   configurable transition time (UI options: 0, 5, 10, 15, 30 minutes).
 - Required gaps apply before and after practice on the selected day. Exact gaps
   are allowed; zero transition retains the original overlap rules.
-- Ranking of predefined candidate practice windows by conflicting-swimmer count,
-  preserving original order for ties and reusing the conflict checker.
+- Dynamic practice-time recommendation generation. The Coach selects a weekday,
+  earliest allowable start, latest allowable end, practice duration, and required
+  transition time. The backend generates every valid candidate start time in
+  15-minute increments and ranks the resulting practice windows by conflicting-
+  swimmer count.
+- Supported practice durations are 30, 45, 60, 75, 90, 105, and 120 minutes.
+  Recommendation ties preserve chronological order and reuse the existing
+  conflict-detection logic rather than duplicating scheduling calculations.
+- Coach Scheduling emphasizes the five best recommendations by default, identifies
+  the first result as the Best Option, reports the total number of generated
+  windows, lists conflicting swimmers, and allows the Coach to expand the table
+  to view all recommendations.
 - Coach Dashboard, Scheduling, Calendar, Performance, and Roster sections.
 - Coach roster selection with one swimmer's class schedule displayed at a time.
 - Weekly Coach calendar with fictional practices, a meet, team travel, and an
@@ -176,72 +187,32 @@ Performance calculations use local mock data; there is no SwimCloud connection.
 
 ## Completed Milestones and Current Roadmap
 
-Steps through 7C are complete: setup, conflict checking, ranking, transition
-time, role views, roster expansion, Coach organization, calendar, performance,
-Swimmer dashboard and identity selection, varied SCY event profiles, visual
-polish, and scheduling time-control polish.
+Steps through 8C are complete: setup, conflict checking, transition-aware
+scheduling, role views, roster expansion, Coach organization, weekly calendar,
+performance tracking, Swimmer dashboard and identity selection, varied SCY
+event profiles, visual polish, scheduling time-control polish, and dynamic
+practice-time recommendations.
+
+Step 8 is complete:
+
+- Step 8A: backend candidate-window generation and recommendation logic
+- Step 8B: FastAPI recommendation endpoint
+- Step 8C: Coach "Find Best Practice Times" interface
+
+The recommendation workflow now allows the Coach to choose the weekday,
+earliest allowable practice start, latest allowable practice end, practice
+duration, and transition requirement. Candidate practices are generated every
+15 minutes within those limits and ranked using the existing conflict-detection
+logic.
 
 Current planned development order:
 
-1. Step 8 - Dynamic practice-time recommendation
-2. Step 9 - Performance progression graph
-3. Step 10 - Relational database and persistence
-4. Step 11 - Client feedback and usability testing
+1. Step 9 - Performance progression graph
+2. Step 10 - Relational database and persistence
+3. Step 11 - Client feedback and usability testing
 
 Later directions include authentication and real role permissions, athlete/team
 goals, optional practice tracking, approved imports if feasible, deployment,
-and continued UI refinement.
+mobile-friendly improvements, and continued UI refinement.
 
 These later directions are not currently implemented features.
-
-
-## Step 8 - Dynamic Practice-Time Recommendation Specification
-
-The existing predefined practice-window ranking is useful for the prototype,
-but the next scheduling improvement is to generate realistic candidate practice
-times dynamically.
-
-The existing manual "Check a Practice Time" workflow must remain available.
-
-Dynamic recommendation rules:
-
-- Candidate practice start times use 15-minute boundaries only:
-  :00, :15, :30, and :45.
-- The Coach chooses the weekday.
-- The Coach chooses the practice duration.
-- Allowed practice durations are:
-  30, 45, 60, 75, 90, 105, and 120 minutes.
-- The Coach chooses an earliest allowable start time.
-- The Coach chooses a latest allowable end time.
-- The existing required transition-time setting remains part of the calculation.
-- Suggested practices must start at or after the earliest allowable start.
-- Suggested practices must end at or before the latest allowable end.
-- Overnight practice intervals are not supported.
-- Candidate windows are generated chronologically in 15-minute increments.
-- Existing conflict-detection logic must be reused rather than duplicated.
-- Candidate windows are ranked from fewest conflicts to most conflicts.
-- When multiple windows have the same conflict count, chronological order
-  should be preserved.
-- The eventual Coach interface should emphasize the best recommendations rather
-  than overwhelming the user with every possible window.
-- The intended prototype defaults are an earliest start of 5:30 AM and a latest
-  end of 6:30 PM, but the Coach will eventually be able to change those values.
-
-Step 8 will be implemented incrementally:
-
-### Step 8A
-Create and test the backend logic that generates candidate practice windows and
-ranks them using the existing scheduling logic.
-
-Do not change the API or frontend during Step 8A.
-
-### Step 8B
-Expose the dynamic recommendation logic through a FastAPI endpoint while
-preserving all existing endpoints and behavior.
-
-### Step 8C
-Integrate the recommendation feature into Coach Scheduling. Replace the current
-predefined ranking workflow with a "Find Best Practice Times" workflow while
-keeping the existing manual "Check a Practice Time" feature.
-
-Do not implement Steps 8B or 8C until explicitly requested.
