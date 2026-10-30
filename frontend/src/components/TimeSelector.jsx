@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function TimeSelector({ id, label, value, onChange }) {
+export default function TimeSelector({ id, label, value, onChange, minuteStep = 5 }) {
   const [hour, setHour] = useState(value ? String(Number(value.slice(0, 2)) % 12 || 12) : '');
   const [minute, setMinute] = useState(value ? value.slice(3) : '');
   const [period, setPeriod] = useState(value ? (Number(value.slice(0, 2)) < 12 ? 'AM' : 'PM') : '');
@@ -31,7 +31,7 @@ export default function TimeSelector({ id, label, value, onChange }) {
         <select required aria-label={`${label} minute`} value={minute}
           onChange={(event) => update(hour, event.target.value, period)}>
           <option value="">Minute</option>
-          {Array.from({ length: 12 }, (_, index) => String(index * 5).padStart(2, '0')).map((number) => (
+          {Array.from({ length: 60 / minuteStep }, (_, index) => String(index * minuteStep).padStart(2, '0')).map((number) => (
             <option key={number} value={number}>{number}</option>
           ))}
         </select>

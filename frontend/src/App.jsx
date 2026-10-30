@@ -8,13 +8,14 @@ import TimeSelector from './components/TimeSelector.jsx';
 const weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 const transitionOptions = [0, 5, 10, 15, 30];
 
-const candidateWindows = [
-  { startTime: '06:00', endTime: '07:30' },
-  { startTime: '09:00', endTime: '10:30' },
-  { startTime: '11:00', endTime: '12:30' },
-  { startTime: '13:00', endTime: '14:30' },
-  { startTime: '15:00', endTime: '16:30' },
-  { startTime: '17:00', endTime: '18:30' },
+const durationOptions = [
+  [30, '30 minutes'],
+  [45, '45 minutes'],
+  [60, '1 hour'],
+  [75, '1 hour 15 minutes'],
+  [90, '1 hour 30 minutes'],
+  [105, '1 hour 45 minutes'],
+  [120, '2 hours'],
 ];
 
 function formatTime(time) {
@@ -91,29 +92,51 @@ function CoachView({ onSwitchRole }) {
   const [rankingError, setRankingError] = useState('');
   const [ranking, setRanking] = useState(false);
   const [rankingTransitionMinutes, setRankingTransitionMinutes] = useState(0);
+  const [earliestStartTime, setEarliestStartTime] = useState('05:30');
+  const [latestEndTime, setLatestEndTime] = useState('18:30');
+  const [practiceDurationMinutes, setPracticeDurationMinutes] = useState(90);
+  const [showAllOptions, setShowAllOptions] = useState(false);
 
-  async function rankWindows(event) {
-    event.preventDefault();
+  function clearRecommendations() {
     setRankedWindows(null);
     setRankingError('');
+    setShowAllOptions(false);
+  }
+
+  async function recommendWindows(event) {
+    event.preventDefault();
+    clearRecommendations();
     setRanking(true);
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 10000);
 
     try {
-      const response = await fetch('/api/rank-practice-windows', {
+      const response = await fetch('/api/recommend-practice-windows', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          swimmers: mockSchedules, day: rankingDay, candidateWindows,
+          swimmers: mockSchedules, day: rankingDay,
+          earliestStartTime, latestEndTime, practiceDurationMinutes,
           transitionMinutes: rankingTransitionMinutes,
         }),
         signal: controller.signal,
       });
-      if (!response.ok) throw new Error('Ranking request failed');
+      if (!response.ok) {
+        if (response.status === 422) {
+          const details = await response.json();
+          throw new Error(typeof details.detail === 'string'
+            ? details.detail
+            : 'Please check the time range, practice duration, and transition time.');
+        }
+        throw new Error('Could not find practice times. Make sure the backend is running and try again.');
+      }
       setRankedWindows(await response.json());
-    } catch {
-      setRankingError('Could not rank practice windows. Make sure the backend is running and try again.');
+    } catch (error) {
+      setRankingError(error.name === 'AbortError'
+        ? 'The request took too long. Check that the backend is running and try again.'
+        : error instanceof TypeError
+          ? 'Could not reach the backend. Make sure it is running and try again.'
+          : error.message);
     } finally {
       clearTimeout(timeout);
       setRanking(false);
@@ -301,41 +324,67 @@ function CoachView({ onSwitchRole }) {
         </div>
       </section>
       <section className="panel">
-        <h2>Rank Practice Windows</h2>
-        <form onSubmit={rankWindows}>
+        <h2>Find Best Practice Times</h2>
+        <p>Choose a time range in 15-minute increments and a practice duration.</p>
+        <form onSubmit={recommendWindows}>
           <fieldset disabled={ranking}>
-            <legend>Practice window ranking</legend>
+            <legend>Practice recommendations</legend>
             <p>
               <label htmlFor="ranking-day">Weekday: </label>
               <select id="ranking-day" value={rankingDay} onChange={(event) => {
                 setRankingDay(event.target.value);
-                setRankedWindows(null);
-                setRankingError('');
+                clearRecommendations();
               }}>
                 {weekdays.map((weekday) => <option key={weekday}>{weekday}</option>)}
+              </select>
+            </p>
+            <TimeSelector id="recommendation-start" label="Earliest practice start time"
+              minuteStep={15} value={earliestStartTime} onChange={(value) => {
+                setEarliestStartTime(value);
+                clearRecommendations();
+              }} />
+            <TimeSelector id="recommendation-end" label="Latest practice end time"
+              minuteStep={15} value={latestEndTime} onChange={(value) => {
+                setLatestEndTime(value);
+                clearRecommendations();
+              }} />
+            <p>
+              <label htmlFor="practice-duration">Practice duration: </label>
+              <select id="practice-duration" value={practiceDurationMinutes} onChange={(event) => {
+                setPracticeDurationMinutes(Number(event.target.value));
+                clearRecommendations();
+              }}>
+                {durationOptions.map(([minutes, label]) => (
+                  <option key={minutes} value={minutes}>{label}</option>
+                ))}
               </select>
             </p>
             <p>
               <label htmlFor="ranking-transition">Required transition time: </label>
               <select id="ranking-transition" value={rankingTransitionMinutes} onChange={(event) => {
                 setRankingTransitionMinutes(Number(event.target.value));
-                setRankedWindows(null);
-                setRankingError('');
+                clearRecommendations();
               }}>
                 {transitionOptions.map((minutes) => (
                   <option key={minutes} value={minutes}>{minutes} minutes</option>
                 ))}
               </select>
             </p>
-            <button type="submit">Rank Practice Windows</button>
+            <button type="submit">Find Best Practice Times</button>
           </fieldset>
         </form>
-        {ranking && <p role="status">Ranking practice windows...</p>}
+        {ranking && <p role="status">Finding best practice times...</p>}
         {rankingError && <p role="alert">{rankingError}</p>}
         <div className="table-scroll" aria-live="polite">
-          {rankedWindows && (
+          {rankedWindows !== null && (
+            <p>{rankedWindows.length} valid practice windows generated.</p>
+          )}
+          {rankedWindows?.length === 0 && (
+            <p>No valid practice windows were found. Try a wider time range or a shorter duration.</p>
+          )}
+          {rankedWindows?.length > 0 && (
             <table className="ranking-table">
-              <caption>Ranked practice windows for {rankingDay}</caption>
+              <caption>Recommended practice times for {rankingDay}</caption>
               <thead>
                 <tr>
                   <th scope="col">Rank</th>
@@ -345,9 +394,9 @@ function CoachView({ onSwitchRole }) {
                 </tr>
               </thead>
               <tbody>
-                {rankedWindows.map((window, index) => (
+                {(showAllOptions ? rankedWindows : rankedWindows.slice(0, 5)).map((window, index) => (
                   <tr className={index === 0 ? 'best-window' : undefined} key={`${window.startTime}-${window.endTime}`}>
-                    <td>{index + 1}{index === 0 && <span className="rank-label">Top ranked</span>}</td>
+                    <td>{index + 1}{index === 0 && <span className="rank-label">Best Option</span>}</td>
                     <td>{formatTime(window.startTime)}–{formatTime(window.endTime)}</td>
                     <td><span className={window.conflict_count === 0 ? 'count-success' : 'count-conflict'}>{window.conflict_count}</span></td>
                     <td>{window.conflicting_swimmers.length === 0
@@ -357,6 +406,12 @@ function CoachView({ onSwitchRole }) {
                 ))}
               </tbody>
             </table>
+          )}
+          {rankedWindows?.length > 5 && (
+            <button type="button" aria-expanded={showAllOptions}
+              onClick={() => setShowAllOptions(!showAllOptions)}>
+              {showAllOptions ? 'Show Top 5' : 'Show All Options'}
+            </button>
           )}
         </div>
       </section>
