@@ -110,7 +110,11 @@ fieldset button { grid-column: 1 / -1; justify-self: start; margin-top: 4px; }
 .chart-axis { fill: none; stroke: var(--muted); stroke-width: 1; }
 .chart-line { fill: none; stroke: var(--purple); stroke-width: 3; stroke-linejoin: round; }
 .chart-point { fill: white; stroke: var(--purple); stroke-width: 3; }
-.chart-point:focus { fill: var(--purple-light); stroke-width: 5; }
+.chart-point-target { cursor: pointer; }
+.chart-hit-area { fill: transparent; }
+.chart-point-target.is-active .chart-point, .chart-point-target:focus .chart-point { fill: var(--purple-light); stroke-width: 5; }
+.chart-details { padding: 16px; border: 1px solid var(--border); border-left: 4px solid var(--purple); border-radius: 7px; background: #faf9fc; overflow-wrap: anywhere; }
+.chart-details p { margin: 4px 0; }
 .progression-chart .chart-pb { fill: var(--purple); font-weight: 700; }
 .progression-chart li { overflow-wrap: anywhere; }
 @media (max-width: 700px) {
