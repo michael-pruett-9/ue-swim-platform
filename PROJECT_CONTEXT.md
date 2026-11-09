@@ -35,7 +35,7 @@ practice times.
 
 1. Unified scheduling and calendar
 2. Scheduling conflict detection and coach availability/recommendation tools
-3. Swimming performance tracking, progression analytics, and year-to-year comparison
+3. Swimming performance tracking and analytics, including multi-season progression and year-to-year comparison
 4. Athlete and team goal tracking
 5. Optional practice logging and practice-performance progression
 
@@ -175,6 +175,10 @@ Implemented functionality:
   placeholders and five-minute choices. API times remain 24-hour HH:MM strings.
 - Backend unittest coverage for conflict logic, transitions, ranking, and APIs;
   frontend production build checking through npm run build.
+- Performance progression graphs display chronological fictional meet results
+  for a selected event. Graph points are keyboard/mouse/touch interactive and
+  display meet, date, time, PB status, result-to-result change, and distance
+  from personal best.
 
 All athlete-related information remains fictional/mock data. Calendar team
 events are display data and are not automatically included in the scheduling
@@ -184,6 +188,8 @@ The Swimmer dashboard labels the first event in that mock week accordingly.
 Performance calculations use local mock data; there is no SwimCloud connection.
 
 Recent client feedback supports expanding the performance side of the platform. Planned performance work includes richer interactive progression information and year-to-year or season-to-season comparisons. The client also expressed interest in future goal tracking and optional practice-result logging so athletes and coaches could review progression from practice data separately from official meet performance. These are planned features and are not currently implemented.
+
+
 
 ## Completed Milestones and Current Roadmap
 
@@ -206,14 +212,22 @@ Step 9 is now focused on expanding performance progression and analytics:
 
 Current planned development order:
 
-1. Complete Step 9 performance progression and comparison work.
-2. Step 10 - Relational database and persistence.
-3. Step 11 - Begin moving appropriate schedule and performance data from local mock files into persistent storage.
-4. Step 12 - Athlete/team goals, optional practice-result logging, and practice progression.
-5. Step 13 - Client feedback, usability testing, and refinement.
+1. Step 9C - Multi-season performance history and year-to-year comparison
+2. Step 9D - Additional performance filtering and customization
+3. Step 10 - Relational database and persistence
+4. Step 10C/10D - Coach roster management and active/historical swimmer status
+5. Step 11 - Athlete/team goals and optional practice logging/progression
+6. Step 12 - Authentication, deployment, and application packaging
+7. Step 13 - Client feedback and usability testing
 
-Later directions include authentication and real role permissions, approved imports if feasible, deployment, easier application startup/packaging, mobile-friendly improvements, and continued UI refinement.
+Future roster management should preserve historical athlete information rather
+than permanently removing useful performance history. Swimmers should eventually
+have an active/historical status. Only active swimmers should participate in
+current scheduling conflict and practice recommendation calculations, while
+historical swimmers may remain available for appropriate performance/history
+views.
 
-Official meet performance and optional future practice-result data should remain distinguishable rather than being treated as equivalent performance records.
-
-These later directions are not currently implemented features.
+Client feedback from the head coach specifically supports expanding performance
+progression tools, including year-to-year performance comparison, and eventually
+allowing athletes to record practice information and track practice progression.
+These are planned directions and should continue to be implemented incrementally.
