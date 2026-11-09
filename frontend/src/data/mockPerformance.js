@@ -36,18 +36,39 @@ const meets = [
   { date: '2026-10-03', meet: 'Mock October Meet' },
 ];
 
+const previousMeets = [
+  { date: '2025-09-06', meet: 'Mock 2025 Season Opener' },
+  { date: '2025-09-20', meet: 'Mock 2025 Fall Invitational' },
+  { date: '2025-10-04', meet: 'Mock 2025 October Meet' },
+];
+
 // Modest 0.4–1.1% changes scale with race length. Some final swims regress
 // slightly from the second meet. All results are deterministic fictional data.
 export const mockPerformance = performanceProfiles.flatMap((profile, swimmerIndex) =>
   Object.entries(profile.times).flatMap(([event, baseline], eventIndex) => {
     const reduction = 0.004 + ((swimmerIndex + eventIndex) % 4) * 0.002;
     const reductions = [0, reduction, (swimmerIndex + eventIndex) % 2 === 0 ? reduction * 0.5 : reduction * 1.1];
-    return meets.map((meet, meetIndex) => ({
+    // Previous-season baselines are 1–2.5% slower, with modest meet variation.
+    // Alternating final-meet patterns include both improvements and regressions.
+    const previousBaseline = baseline * (1.01 + ((swimmerIndex + eventIndex) % 4) * 0.005);
+    const previousFactors = (swimmerIndex + eventIndex) % 2 === 0
+      ? [1, 0.996, 0.998] : [1, 1.002, 0.995];
+    const previousResults = previousMeets.map((meet, meetIndex) => ({
+      id: `${profile.swimmerId}-${event}-2025-26-${meetIndex}`,
+      swimmerId: profile.swimmerId,
+      event,
+      season: '2025-26',
+      timeSeconds: Number((previousBaseline * previousFactors[meetIndex]).toFixed(2)),
+      ...meet,
+    }));
+    const currentResults = meets.map((meet, meetIndex) => ({
       id: `${profile.swimmerId}-${event}-${meetIndex}`,
       swimmerId: profile.swimmerId,
       event,
+      season: '2026-27',
       timeSeconds: Number((baseline * (1 - reductions[meetIndex])).toFixed(2)),
       ...meet,
     }));
+    return [...previousResults, ...currentResults];
   }),
 );
