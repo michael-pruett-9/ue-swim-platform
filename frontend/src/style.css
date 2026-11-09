@@ -101,6 +101,18 @@ fieldset button { grid-column: 1 / -1; justify-self: start; margin-top: 4px; }
 .calendar-team-event .calendar-type { background: #eaf1f7; color: #355a78; }
 .panel ol { padding-left: 24px; }
 .panel ol li { padding: 10px 0; border-bottom: 1px solid #eeeaf2; font-variant-numeric: tabular-nums; }
+.progression-chart { margin: 20px 0 0; min-width: 0; }
+.progression-chart figcaption { color: var(--muted); font-size: 0.9rem; }
+.progression-chart svg { display: block; width: 100%; max-width: 800px; height: auto; margin: 16px auto; overflow: visible; }
+.progression-chart text { fill: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }
+.progression-chart .chart-axis-label { font-weight: 600; }
+.chart-grid { stroke: var(--border); stroke-width: 1; }
+.chart-axis { fill: none; stroke: var(--muted); stroke-width: 1; }
+.chart-line { fill: none; stroke: var(--purple); stroke-width: 3; stroke-linejoin: round; }
+.chart-point { fill: white; stroke: var(--purple); stroke-width: 3; }
+.chart-point:focus { fill: var(--purple-light); stroke-width: 5; }
+.progression-chart .chart-pb { fill: var(--purple); font-weight: 700; }
+.progression-chart li { overflow-wrap: anywhere; }
 @media (max-width: 700px) {
   main { width: calc(100% - 28px); margin-top: 14px; }
   .coach-header { align-items: flex-start; flex-direction: column; padding: 22px; gap: 16px; }

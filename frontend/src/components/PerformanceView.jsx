@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ProgressionChart from './ProgressionChart.jsx';
 import { mockSchedules } from '../data/mockSchedules.js';
 import { formatSwimTime, getSwimmerResults, summarizeEvent } from '../utils/performance.js';
 
@@ -59,14 +60,12 @@ export default function PerformanceView({ fixedSwimmerId } = {}) {
         </div>
       </section>
       <section className="panel">
-        <h3>Simple progression</h3>
+        <h3>Performance progression</h3>
         <label htmlFor="progression-event">Event: </label>
         <select id="progression-event" value={activeEvent} onChange={(event) => setSelectedEvent(event.target.value)}>
           {performanceEvents.map((event) => <option key={event}>{event}</option>)}
         </select>
-        <ol>{progression.map((result) => (
-          <li key={result.id}>{result.date} — {result.meet}: <strong>{formatSwimTime(result.timeSeconds)}</strong></li>
-        ))}</ol>
+        <ProgressionChart results={progression} event={activeEvent} />
       </section>
     </section>
   );

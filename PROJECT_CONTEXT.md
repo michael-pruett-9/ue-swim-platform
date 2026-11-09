@@ -20,8 +20,7 @@ Users:
 - Coaches
 - Swimmers
 
-The head coach has reviewed the project direction and supports
-the current feature set.
+The head coach has reviewed both the project direction and current working prototype and responded positively to the implemented scheduling and performance features. Additional client feedback emphasized interest in expanded performance progression analytics, including year-to-year comparisons, as well as future athlete goal tracking and optional practice-time/result logging.
 
 ## Main Problem
 UE Swimming & Diving currently handles class schedules, team
@@ -35,10 +34,10 @@ practice times.
 ## Planned Overall Feature Scope
 
 1. Unified scheduling and calendar
-2. Scheduling conflict detection and coach availability dashboard
-3. Swimming performance tracking and analytics
+2. Scheduling conflict detection and coach availability/recommendation tools
+3. Swimming performance tracking, progression analytics, and year-to-year comparison
 4. Athlete and team goal tracking
-5. Optional practice tracking
+5. Optional practice logging and practice-performance progression
 
 ## MVP Priority
 
@@ -98,9 +97,7 @@ Later:
 - deployment/testing
 ## Current Project State
 
-A working local Prototype v1 is implemented as of October 2026. React/Vite
-communicates with Python/FastAPI through the Vite development proxy. The
-backend runs in backend/.venv with Uvicorn.
+Coach and Swimmer prototype views, 20 fictional swimmers, full-week scheduling support, transition-aware conflict checking, dynamically generated practice-time recommendations, weekly calendar, performance histories, swimmer-specific progression graphs, roster browsing, and visual polish are implemented.
 
 Current endpoints:
 - GET /api/health
@@ -170,8 +167,9 @@ Implemented functionality:
 - Fictional SCY specialties spanning freestyle, backstroke, breaststroke,
   butterfly, and IM. Each swimmer has 3-5 tracked events with three chronological
   fictional meet results per event, stored as numeric seconds.
-- Personal best, most recent time, improvement in seconds/percentage, results
-  history, and simple progression lists; lower swimming times are better.
+- Personal best, most recent time, improvement in seconds/percentage, and chronological results history; lower swimming times are better.
+- Responsive swimmer/event progression graphs built from the existing fictional performance data. Results are plotted chronologically, faster times appear higher, the personal-best result is identified, longer events retain minutes:seconds.hundredths formatting, and a textual progression list remains available beneath the graph.
+- Coach mode can graph any fictional swimmer's tracked events, while Swimmer mode remains restricted to the fictional identity selected on the landing screen.
 - Responsive purple-and-neutral prototype styling with explicit status labels.
 - Reusable hour/minute/AM-PM controls in Coach Scheduling, including required
   placeholders and five-minute choices. API times remain 24-hour HH:MM strings.
@@ -185,13 +183,11 @@ transition checks. Calendar data is an undated sample week, not a live calendar.
 The Swimmer dashboard labels the first event in that mock week accordingly.
 Performance calculations use local mock data; there is no SwimCloud connection.
 
+Recent client feedback supports expanding the performance side of the platform. Planned performance work includes richer interactive progression information and year-to-year or season-to-season comparisons. The client also expressed interest in future goal tracking and optional practice-result logging so athletes and coaches could review progression from practice data separately from official meet performance. These are planned features and are not currently implemented.
+
 ## Completed Milestones and Current Roadmap
 
-Steps through 8C are complete: setup, conflict checking, transition-aware
-scheduling, role views, roster expansion, Coach organization, weekly calendar,
-performance tracking, Swimmer dashboard and identity selection, varied SCY
-event profiles, visual polish, scheduling time-control polish, and dynamic
-practice-time recommendations.
+Steps through 9A are complete: setup, conflict checking, transition-aware scheduling, role views, roster expansion, Coach organization, weekly calendar, performance tracking, Swimmer dashboard and identity selection, varied SCY event profiles, visual polish, scheduling time-control polish, dynamic practice-time recommendations, and the initial performance progression graph.
 
 Step 8 is complete:
 
@@ -199,20 +195,25 @@ Step 8 is complete:
 - Step 8B: FastAPI recommendation endpoint
 - Step 8C: Coach "Find Best Practice Times" interface
 
-The recommendation workflow now allows the Coach to choose the weekday,
-earliest allowable practice start, latest allowable practice end, practice
-duration, and transition requirement. Candidate practices are generated every
-15 minutes within those limits and ranked using the existing conflict-detection
-logic.
+The recommendation workflow allows the Coach to choose the weekday, earliest allowable practice start, latest allowable practice end, practice duration, and transition requirement. Candidate practices are generated every 15 minutes within those limits and ranked using the existing conflict-detection logic.
+
+Step 9 is now focused on expanding performance progression and analytics:
+
+- Step 9A - Complete: responsive swimmer/event progression graph using existing fictional meet results.
+- Step 9B - Next: interactive graph points and richer result details, including time, meet/date, PB status, and useful progression/change information.
+- Step 9C - Planned: year-to-year or season-to-season performance comparison.
+- Step 9D - Planned: additional useful performance filtering and customization based on client feedback.
 
 Current planned development order:
 
-1. Step 9 - Performance progression graph
-2. Step 10 - Relational database and persistence
-3. Step 11 - Client feedback and usability testing
+1. Complete Step 9 performance progression and comparison work.
+2. Step 10 - Relational database and persistence.
+3. Step 11 - Begin moving appropriate schedule and performance data from local mock files into persistent storage.
+4. Step 12 - Athlete/team goals, optional practice-result logging, and practice progression.
+5. Step 13 - Client feedback, usability testing, and refinement.
 
-Later directions include authentication and real role permissions, athlete/team
-goals, optional practice tracking, approved imports if feasible, deployment,
-mobile-friendly improvements, and continued UI refinement.
+Later directions include authentication and real role permissions, approved imports if feasible, deployment, easier application startup/packaging, mobile-friendly improvements, and continued UI refinement.
+
+Official meet performance and optional future practice-result data should remain distinguishable rather than being treated as equivalent performance records.
 
 These later directions are not currently implemented features.
