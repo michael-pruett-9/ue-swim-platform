@@ -111,6 +111,9 @@ fieldset button { grid-column: 1 / -1; justify-self: start; margin-top: 4px; }
 .chart-grid { stroke: var(--border); stroke-width: 1; }
 .chart-axis { fill: none; stroke: var(--muted); stroke-width: 1; }
 .chart-line { fill: none; stroke: var(--purple); stroke-width: 3; stroke-linejoin: round; }
+.chart-line.chart-series-b { stroke: #716078; stroke-dasharray: 7 5; }
+.chart-series-b .chart-point { stroke: #716078; }
+.chart-legend { display: flex; flex-wrap: wrap; gap: 12px 24px; padding-left: 20px; font-size: 0.9rem; }
 .chart-point { fill: white; stroke: var(--purple); stroke-width: 3; }
 .chart-point-target { cursor: pointer; }
 .chart-hit-area { fill: transparent; }

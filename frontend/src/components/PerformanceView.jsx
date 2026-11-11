@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import ProgressionChart from './ProgressionChart.jsx';
+import SeasonComparison from './SeasonComparison.jsx';
 import { mockSchedules } from '../data/mockSchedules.js';
 import { formatSwimTime, getSwimmerResults, summarizeEvent, getAvailableSeasons, getSeasonResults } from '../utils/performance.js';
 
@@ -8,6 +9,7 @@ export default function PerformanceView({ fixedSwimmerId } = {}) {
   const swimmerId = fixedSwimmerId ?? selectedSwimmerId;
   const [selectedEvent, setSelectedEvent] = useState('');
   const [selectedSeason, setSelectedSeason] = useState('');
+  const [progressionView, setProgressionView] = useState('single');
   const swimmer = mockSchedules.find((entry) => entry.id === swimmerId);
   const results = getSwimmerResults(swimmerId);
   const performanceEvents = [...new Set(results.map((result) => result.event))];
@@ -70,23 +72,32 @@ export default function PerformanceView({ fixedSwimmerId } = {}) {
         <h3>Performance progression</h3>
         <div className="progression-filters">
         <div>
+          <label htmlFor="progression-view">View</label>
+          <select id="progression-view" value={progressionView} onChange={(event) => setProgressionView(event.target.value)}>
+            <option value="single">Single season</option>
+            <option value="compare">Compare seasons</option>
+          </select>
+        </div>
+        <div>
         <label htmlFor="progression-event">Event: </label>
         <select id="progression-event" value={activeEvent} onChange={(event) => setSelectedEvent(event.target.value)}>
           {performanceEvents.map((event) => <option key={event}>{event}</option>)}
         </select>
         </div>
-        <div>
+        {progressionView === 'single' && <div>
           <label htmlFor="progression-season">Season: </label>
           <select id="progression-season" value={activeSeason} onChange={(event) => setSelectedSeason(event.target.value)}>
             {seasons.map((season) => <option key={season} value={season}>{season}</option>)}
             <option value="all">All seasons</option>
           </select>
+        </div>}
         </div>
-        </div>
+        {progressionView === 'compare' ? <SeasonComparison results={progression} event={activeEvent} /> : <>
         <p>{activeSeason === 'all' ? 'Showing all seasons' : `Showing ${activeSeason} season`}. Summary cards and Results History include all seasons.</p>
         <ProgressionChart key={`${swimmerId}-${activeEvent}-${activeSeason}`}
           results={visibleProgression} event={activeEvent}
           personalBest={progression.length ? summarizeEvent(progression).best : undefined} />
+        </>}
       </section>
     </section>
   );
