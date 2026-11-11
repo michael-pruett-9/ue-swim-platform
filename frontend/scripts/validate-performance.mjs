@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { filterPerformanceResults, summarizeSelectedResults } from '../src/utils/performance.js';
 import { mockPerformance, performanceProfiles, performanceEvents } from '../src/data/mockPerformance.js';
 import { mockSchedules } from '../src/data/mockSchedules.js';
 import { getSwimmerResults, getAvailableSeasons, getSeasonResults, groupResultsBySeason, summarizeEvent } from '../src/utils/performance.js';
@@ -51,4 +52,41 @@ for (const profile of performanceProfiles) {
   }
 }
 assert.equal(mockPerformance.length, 432);
+const alpha = getSwimmerResults('mock-001');
+const selected = filterPerformanceResults(alpha, '50 Freestyle', '2026-27');
+const selectedSummary = summarizeSelectedResults(selected);
+assert.equal(selectedSummary.count, 3);
+assert.equal(selectedSummary.best.timeSeconds, 23.41);
+assert.equal(selectedSummary.latest.timeSeconds, 23.45);
+assert.equal(selectedSummary.improvement.toFixed(2), '0.09');
+assert.deepEqual(summarizeSelectedResults([...selected].reverse()), selectedSummary);
+assert.equal(summarizeSelectedResults([selected[0]]).improvement, null);
+assert.equal(summarizeSelectedResults([]).count, 0);
+assert.equal(summarizeSelectedResults([{ ...selected[0] }, { ...selected[1], timeSeconds: 23.50 }]).improvement, 0);
+for (const profile of performanceProfiles) {
+  const history = getSwimmerResults(profile.swimmerId);
+  const before = JSON.stringify(history);
+  assert.equal(filterPerformanceResults(history).length, history.length);
+  for (const season of ['all', ...seasons]) {
+    const filtered = filterPerformanceResults(history, 'all', season);
+    const summary = summarizeSelectedResults(filtered, false);
+    assert.equal(summary.count, filtered.length);
+    assert.deepEqual(summary.latest, filtered.at(-1));
+    assert.equal(summary.best, null);
+    assert.equal(summary.improvement, null);
+  }
+  for (const event of Object.keys(profile.times)) {
+    for (const season of seasons) {
+      const filtered = filterPerformanceResults(history, event, season);
+      assert.equal(filtered.length, 3);
+      assert.ok(filtered.every((result) => result.event === event && result.season === season));
+      assert.deepEqual(summarizeSelectedResults(filtered), summarizeSelectedResults([...filtered].reverse()));
+    }
+  }
+  assert.equal(JSON.stringify(history), before);
+}
+console.log('History filter/summary checks passed for all swimmers, including Alpha values, display-order independence, empty/single results, and zero improvement.');
 console.log('Performance validation passed: 20 swimmers, 72 swimmer/event pairs, 2 seasons, 432 results.');
+assert.equal(summarizeSelectedResults(selected, false).best, null);
+assert.equal(summarizeSelectedResults(selected, false).improvement, null);
+console.log('All-events summaries preserve count/latest and skip best/improvement calculations.');

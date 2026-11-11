@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ProgressionChart from './ProgressionChart.jsx';
 import SeasonComparison from './SeasonComparison.jsx';
+import ResultsHistory from './ResultsHistory.jsx';
 import { mockSchedules } from '../data/mockSchedules.js';
 import { formatSwimTime, getSwimmerResults, summarizeEvent, getAvailableSeasons, getSeasonResults } from '../utils/performance.js';
 
@@ -54,20 +55,7 @@ export default function PerformanceView({ fixedSwimmerId } = {}) {
           );
         })}
       </div>
-      <section className="panel">
-        <h3>Results history</h3>
-        <div className="table-scroll">
-          <table className="ranking-table">
-            <caption>{swimmer.name} — oldest to newest; times in seconds or minutes:seconds.hundredths</caption>
-            <thead><tr><th scope="col">Meet</th><th scope="col">Event</th><th scope="col">Time</th></tr></thead>
-            <tbody>{results.map((result) => (
-              <tr key={result.id}>
-                <td>{result.meet} — {result.date}</td><td>{result.event}</td><td>{formatSwimTime(result.timeSeconds)}</td>
-              </tr>
-            ))}</tbody>
-          </table>
-        </div>
-      </section>
+      <ResultsHistory key={swimmerId} results={results} swimmerName={swimmer.name} />
       <section className="panel">
         <h3>Performance progression</h3>
         <div className="progression-filters">
@@ -93,7 +81,7 @@ export default function PerformanceView({ fixedSwimmerId } = {}) {
         </div>}
         </div>
         {progressionView === 'compare' ? <SeasonComparison results={progression} event={activeEvent} /> : <>
-        <p>{activeSeason === 'all' ? 'Showing all seasons' : `Showing ${activeSeason} season`}. Summary cards and Results History include all seasons.</p>
+        <p>{activeSeason === 'all' ? 'Showing all seasons' : `Showing ${activeSeason} season`}. Career summary cards include all seasons. Results History has independent filters.</p>
         <ProgressionChart key={`${swimmerId}-${activeEvent}-${activeSeason}`}
           results={visibleProgression} event={activeEvent}
           personalBest={progression.length ? summarizeEvent(progression).best : undefined} />
