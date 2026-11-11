@@ -193,7 +193,12 @@ Recent client feedback supports expanding the performance side of the platform. 
 
 ## Completed Milestones and Current Roadmap
 
-Steps through 9A are complete: setup, conflict checking, transition-aware scheduling, role views, roster expansion, Coach organization, weekly calendar, performance tracking, Swimmer dashboard and identity selection, varied SCY event profiles, visual polish, scheduling time-control polish, dynamic practice-time recommendations, and the initial performance progression graph.
+Steps through 9C-1 are complete: setup, conflict checking, transition-aware
+scheduling, role views, roster expansion, Coach organization, weekly calendar,
+performance tracking, Swimmer dashboard and identity selection, varied SCY
+event profiles, visual polish, scheduling time-control polish, dynamic
+practice-time recommendations, interactive performance progression graphs, and
+multi-season fictional performance history.
 
 Step 8 is complete:
 
@@ -203,22 +208,33 @@ Step 8 is complete:
 
 The recommendation workflow allows the Coach to choose the weekday, earliest allowable practice start, latest allowable practice end, practice duration, and transition requirement. Candidate practices are generated every 15 minutes within those limits and ranked using the existing conflict-detection logic.
 
-Step 9 is now focused on expanding performance progression and analytics:
+Step 9 is focused on expanding performance progression and analytics:
 
-- Step 9A - Complete: responsive swimmer/event progression graph using existing fictional meet results.
-- Step 9B - Next: interactive graph points and richer result details, including time, meet/date, PB status, and useful progression/change information.
-- Step 9C - Planned: year-to-year or season-to-season performance comparison.
-- Step 9D - Planned: additional useful performance filtering and customization based on client feedback.
+- Step 9A - Complete: responsive swimmer/event progression graph using existing
+  fictional meet results.
+- Step 9B - Complete: interactive graph points with mouse, keyboard, and touch
+  details including meet/date, time, PB status, result-to-result change, and
+  distance from personal best.
+- Step 9C-1 - Complete: multi-season fictional performance history. All 20
+  fictional swimmers now have results across the 2025-26 and 2026-27 seasons
+  while preserving their existing event specialties.
+- Step 9C-2 - Next: season filtering and progression-graph cleanup so users can
+  view one season at a time without crowded date labels while retaining access
+  to complete historical results.
+- Step 9C-3 - Planned: year-to-year/season-to-season visual comparison.
+- Step 9D - Planned: additional useful performance filtering and customization
+  based on client feedback.
 
 Current planned development order:
 
-1. Step 9C - Multi-season performance history and year-to-year comparison
-2. Step 9D - Additional performance filtering and customization
-3. Step 10 - Relational database and persistence
-4. Step 10C/10D - Coach roster management and active/historical swimmer status
-5. Step 11 - Athlete/team goals and optional practice logging/progression
-6. Step 12 - Authentication, deployment, and application packaging
-7. Step 13 - Client feedback and usability testing
+1. Step 9C-2 - Season filtering and progression graph cleanup
+2. Step 9C-3 - Year-to-year / season-to-season comparison
+3. Step 9D - Additional performance filtering and customization
+4. Step 10 - Relational database and persistence
+5. Step 10C/10D - Coach roster management and active/historical swimmer status
+6. Step 11 - Athlete/team goals and optional practice logging/progression
+7. Step 12 - Authentication, deployment, and application packaging
+8. Step 13 - Client feedback and usability testing
 
 Future roster management should preserve historical athlete information rather
 than permanently removing useful performance history. Swimmers should eventually
