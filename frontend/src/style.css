@@ -102,6 +102,8 @@ fieldset button { grid-column: 1 / -1; justify-self: start; margin-top: 4px; }
 .panel ol { padding-left: 24px; }
 .panel ol li { padding: 10px 0; border-bottom: 1px solid #eeeaf2; font-variant-numeric: tabular-nums; }
 .progression-chart { margin: 20px 0 0; min-width: 0; }
+.progression-filters { display: flex; flex-wrap: wrap; gap: 16px 24px; }
+.progression-filters > div { min-width: 0; }
 .progression-chart figcaption { color: var(--muted); font-size: 0.9rem; }
 .progression-chart svg { display: block; width: 100%; max-width: 800px; height: auto; margin: 16px auto; overflow: visible; }
 .progression-chart text { fill: var(--muted); font-size: 14px; font-variant-numeric: tabular-nums; }

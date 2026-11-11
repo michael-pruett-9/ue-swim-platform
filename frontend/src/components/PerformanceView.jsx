@@ -1,18 +1,25 @@
 import { useState } from 'react';
 import ProgressionChart from './ProgressionChart.jsx';
 import { mockSchedules } from '../data/mockSchedules.js';
-import { formatSwimTime, getSwimmerResults, summarizeEvent } from '../utils/performance.js';
+import { formatSwimTime, getSwimmerResults, summarizeEvent, getAvailableSeasons, getSeasonResults } from '../utils/performance.js';
 
 export default function PerformanceView({ fixedSwimmerId } = {}) {
   const [selectedSwimmerId, setSwimmerId] = useState(mockSchedules[0].id);
   const swimmerId = fixedSwimmerId ?? selectedSwimmerId;
   const [selectedEvent, setSelectedEvent] = useState('');
+  const [selectedSeason, setSelectedSeason] = useState('');
   const swimmer = mockSchedules.find((entry) => entry.id === swimmerId);
   const results = getSwimmerResults(swimmerId);
   const performanceEvents = [...new Set(results.map((result) => result.event))];
   const activeEvent = performanceEvents.includes(selectedEvent) ? selectedEvent : performanceEvents[0];
   const latest = results[results.length - 1];
   const progression = results.filter((result) => result.event === activeEvent);
+  const seasons = getAvailableSeasons(progression);
+  const activeSeason = selectedSeason === 'all' || seasons.includes(selectedSeason)
+    ? selectedSeason : seasons.at(-1) ?? '';
+  // Commit a fallback so subsequent swimmer/event changes retain the visible choice.
+  if (activeSeason !== selectedSeason) setSelectedSeason(activeSeason);
+  const visibleProgression = activeSeason === 'all' ? progression : getSeasonResults(progression, activeSeason);
 
   return (
     <section aria-labelledby="performance-heading">
@@ -61,11 +68,25 @@ export default function PerformanceView({ fixedSwimmerId } = {}) {
       </section>
       <section className="panel">
         <h3>Performance progression</h3>
+        <div className="progression-filters">
+        <div>
         <label htmlFor="progression-event">Event: </label>
         <select id="progression-event" value={activeEvent} onChange={(event) => setSelectedEvent(event.target.value)}>
           {performanceEvents.map((event) => <option key={event}>{event}</option>)}
         </select>
-        <ProgressionChart results={progression} event={activeEvent} />
+        </div>
+        <div>
+          <label htmlFor="progression-season">Season: </label>
+          <select id="progression-season" value={activeSeason} onChange={(event) => setSelectedSeason(event.target.value)}>
+            {seasons.map((season) => <option key={season} value={season}>{season}</option>)}
+            <option value="all">All seasons</option>
+          </select>
+        </div>
+        </div>
+        <p>{activeSeason === 'all' ? 'Showing all seasons' : `Showing ${activeSeason} season`}. Summary cards and Results History include all seasons.</p>
+        <ProgressionChart key={`${swimmerId}-${activeEvent}-${activeSeason}`}
+          results={visibleProgression} event={activeEvent}
+          personalBest={progression.length ? summarizeEvent(progression).best : undefined} />
       </section>
     </section>
   );
