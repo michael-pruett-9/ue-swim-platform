@@ -193,7 +193,7 @@ Recent client feedback supports expanding the performance side of the platform. 
 
 ## Completed Milestones and Current Roadmap
 
-Steps through 9C-1 are complete: setup, conflict checking, transition-aware
+Steps through 9C are complete: setup, conflict checking, transition-aware
 scheduling, role views, roster expansion, Coach organization, weekly calendar,
 performance tracking, Swimmer dashboard and identity selection, varied SCY
 event profiles, visual polish, scheduling time-control polish, dynamic
@@ -208,33 +208,24 @@ Step 8 is complete:
 
 The recommendation workflow allows the Coach to choose the weekday, earliest allowable practice start, latest allowable practice end, practice duration, and transition requirement. Candidate practices are generated every 15 minutes within those limits and ranked using the existing conflict-detection logic.
 
-Step 9 is focused on expanding performance progression and analytics:
 
-- Step 9A - Complete: responsive swimmer/event progression graph using existing
-  fictional meet results.
-- Step 9B - Complete: interactive graph points with mouse, keyboard, and touch
-  details including meet/date, time, PB status, result-to-result change, and
-  distance from personal best.
-- Step 9C-1 - Complete: multi-season fictional performance history. All 20
-  fictional swimmers now have results across the 2025-26 and 2026-27 seasons
-  while preserving their existing event specialties.
-- Step 9C-2 - Next: season filtering and progression-graph cleanup so users can
-  view one season at a time without crowded date labels while retaining access
-  to complete historical results.
-- Step 9C-3 - Planned: year-to-year/season-to-season visual comparison.
-- Step 9D - Planned: additional useful performance filtering and customization
+- Step 9 is focused on expanding performance progression and analytics:
+
+- Step 9A - Complete: responsive swimmer/event progression graph using fictional meet results.
+- Step 9B - Complete: interactive graph points with meet/date, time, PB status, result-to-result change, and distance from personal best.
+- Step 9C - Complete: multi-season performance history, season filtering, and direct season-to-season comparison using a shared time scale.
+- Step 9D - Next: additional performance filtering and selected-view summaries to make larger performance histories easier for coaches and swimmers to explore.al useful performance filtering and customization
   based on client feedback.
 
 Current planned development order:
 
-1. Step 9C-2 - Season filtering and progression graph cleanup
-2. Step 9C-3 - Year-to-year / season-to-season comparison
-3. Step 9D - Additional performance filtering and customization
-4. Step 10 - Relational database and persistence
-5. Step 10C/10D - Coach roster management and active/historical swimmer status
-6. Step 11 - Athlete/team goals and optional practice logging/progression
-7. Step 12 - Authentication, deployment, and application packaging
-8. Step 13 - Client feedback and usability testing
+1. Step 9D - Performance filtering and selected-view summaries
+2. Step 10 - Relational database and persistence
+3. Step 10C/10D - Coach roster management and active/historical swimmer status
+4. Step 10B - Meet-results import workflow
+5. Step 11 - Athlete/team goals and optional practice logging/progression
+6. Step 12 - Authentication, deployment, and application packaging
+7. Step 13 - Client feedback and usability testing
 
 Future roster management should preserve historical athlete information rather
 than permanently removing useful performance history. Swimmers should eventually
@@ -242,6 +233,12 @@ have an active/historical status. Only active swimmers should participate in
 current scheduling conflict and practice recommendation calculations, while
 historical swimmers may remain available for appropriate performance/history
 views.
+
+Meet-result importing should be implemented after persistent swimmer records and
+active/historical roster management are established. A future import workflow
+should parse uploaded meet results, match results to existing swimmers and events,
+show a review/validation screen, identify unmatched or duplicate records, and
+require Coach confirmation before saving imported results.
 
 Client feedback from the head coach specifically supports expanding performance
 progression tools, including year-to-year performance comparison, and eventually
