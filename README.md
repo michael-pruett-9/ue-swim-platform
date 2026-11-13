@@ -1,66 +1,100 @@
-﻿# UE Swimming & Diving Scheduling and Performance Platform
+# UE Swimming & Diving Scheduling and Performance Platform
 
-A two-semester senior Computer Science project for the University of Evansville Swimming & Diving team. The working local prototype brings scheduling tools and fictional swimming performance histories into separate Coach and Swimmer experiences.
+A two-semester senior Computer Science project for the University of Evansville Swimming & Diving team. The November 2026 local prototype combines practice scheduling and fictional multi-season swimming analytics in Coach and Swimmer experiences. A tested SQLite foundation prepares for future runtime persistence; the running application still uses frontend mock datasets.
 
+## Prototype Screenshots
 
+### Dynamic Practice-Time Recommendations
 
-## Prototype Screenshot
+![Coach scheduling recommendations](docs/screenshots/Coach_Scheduling_Recommendations.png)
 
-![Coach Dashboard](docs/screenshots/Coach_Dashboard.png)
+The Coach defines scheduling constraints and receives ranked practice-window recommendations.
+
+### Multi-Season Performance Analytics
+
+![Performance season comparison](docs/screenshots/Performance_Season_Comparison.png)
+
+Coaches can compare a swimmer's performance across fictional seasons using a shared time scale.
 
 ## Project Goal / Problem
 
-Class schedules, team schedules, meet results, and other information are spread across multiple systems. Without one protected athletics practice period, coaches must manually compare swimmers' class schedules to find practice times. This project aims to bring scheduling and performance information together and help coaches identify lower-conflict practice windows.
+Class schedules, team schedules, and meet results are spread across multiple systems. Without one protected athletics practice period, coaches manually compare swimmers' class schedules to find practice times. This project brings scheduling and performance information together to help coaches identify lower-conflict practice windows and explore swimmer progression.
 
 ## Current Prototype Features
 
-- Connected React/Vite frontend and Python/FastAPI backend.
-- Prototype Coach/Swimmer role selection and fictional swimmer identity selection.
-- Exactly 20 fictional swimmers with Monday-Friday class schedules.
-- Monday-Sunday conflict checking and ranking of predefined candidate practice windows.
-- Required transition options of 0, 5, 10, 15, and 30 minutes, applied before and after practice. An exactly sufficient gap is allowed; zero preserves overlap-only checks.
-- Reusable AM/PM practice-time controls; scheduling API values remain 24-hour `HH:MM` strings.
-- Weekly calendar with mock practices, a meet, travel, and optional class overlays.
-- Varied fictional individual SCY swimming specialties, personal bests, recent times, improvement, history, and simple progression lists.
-- Responsive purple-and-neutral styling, readable forms, cards, tables, and status messages.
+- React/Vite frontend connected to Python/FastAPI through the development proxy.
+- Coach/Swimmer prototype roles and fictional swimmer identity selection.
+- Twenty fictional swimmers with Monday-Friday classes; scheduling supports Monday-Sunday.
+- Single-practice conflict checking and dynamic practice-time recommendations.
+- Required transition times of 0, 5, 10, 15, or 30 minutes before and after practice. An exactly sufficient gap is allowed.
+- Weekly calendars, individual roster schedule viewing, and responsive purple-and-neutral styling.
+- Fictional 2025-26 and 2026-27 performance seasons with varied individual SCY specialties, career personal bests, latest times, and improvement information.
+- Interactive SVG progression graphs, season comparison, and independently filtered Results History.
+- SQLite schema, initialization, fictional seeding, read helpers, and database tests, isolated from the running application.
 
 ## Coach Prototype
 
-Coach navigation contains Dashboard, Scheduling, Calendar, Performance, and Roster. The dashboard summarizes available tools. Scheduling checks one practice time or ranks six predefined windows using all 20 swimmers' class schedules. Ranking orders by conflicting-swimmer count and preserves input order for ties.
+Coach navigation contains Dashboard, Scheduling, Calendar, Performance, and Roster.
 
-The weekly Calendar shows fictional team events and can overlay one selected swimmer's classes. Roster displays one selected swimmer's schedule. Performance allows browsing every fictional swimmer's tracked events and results.
+Scheduling retains **Check a Practice Time** and **Find Best Practice Times**. For recommendations, the Coach chooses weekday, earliest start, latest end, duration, and transition time. Supported durations are 30, 45, 60, 75, 90, 105, and 120 minutes. Python generates candidate starts every 15 minutes within the bounds and ranks candidates by conflicting-swimmer count, preserving chronological order for ties. All 20 fictional swimmers are included.
+
+The interface initially displays the five best recommendations, labels the first **Best Option**, reports the total valid-window count, lists conflicts and swimmer names, and offers **Show All Options** / **Show Top 5**. User-facing scheduling times use AM/PM; API values remain 24-hour HH:MM.
+
+Calendar shows mock team events with an optional swimmer class overlay. Roster shows one selected swimmer's schedule. Performance allows browsing all fictional swimmers and their tracked events:
+
+- Single-season progression defaults to the most recent season, with an All seasons option.
+- Mouse, keyboard, and touch point interactions expose meet/date, time, career PB status, previous-result change, and distance from PB where applicable.
+- Compare seasons aligns Meet 1, Meet 2, and Meet 3 on one time scale, using distinct lines/markers and a legend. Summaries show each season's best/latest result and the season-best difference. Changes are calculated within each season.
+- Results History filters independently by event, season, and newest/oldest order. Its selected-results summary includes count and latest result. Best and Improvement require a specific event; All events displays "Select an event" for both.
+
+Career cards remain all-history. Lower swimming times are better; long events retain minutes:seconds.hundredths formatting. Textual graph fallbacks remain available.
 
 ## Swimmer Prototype
 
-Select a fictional swimmer on the landing screen, then enter Dashboard, Calendar, or Performance. These views use that swimmer's ID to show personal summaries, their classes alongside team events, and their performance history. Changing identity requires returning with Switch Role. This is UI-only prototype selection, not login or access control.
+Select one fictional swimmer on the landing screen, then enter Dashboard, Calendar, or Performance. These views show that swimmer's summaries, classes alongside team events, and performance analytics, including season comparison and history filtering. No swimmer selector appears inside Swimmer mode; changing identity requires Switch Role. This restriction is a UI demonstration, not authentication or authorization.
 
 ## Technology
 
-- Frontend: React, Vite, JavaScript, plain CSS, and React state navigation.
-- Backend: Python, FastAPI, Uvicorn, `venv`, and `pip`.
-- Tests: Python's built-in `unittest`.
-- Data: local fictional JavaScript datasets; no database or persistence layer yet.
-- Development connection: Vite proxies `/api` from port 5173 to FastAPI on port 8000.
+- Frontend: React, Vite, JavaScript, plain CSS, SVG charts, and React state navigation; no routing or charting library.
+- Backend: Python, FastAPI, Uvicorn, venv, and pip.
+- Database foundation: SQLite through Python's built-in sqlite3, with no ORM.
+- Runtime data: local fictional JavaScript datasets; SQLite is not yet the application's runtime data source.
+- Validation: Python unittest, frontend production build, and a Node performance-data validation script.
+- Development connection: Vite proxies /api from port 5173 to FastAPI on port 8000.
 
-Current endpoints are `GET /api/health`, `POST /api/conflicts`, and `POST /api/rank-practice-windows`. Automatic API documentation routes are disabled.
+Current endpoints:
+
+- GET /api/health
+- POST /api/conflicts
+- POST /api/rank-practice-windows (retained API for supplied candidates)
+- POST /api/recommend-practice-windows (dynamic recommendations used by Coach Scheduling)
+
+Automatic API documentation routes are disabled.
 
 ## Repository Structure
 
 ```text
 ue-swim-platform/
 |-- frontend/
-|   |-- src/
-|   |   |-- components/     # Calendar, performance, swimmer view, time selector
-|   |   |-- data/           # Fictional schedules, team events, performance
-|   |   |-- utils/          # Shared performance helpers
-|   |   |-- App.jsx
-|   |   `-- style.css
+|   |-- src/components/     # Roles, calendar, performance graphs/history, controls
+|   |-- src/data/           # Fictional schedules, team events, performance
+|   |-- src/utils/          # Shared performance helpers
+|   |-- src/App.jsx
+|   |-- src/style.css
+|   |-- scripts/validate-performance.mjs
 |   |-- package.json
 |   `-- vite.config.js
 |-- backend/
 |   |-- main.py
 |   |-- conflict_detection.py
 |   |-- practice_ranking.py
+|   |-- database.py
+|   |-- schema.sql
+|   |-- seed_database.py
+|   |-- seed_data.json
+|   |-- export_seed.mjs
+|   |-- DATABASE.md
+|   |-- data/               # Generated, ignored local SQLite database
 |   |-- test_*.py
 |   `-- requirements.txt
 |-- docs/
@@ -68,6 +102,9 @@ ue-swim-platform/
 |   |-- requirements/
 |   |-- proposal/
 |   |-- preliminary design/
+|   |-- responsible_computing/
+|   |-- methods/
+|   |-- testing/
 |   |-- progress/
 |   `-- screenshots/
 |-- PROJECT_CONTEXT.md
@@ -118,6 +155,18 @@ Invoke-RestMethod http://127.0.0.1:8000/api/health
 
 It returns a status of `ok`. The Coach view also displays backend connection status. To check the frontend production build, run `npm run build` from `frontend`. This generates ignored `dist/` files; it does not deploy the application. The `/api` proxy is a development configuration.
 
+### Optional database foundation setup
+
+The UI does not require database initialization. To initialize, seed, and inspect the separate local database, run from the repository root:
+
+```powershell
+.\backend\.venv\Scripts\python.exe -B backend/database.py
+.\backend\.venv\Scripts\python.exe -B backend/seed_database.py
+.\backend\.venv\Scripts\python.exe -B backend/database.py --inspect
+```
+
+The generated backend/data/prototype.sqlite3 file is ignored by Git. The schema covers swimmers, seasons, class entries, meets, events, results, and team events. Multiple results may share a swimmer/event/meet; each result has its own unique ID. Swimmer status supports active/historical in the schema only; runtime behavior does not use it yet. See [database documentation](backend/DATABASE.md) for seed sources, repeat-run behavior, read helpers, and limitations.
+
 ## Running Backend Tests
 
 From the repository root, after backend dependencies are installed:
@@ -126,32 +175,44 @@ From the repository root, after backend dependencies are installed:
 .\backend\.venv\Scripts\python.exe -B -m unittest discover -s backend -p "test_*.py" -v
 ```
 
-Tests cover conflict detection, transitions, weekday support, practice ranking, and in-process API handling. No running server is required. Frontend scripts currently provide build checking, but no separate automated frontend test or lint command.
+Tests cover conflicts, transitions, weekdays, ranking, dynamic recommendations, API behavior, and the database foundation. Database tests use temporary files. No running server is required.
+
+From frontend, run npm run build for production-build verification. From the repository root, validate fictional performance data and history summaries with:
+
+```powershell
+node frontend/scripts/validate-performance.mjs
+```
+
+There is no separate frontend lint command or automated browser-interaction suite.
 
 ## Responsible Computing / Prototype Data
 
-All swimmer identities, class schedules, team events, meets, and performance values are fictional. No real student-athlete information is used. Protecting athlete schedules, performance information, and eventual Coach/Swimmer permissions remains a design priority.
+All swimmer identities, class schedules, team events, meets, and performance values are fictional. No real private student-athlete information is used. Protecting athlete schedules, performance data, and eventual role permissions remains a design priority.
 
-The role selector is not authentication. All mock datasets are bundled with the frontend. No private-data protection or production security is claimed, and no external integration is required to run the prototype.
+The role selector is not authentication. Mock datasets are bundled with the frontend; no private-data protection or production security is claimed. No external integration is required to run the prototype.
 
 ## Current Status
 
-Working local Prototype v1, October 2026. Scheduling, role-based prototype views, calendar display, performance histories, roster browsing, visual polish, and custom time controls are implemented.
+Working local prototype, **November 2026**. Steps 8, 9, and 10A are complete: dynamic scheduling recommendations; Coach/Swimmer views, calendars, roster browsing; multi-season fictional histories, interactive progression, season comparison, history filtering; and a seeded/tested relational SQLite foundation.
 
-Scheduling calculations currently examine submitted class schedules on the selected weekday; displayed calendar team events are not automatically included in those calculations. Overnight intervals and cross-day transitions are not supported. Candidate windows are predefined, not automatically generated. The calendar is a fictional weekday board rather than a dated live calendar. Performance summaries are calculated locally from mock results. There is no database, real authentication, external-data connection, or production deployment setup.
+The running application still uses frontend mock datasets and submitted schedules. Full database-backed runtime persistence is not implemented. Neither are real authentication/authorization, real private athlete data, SwimCloud integration, meet-result uploads/imports, goal tracking, practice logging, or production deployment/application packaging.
+
+Scheduling examines submitted class schedules; calendar team events are not automatically included. Overnight intervals and cross-day transitions are unsupported. The calendar is an undated fictional week. Season comparisons align meet order, not equivalent meet conditions. The schema supports multiple swims per event/meet but does not implement round/heat workflows.
 
 ## Future Work
 
-- Relational database and persistence.
-- Authentication and real role permissions.
-- Athlete and team goal tracking.
-- Optional practice tracking.
-- Approved real-data or external-data imports, if feasible.
-- Additional automated and usability testing.
-- Deployment.
-- Continued UI refinement.
+The intentional next-step order is:
 
-These are future directions, not currently implemented features.
+1. Step 10C - Active vs. historical swimmer behavior.
+2. Step 10D - Coach roster management.
+3. Step 10B - Meet-results import workflow.
+4. Step 11 - Athlete/team goals and optional practice logging/progression.
+5. Step 12 - Authentication, deployment, and application packaging.
+6. Step 13 - Client feedback and usability testing.
+
+Database-backed runtime data will be introduced incrementally. Future roster behavior should preserve historical performances: active swimmers would participate in current scheduling, while historical swimmers remain available for appropriate history/performance viewing. This runtime distinction is not implemented yet.
+
+A future Coach import workflow could upload an appropriate meet-results file, extract supported swimmer/event/result/meet metadata, preview it, resolve unmatched records or duplicates, and confirm saving. Approved real-data imports or external integrations may be explored; SwimCloud must not be a runtime requirement. Additional testing and continued UI refinement remain ongoing priorities.
 
 ## Documentation
 
@@ -165,4 +226,12 @@ These are future directions, not currently implemented features.
 - [Progress pitch 1](docs/progress/Michael-Pruett-Senior-Project-Progress-Pitch-%231.pptx)
 - [Existing Coach dashboard image](docs/screenshots/Coach_Dashboard.png)
 
-The component READMEs retain early-prototype feature descriptions (including an outdated health-only backend description); their startup commands remain useful. Use this root README for the current feature inventory. Proposal, requirements, and architecture artifacts describe project planning and may include future scope.
+- [Database foundation and commands](backend/DATABASE.md)
+- [Ethics / Responsible Computing](docs/responsible_computing/CS-495-Ethics%20and%20Responsible%20Computing-Michael%20Pruett.pdf)
+- [Methods draft](docs/methods/Methods%20Draft%20-%20Michael%20Pruett-%20CS-495.pdf)
+- [Testing plan](docs/testing/Testing%20Plan%20-%20CS-%20495%20-%20Michael%20Pruett.pdf)
+- [Working Prototype v1 report](docs/progress/Working%20Prototype%20v1%20-%20CS-495-Michael%20Pruett.pdf)
+- [Progress pitch 2](docs/progress/Michael-Pruett-Senior-Project-Progress-Pitch-2.pptx)
+- [October 21 progress presentation](docs/progress/Progress%20Presentation-10-21-2026-Michael%20Pruett.pptx)
+
+No standalone Problem Statement document was found in docs; the project problem is described above. Component READMEs retain early-prototype feature descriptions, but their startup instructions remain useful. Use this root README for current implementation status. Planning documents and historical reports may describe future scope or earlier milestones.

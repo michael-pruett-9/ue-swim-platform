@@ -59,7 +59,8 @@ Backend:
 
 Database:
 - Relational database
-- SQLite may be used initially for local development
+- SQLite foundation implemented for local development using built-in sqlite3
+- Runtime migration from frontend mock datasets remains future work
 
 Potential external data:
 - SwimCloud
@@ -95,9 +96,12 @@ Later:
 - real data if appropriate/allowed
 - external integrations if feasible
 - deployment/testing
-## Current Project State
+## Current Project State - November 2026
 
-Coach and Swimmer prototype views, 20 fictional swimmers, full-week scheduling support, transition-aware conflict checking, dynamically generated practice-time recommendations, weekly calendar, performance histories, swimmer-specific progression graphs, roster browsing, and visual polish are implemented.
+Steps 8, 9, and 10A are complete. The prototype includes 20 fictional swimmers,
+Coach/Swimmer views, Monday-Sunday scheduling, transition-aware conflict checking,
+dynamic practice recommendations, calendars, roster browsing, interactive
+multi-season performance graphs, season comparison, and Results History filters.
 
 Current endpoints:
 - GET /api/health
@@ -105,15 +109,19 @@ Current endpoints:
 - POST /api/rank-practice-windows
 - POST /api/recommend-practice-windows
 
-Coach and Swimmer prototype views, 20 fictional swimmers, full-week scheduling
-support, transition-aware conflict checking and ranking, weekly calendar,
-performance histories, roster browsing, and visual polish are implemented.
-See Working Prototype v1 below and README.md for the current feature inventory
-and exact startup/test commands.
+SQLite now provides a seeded and tested relational database foundation with
+connection/initialization helpers and isolated read helpers. Tables cover swimmers,
+seasons, class schedule entries, meets, events, results, and team events. Each
+result has a unique ID; multiple results may share a swimmer/event/meet.
+Generated local database files are ignored by Git.
 
-No database, authentication, external integrations, real athlete data, or
-production deployment setup is implemented. The role selector is a local UI
-demonstration, not an access-control boundary.
+The running application still uses frontend mock JavaScript datasets, not SQLite.
+It is not yet fully persistent. The database schema supports active/historical
+swimmer status, but runtime status behavior and roster editing are not implemented.
+No authentication/authorization, meet-result upload/import, goals, practice logging,
+SwimCloud integration, real private athlete data, or production packaging is implemented.
+The role selector is a local UI demonstration, not an access-control boundary.
+See README.md and backend/DATABASE.md for startup, validation, and database commands.
 
 ## Development Guardrails
 
@@ -134,7 +142,7 @@ When assisting with this project:
 - Prioritize functionality and clarity over visual polish during the first semester.
 
 
-## Working Prototype v1 - October 2026
+## Working Prototype v1 - November 2026
 
 Implemented functionality:
 
@@ -166,14 +174,15 @@ Implemented functionality:
   fictional identity selected before entering Swimmer mode.
 - Fictional SCY specialties spanning freestyle, backstroke, breaststroke,
   butterfly, and IM. Each swimmer has 3-5 tracked events with three chronological
-  fictional meet results per event, stored as numeric seconds.
+  fictional meet results per event per season (2025-26 and 2026-27), stored as numeric seconds.
 - Personal best, most recent time, improvement in seconds/percentage, and chronological results history; lower swimming times are better.
 - Responsive swimmer/event progression graphs built from the existing fictional performance data. Results are plotted chronologically, faster times appear higher, the personal-best result is identified, longer events retain minutes:seconds.hundredths formatting, and a textual progression list remains available beneath the graph.
 - Coach mode can graph any fictional swimmer's tracked events, while Swimmer mode remains restricted to the fictional identity selected on the landing screen.
 - Responsive purple-and-neutral prototype styling with explicit status labels.
 - Reusable hour/minute/AM-PM controls in Coach Scheduling, including required
-  placeholders and five-minute choices. API times remain 24-hour HH:MM strings.
-- Backend unittest coverage for conflict logic, transitions, ranking, and APIs;
+  placeholders, five-minute choices for conflict checking, and quarter-hour bounds
+  for recommendations. API times remain 24-hour HH:MM strings.
+- Backend unittest coverage for conflict logic, transitions, ranking, recommendations, APIs, and database behavior;
   frontend production build checking through npm run build.
 - Performance progression graphs display chronological fictional meet results
   for a selected event. Graph points are keyboard/mouse/touch interactive and
@@ -187,13 +196,14 @@ transition checks. Calendar data is an undated sample week, not a live calendar.
 The Swimmer dashboard labels the first event in that mock week accordingly.
 Performance calculations use local mock data; there is no SwimCloud connection.
 
-Recent client feedback supports expanding the performance side of the platform. Planned performance work includes richer interactive progression information and year-to-year or season-to-season comparisons. The client also expressed interest in future goal tracking and optional practice-result logging so athletes and coaches could review progression from practice data separately from official meet performance. These are planned features and are not currently implemented.
-
-
+The head coach reviewed the working prototype positively. Feedback supported
+expanded progression and season comparison, which are now implemented. Athlete/team
+goals, optional practice time/result logging, and practice-performance progression
+remain planned. Future practice results should stay distinguishable from meet results.
 
 ## Completed Milestones and Current Roadmap
 
-Steps through 9D are complete: setup, conflict checking, transition-aware
+Steps through 9D and Step 10A are complete: setup, conflict checking, transition-aware
 scheduling, role views, roster expansion, Coach organization, weekly calendar,
 performance tracking, Swimmer dashboard and identity selection, varied SCY
 event profiles, visual polish, scheduling time-control polish, dynamic
@@ -230,19 +240,26 @@ and two seasons can be compared directly. Cross-event "best" and improvement
 calculations are intentionally not performed because different swimming events
 are not directly comparable by raw time.
 
+Step 10A is complete: SQLite schema, initialization, stable-ID fictional seed data,
+inspection helpers/documentation, database tests, and support for multiple swims
+of the same event at a meet. The seed snapshot contains 20 swimmers, 2 seasons,
+158 class entries, 6 meets, 14 events, 432 results, and 6 team events.
+
 Current planned development order:
 
-1. Step 10A - Relational database foundation and persistence
-2. Step 10C - Active/historical swimmer status
-3. Step 10D - Coach roster management
-4. Step 10B - Meet-results import workflow
-5. Step 11 - Athlete/team goals and optional practice logging/progression
-6. Step 12 - Authentication, deployment, and application packaging
-7. Step 13 - Client feedback and usability testing
+1. Step 10C - Active vs. historical swimmer behavior (next)
+2. Step 10D - Coach roster management
+3. Step 10B - Meet-results import workflow
+4. Step 11 - Athlete/team goals and optional practice logging/progression
+5. Step 12 - Authentication, deployment, and application packaging
+6. Step 13 - Client feedback and usability testing
+
+The ordering of 10C/10D before 10B is intentional. Schema-level status is already
+available, but active/historical application behavior has not yet been implemented.
 
 Database work should be introduced incrementally. Do not replace all existing
 mock-data workflows at once. Preserve the current working prototype while
-creating and validating the persistence layer in isolated steps.
+connecting the tested persistence foundation to runtime features in isolated steps.
 
 Future roster management should preserve historical athlete information rather
 than permanently removing useful performance history. Swimmers should eventually
@@ -252,6 +269,7 @@ historical swimmers may remain available for appropriate performance/history
 views.
 
 A future meet-results import workflow should allow the Coach to import structured
-meet-result files, preview parsed swimmer/event/time records, resolve unmatched
+meet-result files, extract supported swimmers/events/results/meet metadata, preview
+parsed records, resolve unmatched
 records or duplicates, and explicitly confirm the import before results are
 stored. External SwimCloud access must not be required for this workflow.
