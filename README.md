@@ -1,4 +1,4 @@
-# UE Swimming & Diving Scheduling and Performance Platform
+﻿# UE Swimming & Diving Scheduling and Performance Platform
 
 A two-semester senior Computer Science project for the University of Evansville Swimming & Diving team. The November 2026 local prototype combines practice scheduling and fictional multi-season swimming analytics in Coach and Swimmer experiences. A tested SQLite foundation prepares for future runtime persistence; the running application still uses frontend mock datasets.
 
@@ -234,4 +234,4 @@ A future Coach import workflow could upload an appropriate meet-results file, ex
 - [Progress pitch 2](docs/progress/Michael-Pruett-Senior-Project-Progress-Pitch-2.pptx)
 - [October 21 progress presentation](docs/progress/Progress%20Presentation-10-21-2026-Michael%20Pruett.pptx)
 
-No standalone Problem Statement document was found in docs; the project problem is described above. Component READMEs retain early-prototype feature descriptions, but their startup instructions remain useful. Use this root README for current implementation status. Planning documents and historical reports may describe future scope or earlier milestones.
+
