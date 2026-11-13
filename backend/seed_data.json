@@ -1,0 +1,4536 @@
+{
+  "swimmers": [
+    {
+      "id": "mock-001",
+      "name": "Mock Swimmer Alpha"
+    },
+    {
+      "id": "mock-002",
+      "name": "Mock Swimmer Beta"
+    },
+    {
+      "id": "mock-003",
+      "name": "Mock Swimmer Gamma"
+    },
+    {
+      "id": "mock-004",
+      "name": "Mock Swimmer Delta"
+    },
+    {
+      "id": "mock-005",
+      "name": "Mock Swimmer Epsilon"
+    },
+    {
+      "id": "mock-006",
+      "name": "Mock Swimmer Zeta"
+    },
+    {
+      "id": "mock-007",
+      "name": "Mock Swimmer Eta"
+    },
+    {
+      "id": "mock-008",
+      "name": "Mock Swimmer Theta"
+    },
+    {
+      "id": "mock-009",
+      "name": "Mock Swimmer Iota"
+    },
+    {
+      "id": "mock-010",
+      "name": "Mock Swimmer Kappa"
+    },
+    {
+      "id": "mock-011",
+      "name": "Mock Swimmer Lambda"
+    },
+    {
+      "id": "mock-012",
+      "name": "Mock Swimmer Mu"
+    },
+    {
+      "id": "mock-013",
+      "name": "Mock Swimmer Nu"
+    },
+    {
+      "id": "mock-014",
+      "name": "Mock Swimmer Xi"
+    },
+    {
+      "id": "mock-015",
+      "name": "Mock Swimmer Omicron"
+    },
+    {
+      "id": "mock-016",
+      "name": "Mock Swimmer Pi"
+    },
+    {
+      "id": "mock-017",
+      "name": "Mock Swimmer Rho"
+    },
+    {
+      "id": "mock-018",
+      "name": "Mock Swimmer Sigma"
+    },
+    {
+      "id": "mock-019",
+      "name": "Mock Swimmer Tau"
+    },
+    {
+      "id": "mock-020",
+      "name": "Mock Swimmer Upsilon"
+    }
+  ],
+  "seasons": [
+    {
+      "id": "2025-26",
+      "name": "2025-26",
+      "start_date": "2025-07-01",
+      "end_date": "2026-06-30"
+    },
+    {
+      "id": "2026-27",
+      "name": "2026-27",
+      "start_date": "2026-07-01",
+      "end_date": "2027-06-30"
+    }
+  ],
+  "class_schedule_entries": [
+    {
+      "id": "mock-001-Monday-09:00-09:50",
+      "swimmer_id": "mock-001",
+      "weekday": "Monday",
+      "start_time": "09:00",
+      "end_time": "09:50",
+      "label": "Sample Math"
+    },
+    {
+      "id": "mock-001-Monday-13:00-13:50",
+      "swimmer_id": "mock-001",
+      "weekday": "Monday",
+      "start_time": "13:00",
+      "end_time": "13:50",
+      "label": "Sample Writing"
+    },
+    {
+      "id": "mock-001-Tuesday-10:00-11:15",
+      "swimmer_id": "mock-001",
+      "weekday": "Tuesday",
+      "start_time": "10:00",
+      "end_time": "11:15",
+      "label": "Sample Science"
+    },
+    {
+      "id": "mock-001-Wednesday-09:00-09:50",
+      "swimmer_id": "mock-001",
+      "weekday": "Wednesday",
+      "start_time": "09:00",
+      "end_time": "09:50",
+      "label": "Sample Math"
+    },
+    {
+      "id": "mock-001-Wednesday-13:00-13:50",
+      "swimmer_id": "mock-001",
+      "weekday": "Wednesday",
+      "start_time": "13:00",
+      "end_time": "13:50",
+      "label": "Sample Writing"
+    },
+    {
+      "id": "mock-001-Thursday-10:00-11:15",
+      "swimmer_id": "mock-001",
+      "weekday": "Thursday",
+      "start_time": "10:00",
+      "end_time": "11:15",
+      "label": "Sample Science"
+    },
+    {
+      "id": "mock-001-Friday-09:00-09:50",
+      "swimmer_id": "mock-001",
+      "weekday": "Friday",
+      "start_time": "09:00",
+      "end_time": "09:50",
+      "label": "Sample Math"
+    },
+    {
+      "id": "mock-001-Friday-13:00-13:50",
+      "swimmer_id": "mock-001",
+      "weekday": "Friday",
+      "start_time": "13:00",
+      "end_time": "13:50",
+      "label": "Sample Writing"
+    },
+    {
+      "id": "mock-002-Monday-10:00-10:50",
+      "swimmer_id": "mock-002",
+      "weekday": "Monday",
+      "start_time": "10:00",
+      "end_time": "10:50",
+      "label": "Sample History"
+    },
+    {
+      "id": "mock-002-Tuesday-09:00-10:15",
+      "swimmer_id": "mock-002",
+      "weekday": "Tuesday",
+      "start_time": "09:00",
+      "end_time": "10:15",
+      "label": "Sample Math"
+    },
+    {
+      "id": "mock-002-Tuesday-14:00-15:15",
+      "swimmer_id": "mock-002",
+      "weekday": "Tuesday",
+      "start_time": "14:00",
+      "end_time": "15:15",
+      "label": "Sample Art"
+    },
+    {
+      "id": "mock-002-Wednesday-10:00-10:50",
+      "swimmer_id": "mock-002",
+      "weekday": "Wednesday",
+      "start_time": "10:00",
+      "end_time": "10:50",
+      "label": "Sample History"
+    },
+    {
+      "id": "mock-002-Thursday-09:00-10:15",
+      "swimmer_id": "mock-002",
+      "weekday": "Thursday",
+      "start_time": "09:00",
+      "end_time": "10:15",
+      "label": "Sample Math"
+    },
+    {
+      "id": "mock-002-Thursday-14:00-15:15",
+      "swimmer_id": "mock-002",
+      "weekday": "Thursday",
+      "start_time": "14:00",
+      "end_time": "15:15",
+      "label": "Sample Art"
+    },
+    {
+      "id": "mock-002-Friday-10:00-10:50",
+      "swimmer_id": "mock-002",
+      "weekday": "Friday",
+      "start_time": "10:00",
+      "end_time": "10:50",
+      "label": "Sample History"
+    },
+    {
+      "id": "mock-003-Monday-08:00-08:50",
+      "swimmer_id": "mock-003",
+      "weekday": "Monday",
+      "start_time": "08:00",
+      "end_time": "08:50",
+      "label": "Sample Science"
+    },
+    {
+      "id": "mock-003-Monday-11:00-11:50",
+      "swimmer_id": "mock-003",
+      "weekday": "Monday",
+      "start_time": "11:00",
+      "end_time": "11:50",
+      "label": "Sample Computing"
+    },
+    {
+      "id": "mock-003-Tuesday-13:00-14:15",
+      "swimmer_id": "mock-003",
+      "weekday": "Tuesday",
+      "start_time": "13:00",
+      "end_time": "14:15",
+      "label": "Sample Writing"
+    },
+    {
+      "id": "mock-003-Wednesday-08:00-08:50",
+      "swimmer_id": "mock-003",
+      "weekday": "Wednesday",
+      "start_time": "08:00",
+      "end_time": "08:50",
+      "label": "Sample Science"
+    },
+    {
+      "id": "mock-003-Wednesday-11:00-11:50",
+      "swimmer_id": "mock-003",
+      "weekday": "Wednesday",
+      "start_time": "11:00",
+      "end_time": "11:50",
+      "label": "Sample Computing"
+    },
+    {
+      "id": "mock-003-Thursday-13:00-14:15",
+      "swimmer_id": "mock-003",
+      "weekday": "Thursday",
+      "start_time": "13:00",
+      "end_time": "14:15",
+      "label": "Sample Writing"
+    },
+    {
+      "id": "mock-003-Friday-08:00-08:50",
+      "swimmer_id": "mock-003",
+      "weekday": "Friday",
+      "start_time": "08:00",
+      "end_time": "08:50",
+      "label": "Sample Science"
+    },
+    {
+      "id": "mock-003-Friday-11:00-11:50",
+      "swimmer_id": "mock-003",
+      "weekday": "Friday",
+      "start_time": "11:00",
+      "end_time": "11:50",
+      "label": "Sample Computing"
+    },
+    {
+      "id": "mock-004-Monday-14:00-14:50",
+      "swimmer_id": "mock-004",
+      "weekday": "Monday",
+      "start_time": "14:00",
+      "end_time": "14:50",
+      "label": "Sample Math"
+    },
+    {
+      "id": "mock-004-Tuesday-08:00-09:15",
+      "swimmer_id": "mock-004",
+      "weekday": "Tuesday",
+      "start_time": "08:00",
+      "end_time": "09:15",
+      "label": "Sample History"
+    },
+    {
+      "id": "mock-004-Tuesday-11:00-12:15",
+      "swimmer_id": "mock-004",
+      "weekday": "Tuesday",
+      "start_time": "11:00",
+      "end_time": "12:15",
+      "label": "Sample Computing"
+    },
+    {
+      "id": "mock-004-Wednesday-14:00-14:50",
+      "swimmer_id": "mock-004",
+      "weekday": "Wednesday",
+      "start_time": "14:00",
+      "end_time": "14:50",
+      "label": "Sample Math"
+    },
+    {
+      "id": "mock-004-Thursday-08:00-09:15",
+      "swimmer_id": "mock-004",
+      "weekday": "Thursday",
+      "start_time": "08:00",
+      "end_time": "09:15",
+      "label": "Sample History"
+    },
+    {
+      "id": "mock-004-Thursday-11:00-12:15",
+      "swimmer_id": "mock-004",
+      "weekday": "Thursday",
+      "start_time": "11:00",
+      "end_time": "12:15",
+      "label": "Sample Computing"
+    },
+    {
+      "id": "mock-004-Friday-14:00-14:50",
+      "swimmer_id": "mock-004",
+      "weekday": "Friday",
+      "start_time": "14:00",
+      "end_time": "14:50",
+      "label": "Sample Math"
+    },
+    {
+      "id": "mock-005-Monday-09:30-10:20",
+      "swimmer_id": "mock-005",
+      "weekday": "Monday",
+      "start_time": "09:30",
+      "end_time": "10:20",
+      "label": "Sample Writing"
+    },
+    {
+      "id": "mock-005-Monday-12:00-12:50",
+      "swimmer_id": "mock-005",
+      "weekday": "Monday",
+      "start_time": "12:00",
+      "end_time": "12:50",
+      "label": "Sample Art"
+    },
+    {
+      "id": "mock-005-Tuesday-15:00-16:15",
+      "swimmer_id": "mock-005",
+      "weekday": "Tuesday",
+      "start_time": "15:00",
+      "end_time": "16:15",
+      "label": "Sample Science"
+    },
+    {
+      "id": "mock-005-Wednesday-09:30-10:20",
+      "swimmer_id": "mock-005",
+      "weekday": "Wednesday",
+      "start_time": "09:30",
+      "end_time": "10:20",
+      "label": "Sample Writing"
+    },
+    {
+      "id": "mock-005-Wednesday-12:00-12:50",
+      "swimmer_id": "mock-005",
+      "weekday": "Wednesday",
+      "start_time": "12:00",
+      "end_time": "12:50",
+      "label": "Sample Art"
+    },
+    {
+      "id": "mock-005-Thursday-15:00-16:15",
+      "swimmer_id": "mock-005",
+      "weekday": "Thursday",
+      "start_time": "15:00",
+      "end_time": "16:15",
+      "label": "Sample Science"
+    },
+    {
+      "id": "mock-005-Friday-09:30-10:20",
+      "swimmer_id": "mock-005",
+      "weekday": "Friday",
+      "start_time": "09:30",
+      "end_time": "10:20",
+      "label": "Sample Writing"
+    },
+    {
+      "id": "mock-005-Friday-12:00-12:50",
+      "swimmer_id": "mock-005",
+      "weekday": "Friday",
+      "start_time": "12:00",
+      "end_time": "12:50",
+      "label": "Sample Art"
+    },
+    {
+      "id": "mock-006-Monday-08:00-08:50",
+      "swimmer_id": "mock-006",
+      "weekday": "Monday",
+      "start_time": "08:00",
+      "end_time": "08:50",
+      "label": "Sample Biology"
+    },
+    {
+      "id": "mock-006-Monday-12:00-12:50",
+      "swimmer_id": "mock-006",
+      "weekday": "Monday",
+      "start_time": "12:00",
+      "end_time": "12:50",
+      "label": "Sample Statistics"
+    },
+    {
+      "id": "mock-006-Tuesday-09:00-10:15",
+      "swimmer_id": "mock-006",
+      "weekday": "Tuesday",
+      "start_time": "09:00",
+      "end_time": "10:15",
+      "label": "Sample Literature"
+    },
+    {
+      "id": "mock-006-Wednesday-08:00-08:50",
+      "swimmer_id": "mock-006",
+      "weekday": "Wednesday",
+      "start_time": "08:00",
+      "end_time": "08:50",
+      "label": "Sample Biology"
+    },
+    {
+      "id": "mock-006-Wednesday-12:00-12:50",
+      "swimmer_id": "mock-006",
+      "weekday": "Wednesday",
+      "start_time": "12:00",
+      "end_time": "12:50",
+      "label": "Sample Statistics"
+    },
+    {
+      "id": "mock-006-Thursday-09:00-10:15",
+      "swimmer_id": "mock-006",
+      "weekday": "Thursday",
+      "start_time": "09:00",
+      "end_time": "10:15",
+      "label": "Sample Literature"
+    },
+    {
+      "id": "mock-006-Friday-08:00-08:50",
+      "swimmer_id": "mock-006",
+      "weekday": "Friday",
+      "start_time": "08:00",
+      "end_time": "08:50",
+      "label": "Sample Biology"
+    },
+    {
+      "id": "mock-006-Friday-12:00-12:50",
+      "swimmer_id": "mock-006",
+      "weekday": "Friday",
+      "start_time": "12:00",
+      "end_time": "12:50",
+      "label": "Sample Statistics"
+    },
+    {
+      "id": "mock-007-Monday-09:00-09:50",
+      "swimmer_id": "mock-007",
+      "weekday": "Monday",
+      "start_time": "09:00",
+      "end_time": "09:50",
+      "label": "Sample Chemistry"
+    },
+    {
+      "id": "mock-007-Monday-14:00-14:50",
+      "swimmer_id": "mock-007",
+      "weekday": "Monday",
+      "start_time": "14:00",
+      "end_time": "14:50",
+      "label": "Sample Writing"
+    },
+    {
+      "id": "mock-007-Tuesday-11:00-12:15",
+      "swimmer_id": "mock-007",
+      "weekday": "Tuesday",
+      "start_time": "11:00",
+      "end_time": "12:15",
+      "label": "Sample Economics"
+    },
+    {
+      "id": "mock-007-Wednesday-09:00-09:50",
+      "swimmer_id": "mock-007",
+      "weekday": "Wednesday",
+      "start_time": "09:00",
+      "end_time": "09:50",
+      "label": "Sample Chemistry"
+    },
+    {
+      "id": "mock-007-Wednesday-14:00-14:50",
+      "swimmer_id": "mock-007",
+      "weekday": "Wednesday",
+      "start_time": "14:00",
+      "end_time": "14:50",
+      "label": "Sample Writing"
+    },
+    {
+      "id": "mock-007-Thursday-11:00-12:15",
+      "swimmer_id": "mock-007",
+      "weekday": "Thursday",
+      "start_time": "11:00",
+      "end_time": "12:15",
+      "label": "Sample Economics"
+    },
+    {
+      "id": "mock-007-Friday-09:00-09:50",
+      "swimmer_id": "mock-007",
+      "weekday": "Friday",
+      "start_time": "09:00",
+      "end_time": "09:50",
+      "label": "Sample Chemistry"
+    },
+    {
+      "id": "mock-007-Friday-14:00-14:50",
+      "swimmer_id": "mock-007",
+      "weekday": "Friday",
+      "start_time": "14:00",
+      "end_time": "14:50",
+      "label": "Sample Writing"
+    },
+    {
+      "id": "mock-008-Monday-10:00-10:50",
+      "swimmer_id": "mock-008",
+      "weekday": "Monday",
+      "start_time": "10:00",
+      "end_time": "10:50",
+      "label": "Sample Calculus"
+    },
+    {
+      "id": "mock-008-Monday-15:00-15:50",
+      "swimmer_id": "mock-008",
+      "weekday": "Monday",
+      "start_time": "15:00",
+      "end_time": "15:50",
+      "label": "Sample Psychology"
+    },
+    {
+      "id": "mock-008-Tuesday-13:00-14:15",
+      "swimmer_id": "mock-008",
+      "weekday": "Tuesday",
+      "start_time": "13:00",
+      "end_time": "14:15",
+      "label": "Sample History"
+    },
+    {
+      "id": "mock-008-Wednesday-10:00-10:50",
+      "swimmer_id": "mock-008",
+      "weekday": "Wednesday",
+      "start_time": "10:00",
+      "end_time": "10:50",
+      "label": "Sample Calculus"
+    },
+    {
+      "id": "mock-008-Wednesday-15:00-15:50",
+      "swimmer_id": "mock-008",
+      "weekday": "Wednesday",
+      "start_time": "15:00",
+      "end_time": "15:50",
+      "label": "Sample Psychology"
+    },
+    {
+      "id": "mock-008-Thursday-13:00-14:15",
+      "swimmer_id": "mock-008",
+      "weekday": "Thursday",
+      "start_time": "13:00",
+      "end_time": "14:15",
+      "label": "Sample History"
+    },
+    {
+      "id": "mock-008-Friday-10:00-10:50",
+      "swimmer_id": "mock-008",
+      "weekday": "Friday",
+      "start_time": "10:00",
+      "end_time": "10:50",
+      "label": "Sample Calculus"
+    },
+    {
+      "id": "mock-008-Friday-15:00-15:50",
+      "swimmer_id": "mock-008",
+      "weekday": "Friday",
+      "start_time": "15:00",
+      "end_time": "15:50",
+      "label": "Sample Psychology"
+    },
+    {
+      "id": "mock-009-Monday-11:00-11:50",
+      "swimmer_id": "mock-009",
+      "weekday": "Monday",
+      "start_time": "11:00",
+      "end_time": "11:50",
+      "label": "Sample Physics"
+    },
+    {
+      "id": "mock-009-Monday-16:00-16:50",
+      "swimmer_id": "mock-009",
+      "weekday": "Monday",
+      "start_time": "16:00",
+      "end_time": "16:50",
+      "label": "Sample Philosophy"
+    },
+    {
+      "id": "mock-009-Tuesday-08:00-09:15",
+      "swimmer_id": "mock-009",
+      "weekday": "Tuesday",
+      "start_time": "08:00",
+      "end_time": "09:15",
+      "label": "Sample Computing"
+    },
+    {
+      "id": "mock-009-Wednesday-11:00-11:50",
+      "swimmer_id": "mock-009",
+      "weekday": "Wednesday",
+      "start_time": "11:00",
+      "end_time": "11:50",
+      "label": "Sample Physics"
+    },
+    {
+      "id": "mock-009-Wednesday-16:00-16:50",
+      "swimmer_id": "mock-009",
+      "weekday": "Wednesday",
+      "start_time": "16:00",
+      "end_time": "16:50",
+      "label": "Sample Philosophy"
+    },
+    {
+      "id": "mock-009-Thursday-08:00-09:15",
+      "swimmer_id": "mock-009",
+      "weekday": "Thursday",
+      "start_time": "08:00",
+      "end_time": "09:15",
+      "label": "Sample Computing"
+    },
+    {
+      "id": "mock-009-Friday-11:00-11:50",
+      "swimmer_id": "mock-009",
+      "weekday": "Friday",
+      "start_time": "11:00",
+      "end_time": "11:50",
+      "label": "Sample Physics"
+    },
+    {
+      "id": "mock-009-Friday-16:00-16:50",
+      "swimmer_id": "mock-009",
+      "weekday": "Friday",
+      "start_time": "16:00",
+      "end_time": "16:50",
+      "label": "Sample Philosophy"
+    },
+    {
+      "id": "mock-010-Monday-08:00-08:50",
+      "swimmer_id": "mock-010",
+      "weekday": "Monday",
+      "start_time": "08:00",
+      "end_time": "08:50",
+      "label": "Sample Sociology"
+    },
+    {
+      "id": "mock-010-Monday-13:00-13:50",
+      "swimmer_id": "mock-010",
+      "weekday": "Monday",
+      "start_time": "13:00",
+      "end_time": "13:50",
+      "label": "Sample Biology"
+    },
+    {
+      "id": "mock-010-Tuesday-14:00-15:15",
+      "swimmer_id": "mock-010",
+      "weekday": "Tuesday",
+      "start_time": "14:00",
+      "end_time": "15:15",
+      "label": "Sample Art"
+    },
+    {
+      "id": "mock-010-Wednesday-08:00-08:50",
+      "swimmer_id": "mock-010",
+      "weekday": "Wednesday",
+      "start_time": "08:00",
+      "end_time": "08:50",
+      "label": "Sample Sociology"
+    },
+    {
+      "id": "mock-010-Wednesday-13:00-13:50",
+      "swimmer_id": "mock-010",
+      "weekday": "Wednesday",
+      "start_time": "13:00",
+      "end_time": "13:50",
+      "label": "Sample Biology"
+    },
+    {
+      "id": "mock-010-Thursday-14:00-15:15",
+      "swimmer_id": "mock-010",
+      "weekday": "Thursday",
+      "start_time": "14:00",
+      "end_time": "15:15",
+      "label": "Sample Art"
+    },
+    {
+      "id": "mock-010-Friday-08:00-08:50",
+      "swimmer_id": "mock-010",
+      "weekday": "Friday",
+      "start_time": "08:00",
+      "end_time": "08:50",
+      "label": "Sample Sociology"
+    },
+    {
+      "id": "mock-010-Friday-13:00-13:50",
+      "swimmer_id": "mock-010",
+      "weekday": "Friday",
+      "start_time": "13:00",
+      "end_time": "13:50",
+      "label": "Sample Biology"
+    },
+    {
+      "id": "mock-011-Monday-09:00-09:50",
+      "swimmer_id": "mock-011",
+      "weekday": "Monday",
+      "start_time": "09:00",
+      "end_time": "09:50",
+      "label": "Sample Statistics"
+    },
+    {
+      "id": "mock-011-Monday-12:00-12:50",
+      "swimmer_id": "mock-011",
+      "weekday": "Monday",
+      "start_time": "12:00",
+      "end_time": "12:50",
+      "label": "Sample Literature"
+    },
+    {
+      "id": "mock-011-Tuesday-15:00-16:15",
+      "swimmer_id": "mock-011",
+      "weekday": "Tuesday",
+      "start_time": "15:00",
+      "end_time": "16:15",
+      "label": "Sample Chemistry"
+    },
+    {
+      "id": "mock-011-Wednesday-09:00-09:50",
+      "swimmer_id": "mock-011",
+      "weekday": "Wednesday",
+      "start_time": "09:00",
+      "end_time": "09:50",
+      "label": "Sample Statistics"
+    },
+    {
+      "id": "mock-011-Wednesday-12:00-12:50",
+      "swimmer_id": "mock-011",
+      "weekday": "Wednesday",
+      "start_time": "12:00",
+      "end_time": "12:50",
+      "label": "Sample Literature"
+    },
+    {
+      "id": "mock-011-Thursday-15:00-16:15",
+      "swimmer_id": "mock-011",
+      "weekday": "Thursday",
+      "start_time": "15:00",
+      "end_time": "16:15",
+      "label": "Sample Chemistry"
+    },
+    {
+      "id": "mock-011-Friday-09:00-09:50",
+      "swimmer_id": "mock-011",
+      "weekday": "Friday",
+      "start_time": "09:00",
+      "end_time": "09:50",
+      "label": "Sample Statistics"
+    },
+    {
+      "id": "mock-011-Friday-12:00-12:50",
+      "swimmer_id": "mock-011",
+      "weekday": "Friday",
+      "start_time": "12:00",
+      "end_time": "12:50",
+      "label": "Sample Literature"
+    },
+    {
+      "id": "mock-012-Monday-10:00-10:50",
+      "swimmer_id": "mock-012",
+      "weekday": "Monday",
+      "start_time": "10:00",
+      "end_time": "10:50",
+      "label": "Sample Economics"
+    },
+    {
+      "id": "mock-012-Monday-14:00-14:50",
+      "swimmer_id": "mock-012",
+      "weekday": "Monday",
+      "start_time": "14:00",
+      "end_time": "14:50",
+      "label": "Sample Calculus"
+    },
+    {
+      "id": "mock-012-Tuesday-10:00-11:15",
+      "swimmer_id": "mock-012",
+      "weekday": "Tuesday",
+      "start_time": "10:00",
+      "end_time": "11:15",
+      "label": "Sample Writing"
+    },
+    {
+      "id": "mock-012-Wednesday-10:00-10:50",
+      "swimmer_id": "mock-012",
+      "weekday": "Wednesday",
+      "start_time": "10:00",
+      "end_time": "10:50",
+      "label": "Sample Economics"
+    },
+    {
+      "id": "mock-012-Wednesday-14:00-14:50",
+      "swimmer_id": "mock-012",
+      "weekday": "Wednesday",
+      "start_time": "14:00",
+      "end_time": "14:50",
+      "label": "Sample Calculus"
+    },
+    {
+      "id": "mock-012-Thursday-10:00-11:15",
+      "swimmer_id": "mock-012",
+      "weekday": "Thursday",
+      "start_time": "10:00",
+      "end_time": "11:15",
+      "label": "Sample Writing"
+    },
+    {
+      "id": "mock-012-Friday-10:00-10:50",
+      "swimmer_id": "mock-012",
+      "weekday": "Friday",
+      "start_time": "10:00",
+      "end_time": "10:50",
+      "label": "Sample Economics"
+    },
+    {
+      "id": "mock-012-Friday-14:00-14:50",
+      "swimmer_id": "mock-012",
+      "weekday": "Friday",
+      "start_time": "14:00",
+      "end_time": "14:50",
+      "label": "Sample Calculus"
+    },
+    {
+      "id": "mock-013-Monday-11:00-11:50",
+      "swimmer_id": "mock-013",
+      "weekday": "Monday",
+      "start_time": "11:00",
+      "end_time": "11:50",
+      "label": "Sample History"
+    },
+    {
+      "id": "mock-013-Monday-15:00-15:50",
+      "swimmer_id": "mock-013",
+      "weekday": "Monday",
+      "start_time": "15:00",
+      "end_time": "15:50",
+      "label": "Sample Physics"
+    },
+    {
+      "id": "mock-013-Tuesday-09:00-10:15",
+      "swimmer_id": "mock-013",
+      "weekday": "Tuesday",
+      "start_time": "09:00",
+      "end_time": "10:15",
+      "label": "Sample Psychology"
+    },
+    {
+      "id": "mock-013-Wednesday-11:00-11:50",
+      "swimmer_id": "mock-013",
+      "weekday": "Wednesday",
+      "start_time": "11:00",
+      "end_time": "11:50",
+      "label": "Sample History"
+    },
+    {
+      "id": "mock-013-Wednesday-15:00-15:50",
+      "swimmer_id": "mock-013",
+      "weekday": "Wednesday",
+      "start_time": "15:00",
+      "end_time": "15:50",
+      "label": "Sample Physics"
+    },
+    {
+      "id": "mock-013-Thursday-09:00-10:15",
+      "swimmer_id": "mock-013",
+      "weekday": "Thursday",
+      "start_time": "09:00",
+      "end_time": "10:15",
+      "label": "Sample Psychology"
+    },
+    {
+      "id": "mock-013-Friday-11:00-11:50",
+      "swimmer_id": "mock-013",
+      "weekday": "Friday",
+      "start_time": "11:00",
+      "end_time": "11:50",
+      "label": "Sample History"
+    },
+    {
+      "id": "mock-013-Friday-15:00-15:50",
+      "swimmer_id": "mock-013",
+      "weekday": "Friday",
+      "start_time": "15:00",
+      "end_time": "15:50",
+      "label": "Sample Physics"
+    },
+    {
+      "id": "mock-014-Monday-08:00-08:50",
+      "swimmer_id": "mock-014",
+      "weekday": "Monday",
+      "start_time": "08:00",
+      "end_time": "08:50",
+      "label": "Sample Computing"
+    },
+    {
+      "id": "mock-014-Monday-16:00-16:50",
+      "swimmer_id": "mock-014",
+      "weekday": "Monday",
+      "start_time": "16:00",
+      "end_time": "16:50",
+      "label": "Sample Art"
+    },
+    {
+      "id": "mock-014-Tuesday-11:00-12:15",
+      "swimmer_id": "mock-014",
+      "weekday": "Tuesday",
+      "start_time": "11:00",
+      "end_time": "12:15",
+      "label": "Sample Philosophy"
+    },
+    {
+      "id": "mock-014-Wednesday-08:00-08:50",
+      "swimmer_id": "mock-014",
+      "weekday": "Wednesday",
+      "start_time": "08:00",
+      "end_time": "08:50",
+      "label": "Sample Computing"
+    },
+    {
+      "id": "mock-014-Wednesday-16:00-16:50",
+      "swimmer_id": "mock-014",
+      "weekday": "Wednesday",
+      "start_time": "16:00",
+      "end_time": "16:50",
+      "label": "Sample Art"
+    },
+    {
+      "id": "mock-014-Thursday-11:00-12:15",
+      "swimmer_id": "mock-014",
+      "weekday": "Thursday",
+      "start_time": "11:00",
+      "end_time": "12:15",
+      "label": "Sample Philosophy"
+    },
+    {
+      "id": "mock-014-Friday-08:00-08:50",
+      "swimmer_id": "mock-014",
+      "weekday": "Friday",
+      "start_time": "08:00",
+      "end_time": "08:50",
+      "label": "Sample Computing"
+    },
+    {
+      "id": "mock-014-Friday-16:00-16:50",
+      "swimmer_id": "mock-014",
+      "weekday": "Friday",
+      "start_time": "16:00",
+      "end_time": "16:50",
+      "label": "Sample Art"
+    },
+    {
+      "id": "mock-015-Monday-09:00-09:50",
+      "swimmer_id": "mock-015",
+      "weekday": "Monday",
+      "start_time": "09:00",
+      "end_time": "09:50",
+      "label": "Sample Biology"
+    },
+    {
+      "id": "mock-015-Monday-13:00-13:50",
+      "swimmer_id": "mock-015",
+      "weekday": "Monday",
+      "start_time": "13:00",
+      "end_time": "13:50",
+      "label": "Sample Sociology"
+    },
+    {
+      "id": "mock-015-Tuesday-13:00-14:15",
+      "swimmer_id": "mock-015",
+      "weekday": "Tuesday",
+      "start_time": "13:00",
+      "end_time": "14:15",
+      "label": "Sample Statistics"
+    },
+    {
+      "id": "mock-015-Wednesday-09:00-09:50",
+      "swimmer_id": "mock-015",
+      "weekday": "Wednesday",
+      "start_time": "09:00",
+      "end_time": "09:50",
+      "label": "Sample Biology"
+    },
+    {
+      "id": "mock-015-Wednesday-13:00-13:50",
+      "swimmer_id": "mock-015",
+      "weekday": "Wednesday",
+      "start_time": "13:00",
+      "end_time": "13:50",
+      "label": "Sample Sociology"
+    },
+    {
+      "id": "mock-015-Thursday-13:00-14:15",
+      "swimmer_id": "mock-015",
+      "weekday": "Thursday",
+      "start_time": "13:00",
+      "end_time": "14:15",
+      "label": "Sample Statistics"
+    },
+    {
+      "id": "mock-015-Friday-09:00-09:50",
+      "swimmer_id": "mock-015",
+      "weekday": "Friday",
+      "start_time": "09:00",
+      "end_time": "09:50",
+      "label": "Sample Biology"
+    },
+    {
+      "id": "mock-015-Friday-13:00-13:50",
+      "swimmer_id": "mock-015",
+      "weekday": "Friday",
+      "start_time": "13:00",
+      "end_time": "13:50",
+      "label": "Sample Sociology"
+    },
+    {
+      "id": "mock-016-Monday-10:00-10:50",
+      "swimmer_id": "mock-016",
+      "weekday": "Monday",
+      "start_time": "10:00",
+      "end_time": "10:50",
+      "label": "Sample Writing"
+    },
+    {
+      "id": "mock-016-Monday-12:00-12:50",
+      "swimmer_id": "mock-016",
+      "weekday": "Monday",
+      "start_time": "12:00",
+      "end_time": "12:50",
+      "label": "Sample Chemistry"
+    },
+    {
+      "id": "mock-016-Tuesday-14:00-15:15",
+      "swimmer_id": "mock-016",
+      "weekday": "Tuesday",
+      "start_time": "14:00",
+      "end_time": "15:15",
+      "label": "Sample Literature"
+    },
+    {
+      "id": "mock-016-Wednesday-10:00-10:50",
+      "swimmer_id": "mock-016",
+      "weekday": "Wednesday",
+      "start_time": "10:00",
+      "end_time": "10:50",
+      "label": "Sample Writing"
+    },
+    {
+      "id": "mock-016-Wednesday-12:00-12:50",
+      "swimmer_id": "mock-016",
+      "weekday": "Wednesday",
+      "start_time": "12:00",
+      "end_time": "12:50",
+      "label": "Sample Chemistry"
+    },
+    {
+      "id": "mock-016-Thursday-14:00-15:15",
+      "swimmer_id": "mock-016",
+      "weekday": "Thursday",
+      "start_time": "14:00",
+      "end_time": "15:15",
+      "label": "Sample Literature"
+    },
+    {
+      "id": "mock-016-Friday-10:00-10:50",
+      "swimmer_id": "mock-016",
+      "weekday": "Friday",
+      "start_time": "10:00",
+      "end_time": "10:50",
+      "label": "Sample Writing"
+    },
+    {
+      "id": "mock-016-Friday-12:00-12:50",
+      "swimmer_id": "mock-016",
+      "weekday": "Friday",
+      "start_time": "12:00",
+      "end_time": "12:50",
+      "label": "Sample Chemistry"
+    },
+    {
+      "id": "mock-017-Monday-11:00-11:50",
+      "swimmer_id": "mock-017",
+      "weekday": "Monday",
+      "start_time": "11:00",
+      "end_time": "11:50",
+      "label": "Sample Psychology"
+    },
+    {
+      "id": "mock-017-Monday-14:00-14:50",
+      "swimmer_id": "mock-017",
+      "weekday": "Monday",
+      "start_time": "14:00",
+      "end_time": "14:50",
+      "label": "Sample Economics"
+    },
+    {
+      "id": "mock-017-Tuesday-15:00-16:15",
+      "swimmer_id": "mock-017",
+      "weekday": "Tuesday",
+      "start_time": "15:00",
+      "end_time": "16:15",
+      "label": "Sample Calculus"
+    },
+    {
+      "id": "mock-017-Wednesday-11:00-11:50",
+      "swimmer_id": "mock-017",
+      "weekday": "Wednesday",
+      "start_time": "11:00",
+      "end_time": "11:50",
+      "label": "Sample Psychology"
+    },
+    {
+      "id": "mock-017-Wednesday-14:00-14:50",
+      "swimmer_id": "mock-017",
+      "weekday": "Wednesday",
+      "start_time": "14:00",
+      "end_time": "14:50",
+      "label": "Sample Economics"
+    },
+    {
+      "id": "mock-017-Thursday-15:00-16:15",
+      "swimmer_id": "mock-017",
+      "weekday": "Thursday",
+      "start_time": "15:00",
+      "end_time": "16:15",
+      "label": "Sample Calculus"
+    },
+    {
+      "id": "mock-017-Friday-11:00-11:50",
+      "swimmer_id": "mock-017",
+      "weekday": "Friday",
+      "start_time": "11:00",
+      "end_time": "11:50",
+      "label": "Sample Psychology"
+    },
+    {
+      "id": "mock-017-Friday-14:00-14:50",
+      "swimmer_id": "mock-017",
+      "weekday": "Friday",
+      "start_time": "14:00",
+      "end_time": "14:50",
+      "label": "Sample Economics"
+    },
+    {
+      "id": "mock-018-Monday-08:00-08:50",
+      "swimmer_id": "mock-018",
+      "weekday": "Monday",
+      "start_time": "08:00",
+      "end_time": "08:50",
+      "label": "Sample Philosophy"
+    },
+    {
+      "id": "mock-018-Monday-15:00-15:50",
+      "swimmer_id": "mock-018",
+      "weekday": "Monday",
+      "start_time": "15:00",
+      "end_time": "15:50",
+      "label": "Sample History"
+    },
+    {
+      "id": "mock-018-Tuesday-08:00-09:15",
+      "swimmer_id": "mock-018",
+      "weekday": "Tuesday",
+      "start_time": "08:00",
+      "end_time": "09:15",
+      "label": "Sample Physics"
+    },
+    {
+      "id": "mock-018-Wednesday-08:00-08:50",
+      "swimmer_id": "mock-018",
+      "weekday": "Wednesday",
+      "start_time": "08:00",
+      "end_time": "08:50",
+      "label": "Sample Philosophy"
+    },
+    {
+      "id": "mock-018-Wednesday-15:00-15:50",
+      "swimmer_id": "mock-018",
+      "weekday": "Wednesday",
+      "start_time": "15:00",
+      "end_time": "15:50",
+      "label": "Sample History"
+    },
+    {
+      "id": "mock-018-Thursday-08:00-09:15",
+      "swimmer_id": "mock-018",
+      "weekday": "Thursday",
+      "start_time": "08:00",
+      "end_time": "09:15",
+      "label": "Sample Physics"
+    },
+    {
+      "id": "mock-018-Friday-08:00-08:50",
+      "swimmer_id": "mock-018",
+      "weekday": "Friday",
+      "start_time": "08:00",
+      "end_time": "08:50",
+      "label": "Sample Philosophy"
+    },
+    {
+      "id": "mock-018-Friday-15:00-15:50",
+      "swimmer_id": "mock-018",
+      "weekday": "Friday",
+      "start_time": "15:00",
+      "end_time": "15:50",
+      "label": "Sample History"
+    },
+    {
+      "id": "mock-019-Monday-09:00-09:50",
+      "swimmer_id": "mock-019",
+      "weekday": "Monday",
+      "start_time": "09:00",
+      "end_time": "09:50",
+      "label": "Sample Art"
+    },
+    {
+      "id": "mock-019-Monday-16:00-16:50",
+      "swimmer_id": "mock-019",
+      "weekday": "Monday",
+      "start_time": "16:00",
+      "end_time": "16:50",
+      "label": "Sample Computing"
+    },
+    {
+      "id": "mock-019-Tuesday-10:00-11:15",
+      "swimmer_id": "mock-019",
+      "weekday": "Tuesday",
+      "start_time": "10:00",
+      "end_time": "11:15",
+      "label": "Sample Sociology"
+    },
+    {
+      "id": "mock-019-Wednesday-09:00-09:50",
+      "swimmer_id": "mock-019",
+      "weekday": "Wednesday",
+      "start_time": "09:00",
+      "end_time": "09:50",
+      "label": "Sample Art"
+    },
+    {
+      "id": "mock-019-Wednesday-16:00-16:50",
+      "swimmer_id": "mock-019",
+      "weekday": "Wednesday",
+      "start_time": "16:00",
+      "end_time": "16:50",
+      "label": "Sample Computing"
+    },
+    {
+      "id": "mock-019-Thursday-10:00-11:15",
+      "swimmer_id": "mock-019",
+      "weekday": "Thursday",
+      "start_time": "10:00",
+      "end_time": "11:15",
+      "label": "Sample Sociology"
+    },
+    {
+      "id": "mock-019-Friday-09:00-09:50",
+      "swimmer_id": "mock-019",
+      "weekday": "Friday",
+      "start_time": "09:00",
+      "end_time": "09:50",
+      "label": "Sample Art"
+    },
+    {
+      "id": "mock-019-Friday-16:00-16:50",
+      "swimmer_id": "mock-019",
+      "weekday": "Friday",
+      "start_time": "16:00",
+      "end_time": "16:50",
+      "label": "Sample Computing"
+    },
+    {
+      "id": "mock-020-Monday-10:00-10:50",
+      "swimmer_id": "mock-020",
+      "weekday": "Monday",
+      "start_time": "10:00",
+      "end_time": "10:50",
+      "label": "Sample Literature"
+    },
+    {
+      "id": "mock-020-Monday-13:00-13:50",
+      "swimmer_id": "mock-020",
+      "weekday": "Monday",
+      "start_time": "13:00",
+      "end_time": "13:50",
+      "label": "Sample Statistics"
+    },
+    {
+      "id": "mock-020-Tuesday-12:00-13:15",
+      "swimmer_id": "mock-020",
+      "weekday": "Tuesday",
+      "start_time": "12:00",
+      "end_time": "13:15",
+      "label": "Sample Biology"
+    },
+    {
+      "id": "mock-020-Wednesday-10:00-10:50",
+      "swimmer_id": "mock-020",
+      "weekday": "Wednesday",
+      "start_time": "10:00",
+      "end_time": "10:50",
+      "label": "Sample Literature"
+    },
+    {
+      "id": "mock-020-Wednesday-13:00-13:50",
+      "swimmer_id": "mock-020",
+      "weekday": "Wednesday",
+      "start_time": "13:00",
+      "end_time": "13:50",
+      "label": "Sample Statistics"
+    },
+    {
+      "id": "mock-020-Thursday-12:00-13:15",
+      "swimmer_id": "mock-020",
+      "weekday": "Thursday",
+      "start_time": "12:00",
+      "end_time": "13:15",
+      "label": "Sample Biology"
+    },
+    {
+      "id": "mock-020-Friday-10:00-10:50",
+      "swimmer_id": "mock-020",
+      "weekday": "Friday",
+      "start_time": "10:00",
+      "end_time": "10:50",
+      "label": "Sample Literature"
+    },
+    {
+      "id": "mock-020-Friday-13:00-13:50",
+      "swimmer_id": "mock-020",
+      "weekday": "Friday",
+      "start_time": "13:00",
+      "end_time": "13:50",
+      "label": "Sample Statistics"
+    }
+  ],
+  "meets": [
+    {
+      "id": "meet-2025-09-06",
+      "name": "Mock 2025 Season Opener",
+      "meet_date": "2025-09-06",
+      "season_id": "2025-26"
+    },
+    {
+      "id": "meet-2025-09-20",
+      "name": "Mock 2025 Fall Invitational",
+      "meet_date": "2025-09-20",
+      "season_id": "2025-26"
+    },
+    {
+      "id": "meet-2025-10-04",
+      "name": "Mock 2025 October Meet",
+      "meet_date": "2025-10-04",
+      "season_id": "2025-26"
+    },
+    {
+      "id": "meet-2026-09-05",
+      "name": "Mock Season Opener",
+      "meet_date": "2026-09-05",
+      "season_id": "2026-27"
+    },
+    {
+      "id": "meet-2026-09-19",
+      "name": "Mock Fall Invitational",
+      "meet_date": "2026-09-19",
+      "season_id": "2026-27"
+    },
+    {
+      "id": "meet-2026-10-03",
+      "name": "Mock October Meet",
+      "meet_date": "2026-10-03",
+      "season_id": "2026-27"
+    }
+  ],
+  "events": [
+    {
+      "id": "event-100-backstroke",
+      "name": "100 Backstroke"
+    },
+    {
+      "id": "event-100-breaststroke",
+      "name": "100 Breaststroke"
+    },
+    {
+      "id": "event-100-butterfly",
+      "name": "100 Butterfly"
+    },
+    {
+      "id": "event-100-freestyle",
+      "name": "100 Freestyle"
+    },
+    {
+      "id": "event-1000-freestyle",
+      "name": "1000 Freestyle"
+    },
+    {
+      "id": "event-1650-freestyle",
+      "name": "1650 Freestyle"
+    },
+    {
+      "id": "event-200-backstroke",
+      "name": "200 Backstroke"
+    },
+    {
+      "id": "event-200-breaststroke",
+      "name": "200 Breaststroke"
+    },
+    {
+      "id": "event-200-butterfly",
+      "name": "200 Butterfly"
+    },
+    {
+      "id": "event-200-freestyle",
+      "name": "200 Freestyle"
+    },
+    {
+      "id": "event-200-im",
+      "name": "200 IM"
+    },
+    {
+      "id": "event-400-im",
+      "name": "400 IM"
+    },
+    {
+      "id": "event-50-freestyle",
+      "name": "50 Freestyle"
+    },
+    {
+      "id": "event-500-freestyle",
+      "name": "500 Freestyle"
+    }
+  ],
+  "results": [
+    {
+      "id": "mock-001-50 Freestyle-2025-26-0",
+      "swimmer_id": "mock-001",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-50-freestyle",
+      "time_seconds": 23.73
+    },
+    {
+      "id": "mock-001-50 Freestyle-2025-26-1",
+      "swimmer_id": "mock-001",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-50-freestyle",
+      "time_seconds": 23.64
+    },
+    {
+      "id": "mock-001-50 Freestyle-2025-26-2",
+      "swimmer_id": "mock-001",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-50-freestyle",
+      "time_seconds": 23.69
+    },
+    {
+      "id": "mock-001-50 Freestyle-0",
+      "swimmer_id": "mock-001",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-50-freestyle",
+      "time_seconds": 23.5
+    },
+    {
+      "id": "mock-001-50 Freestyle-1",
+      "swimmer_id": "mock-001",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-50-freestyle",
+      "time_seconds": 23.41
+    },
+    {
+      "id": "mock-001-50 Freestyle-2",
+      "swimmer_id": "mock-001",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-50-freestyle",
+      "time_seconds": 23.45
+    },
+    {
+      "id": "mock-001-100 Freestyle-2025-26-0",
+      "swimmer_id": "mock-001",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 51.97
+    },
+    {
+      "id": "mock-001-100 Freestyle-2025-26-1",
+      "swimmer_id": "mock-001",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 52.07
+    },
+    {
+      "id": "mock-001-100 Freestyle-2025-26-2",
+      "swimmer_id": "mock-001",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 51.71
+    },
+    {
+      "id": "mock-001-100 Freestyle-0",
+      "swimmer_id": "mock-001",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 51.2
+    },
+    {
+      "id": "mock-001-100 Freestyle-1",
+      "swimmer_id": "mock-001",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 50.89
+    },
+    {
+      "id": "mock-001-100 Freestyle-2",
+      "swimmer_id": "mock-001",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 50.86
+    },
+    {
+      "id": "mock-001-200 Freestyle-2025-26-0",
+      "swimmer_id": "mock-001",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 115.67
+    },
+    {
+      "id": "mock-001-200 Freestyle-2025-26-1",
+      "swimmer_id": "mock-001",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 115.21
+    },
+    {
+      "id": "mock-001-200 Freestyle-2025-26-2",
+      "swimmer_id": "mock-001",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 115.44
+    },
+    {
+      "id": "mock-001-200 Freestyle-0",
+      "swimmer_id": "mock-001",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 113.4
+    },
+    {
+      "id": "mock-001-200 Freestyle-1",
+      "swimmer_id": "mock-001",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 112.49
+    },
+    {
+      "id": "mock-001-200 Freestyle-2",
+      "swimmer_id": "mock-001",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 112.95
+    },
+    {
+      "id": "mock-002-200 Freestyle-2025-26-0",
+      "swimmer_id": "mock-002",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 110.43
+    },
+    {
+      "id": "mock-002-200 Freestyle-2025-26-1",
+      "swimmer_id": "mock-002",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 110.65
+    },
+    {
+      "id": "mock-002-200 Freestyle-2025-26-2",
+      "swimmer_id": "mock-002",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 109.88
+    },
+    {
+      "id": "mock-002-200 Freestyle-0",
+      "swimmer_id": "mock-002",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 108.8
+    },
+    {
+      "id": "mock-002-200 Freestyle-1",
+      "swimmer_id": "mock-002",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 108.15
+    },
+    {
+      "id": "mock-002-200 Freestyle-2",
+      "swimmer_id": "mock-002",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 108.08
+    },
+    {
+      "id": "mock-002-500 Freestyle-2025-26-0",
+      "swimmer_id": "mock-002",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-500-freestyle",
+      "time_seconds": 297.23
+    },
+    {
+      "id": "mock-002-500 Freestyle-2025-26-1",
+      "swimmer_id": "mock-002",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-500-freestyle",
+      "time_seconds": 296.04
+    },
+    {
+      "id": "mock-002-500 Freestyle-2025-26-2",
+      "swimmer_id": "mock-002",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-500-freestyle",
+      "time_seconds": 296.63
+    },
+    {
+      "id": "mock-002-500 Freestyle-0",
+      "swimmer_id": "mock-002",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-500-freestyle",
+      "time_seconds": 291.4
+    },
+    {
+      "id": "mock-002-500 Freestyle-1",
+      "swimmer_id": "mock-002",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-500-freestyle",
+      "time_seconds": 289.07
+    },
+    {
+      "id": "mock-002-500 Freestyle-2",
+      "swimmer_id": "mock-002",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-500-freestyle",
+      "time_seconds": 290.23
+    },
+    {
+      "id": "mock-002-1000 Freestyle-2025-26-0",
+      "swimmer_id": "mock-002",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-1000-freestyle",
+      "time_seconds": 618.28
+    },
+    {
+      "id": "mock-002-1000 Freestyle-2025-26-1",
+      "swimmer_id": "mock-002",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-1000-freestyle",
+      "time_seconds": 619.52
+    },
+    {
+      "id": "mock-002-1000 Freestyle-2025-26-2",
+      "swimmer_id": "mock-002",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-1000-freestyle",
+      "time_seconds": 615.19
+    },
+    {
+      "id": "mock-002-1000 Freestyle-0",
+      "swimmer_id": "mock-002",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-1000-freestyle",
+      "time_seconds": 603.2
+    },
+    {
+      "id": "mock-002-1000 Freestyle-1",
+      "swimmer_id": "mock-002",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-1000-freestyle",
+      "time_seconds": 597.17
+    },
+    {
+      "id": "mock-002-1000 Freestyle-2",
+      "swimmer_id": "mock-002",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-1000-freestyle",
+      "time_seconds": 596.56
+    },
+    {
+      "id": "mock-002-1650 Freestyle-2025-26-0",
+      "swimmer_id": "mock-002",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-1650-freestyle",
+      "time_seconds": 1018.59
+    },
+    {
+      "id": "mock-002-1650 Freestyle-2025-26-1",
+      "swimmer_id": "mock-002",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-1650-freestyle",
+      "time_seconds": 1014.51
+    },
+    {
+      "id": "mock-002-1650 Freestyle-2025-26-2",
+      "swimmer_id": "mock-002",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-1650-freestyle",
+      "time_seconds": 1016.55
+    },
+    {
+      "id": "mock-002-1650 Freestyle-0",
+      "swimmer_id": "mock-002",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-1650-freestyle",
+      "time_seconds": 1008.5
+    },
+    {
+      "id": "mock-002-1650 Freestyle-1",
+      "swimmer_id": "mock-002",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-1650-freestyle",
+      "time_seconds": 1004.47
+    },
+    {
+      "id": "mock-002-1650 Freestyle-2",
+      "swimmer_id": "mock-002",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-1650-freestyle",
+      "time_seconds": 1006.48
+    },
+    {
+      "id": "mock-003-100 Backstroke-2025-26-0",
+      "swimmer_id": "mock-003",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-100-backstroke",
+      "time_seconds": 60.49
+    },
+    {
+      "id": "mock-003-100 Backstroke-2025-26-1",
+      "swimmer_id": "mock-003",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-100-backstroke",
+      "time_seconds": 60.24
+    },
+    {
+      "id": "mock-003-100 Backstroke-2025-26-2",
+      "swimmer_id": "mock-003",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-100-backstroke",
+      "time_seconds": 60.37
+    },
+    {
+      "id": "mock-003-100 Backstroke-0",
+      "swimmer_id": "mock-003",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-100-backstroke",
+      "time_seconds": 59.3
+    },
+    {
+      "id": "mock-003-100 Backstroke-1",
+      "swimmer_id": "mock-003",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-100-backstroke",
+      "time_seconds": 58.83
+    },
+    {
+      "id": "mock-003-100 Backstroke-2",
+      "swimmer_id": "mock-003",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-100-backstroke",
+      "time_seconds": 59.06
+    },
+    {
+      "id": "mock-003-200 Backstroke-2025-26-0",
+      "swimmer_id": "mock-003",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-200-backstroke",
+      "time_seconds": 131.81
+    },
+    {
+      "id": "mock-003-200 Backstroke-2025-26-1",
+      "swimmer_id": "mock-003",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-200-backstroke",
+      "time_seconds": 132.08
+    },
+    {
+      "id": "mock-003-200 Backstroke-2025-26-2",
+      "swimmer_id": "mock-003",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-200-backstroke",
+      "time_seconds": 131.16
+    },
+    {
+      "id": "mock-003-200 Backstroke-0",
+      "swimmer_id": "mock-003",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-200-backstroke",
+      "time_seconds": 128.6
+    },
+    {
+      "id": "mock-003-200 Backstroke-1",
+      "swimmer_id": "mock-003",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-200-backstroke",
+      "time_seconds": 127.31
+    },
+    {
+      "id": "mock-003-200 Backstroke-2",
+      "swimmer_id": "mock-003",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-200-backstroke",
+      "time_seconds": 127.19
+    },
+    {
+      "id": "mock-003-200 Freestyle-2025-26-0",
+      "swimmer_id": "mock-003",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 120.7
+    },
+    {
+      "id": "mock-003-200 Freestyle-2025-26-1",
+      "swimmer_id": "mock-003",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 120.21
+    },
+    {
+      "id": "mock-003-200 Freestyle-2025-26-2",
+      "swimmer_id": "mock-003",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 120.45
+    },
+    {
+      "id": "mock-003-200 Freestyle-0",
+      "swimmer_id": "mock-003",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 119.5
+    },
+    {
+      "id": "mock-003-200 Freestyle-1",
+      "swimmer_id": "mock-003",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 119.02
+    },
+    {
+      "id": "mock-003-200 Freestyle-2",
+      "swimmer_id": "mock-003",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 119.26
+    },
+    {
+      "id": "mock-004-100 Breaststroke-2025-26-0",
+      "swimmer_id": "mock-004",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-100-breaststroke",
+      "time_seconds": 63.96
+    },
+    {
+      "id": "mock-004-100 Breaststroke-2025-26-1",
+      "swimmer_id": "mock-004",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-100-breaststroke",
+      "time_seconds": 64.09
+    },
+    {
+      "id": "mock-004-100 Breaststroke-2025-26-2",
+      "swimmer_id": "mock-004",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-100-breaststroke",
+      "time_seconds": 63.64
+    },
+    {
+      "id": "mock-004-100 Breaststroke-0",
+      "swimmer_id": "mock-004",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-100-breaststroke",
+      "time_seconds": 62.4
+    },
+    {
+      "id": "mock-004-100 Breaststroke-1",
+      "swimmer_id": "mock-004",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-100-breaststroke",
+      "time_seconds": 61.78
+    },
+    {
+      "id": "mock-004-100 Breaststroke-2",
+      "swimmer_id": "mock-004",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-100-breaststroke",
+      "time_seconds": 61.71
+    },
+    {
+      "id": "mock-004-200 Breaststroke-2025-26-0",
+      "swimmer_id": "mock-004",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-200-breaststroke",
+      "time_seconds": 137.56
+    },
+    {
+      "id": "mock-004-200 Breaststroke-2025-26-1",
+      "swimmer_id": "mock-004",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-200-breaststroke",
+      "time_seconds": 137.01
+    },
+    {
+      "id": "mock-004-200 Breaststroke-2025-26-2",
+      "swimmer_id": "mock-004",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-200-breaststroke",
+      "time_seconds": 137.29
+    },
+    {
+      "id": "mock-004-200 Breaststroke-0",
+      "swimmer_id": "mock-004",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-200-breaststroke",
+      "time_seconds": 136.2
+    },
+    {
+      "id": "mock-004-200 Breaststroke-1",
+      "swimmer_id": "mock-004",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-200-breaststroke",
+      "time_seconds": 135.66
+    },
+    {
+      "id": "mock-004-200 Breaststroke-2",
+      "swimmer_id": "mock-004",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-200-breaststroke",
+      "time_seconds": 135.93
+    },
+    {
+      "id": "mock-004-200 IM-2025-26-0",
+      "swimmer_id": "mock-004",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-200-im",
+      "time_seconds": 126.67
+    },
+    {
+      "id": "mock-004-200 IM-2025-26-1",
+      "swimmer_id": "mock-004",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-200-im",
+      "time_seconds": 126.93
+    },
+    {
+      "id": "mock-004-200 IM-2025-26-2",
+      "swimmer_id": "mock-004",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-200-im",
+      "time_seconds": 126.04
+    },
+    {
+      "id": "mock-004-200 IM-0",
+      "swimmer_id": "mock-004",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-200-im",
+      "time_seconds": 124.8
+    },
+    {
+      "id": "mock-004-200 IM-1",
+      "swimmer_id": "mock-004",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-200-im",
+      "time_seconds": 124.05
+    },
+    {
+      "id": "mock-004-200 IM-2",
+      "swimmer_id": "mock-004",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-200-im",
+      "time_seconds": 123.98
+    },
+    {
+      "id": "mock-005-100 Butterfly-2025-26-0",
+      "swimmer_id": "mock-005",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 59.39
+    },
+    {
+      "id": "mock-005-100 Butterfly-2025-26-1",
+      "swimmer_id": "mock-005",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 59.15
+    },
+    {
+      "id": "mock-005-100 Butterfly-2025-26-2",
+      "swimmer_id": "mock-005",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 59.27
+    },
+    {
+      "id": "mock-005-100 Butterfly-0",
+      "swimmer_id": "mock-005",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 58.8
+    },
+    {
+      "id": "mock-005-100 Butterfly-1",
+      "swimmer_id": "mock-005",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 58.56
+    },
+    {
+      "id": "mock-005-100 Butterfly-2",
+      "swimmer_id": "mock-005",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 58.68
+    },
+    {
+      "id": "mock-005-200 Butterfly-2025-26-0",
+      "swimmer_id": "mock-005",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-200-butterfly",
+      "time_seconds": 132.46
+    },
+    {
+      "id": "mock-005-200 Butterfly-2025-26-1",
+      "swimmer_id": "mock-005",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-200-butterfly",
+      "time_seconds": 132.72
+    },
+    {
+      "id": "mock-005-200 Butterfly-2025-26-2",
+      "swimmer_id": "mock-005",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-200-butterfly",
+      "time_seconds": 131.8
+    },
+    {
+      "id": "mock-005-200 Butterfly-0",
+      "swimmer_id": "mock-005",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-200-butterfly",
+      "time_seconds": 130.5
+    },
+    {
+      "id": "mock-005-200 Butterfly-1",
+      "swimmer_id": "mock-005",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-200-butterfly",
+      "time_seconds": 129.72
+    },
+    {
+      "id": "mock-005-200 Butterfly-2",
+      "swimmer_id": "mock-005",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-200-butterfly",
+      "time_seconds": 129.64
+    },
+    {
+      "id": "mock-005-100 Freestyle-2025-26-0",
+      "swimmer_id": "mock-005",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 56.71
+    },
+    {
+      "id": "mock-005-100 Freestyle-2025-26-1",
+      "swimmer_id": "mock-005",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 56.49
+    },
+    {
+      "id": "mock-005-100 Freestyle-2025-26-2",
+      "swimmer_id": "mock-005",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 56.6
+    },
+    {
+      "id": "mock-005-100 Freestyle-0",
+      "swimmer_id": "mock-005",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 55.6
+    },
+    {
+      "id": "mock-005-100 Freestyle-1",
+      "swimmer_id": "mock-005",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 55.16
+    },
+    {
+      "id": "mock-005-100 Freestyle-2",
+      "swimmer_id": "mock-005",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 55.38
+    },
+    {
+      "id": "mock-006-200 IM-2025-26-0",
+      "swimmer_id": "mock-006",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-200-im",
+      "time_seconds": 118.55
+    },
+    {
+      "id": "mock-006-200 IM-2025-26-1",
+      "swimmer_id": "mock-006",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-200-im",
+      "time_seconds": 118.79
+    },
+    {
+      "id": "mock-006-200 IM-2025-26-2",
+      "swimmer_id": "mock-006",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-200-im",
+      "time_seconds": 117.96
+    },
+    {
+      "id": "mock-006-200 IM-0",
+      "swimmer_id": "mock-006",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-200-im",
+      "time_seconds": 116.8
+    },
+    {
+      "id": "mock-006-200 IM-1",
+      "swimmer_id": "mock-006",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-200-im",
+      "time_seconds": 116.1
+    },
+    {
+      "id": "mock-006-200 IM-2",
+      "swimmer_id": "mock-006",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-200-im",
+      "time_seconds": 116.03
+    },
+    {
+      "id": "mock-006-400 IM-2025-26-0",
+      "swimmer_id": "mock-006",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-400-im",
+      "time_seconds": 256.33
+    },
+    {
+      "id": "mock-006-400 IM-2025-26-1",
+      "swimmer_id": "mock-006",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-400-im",
+      "time_seconds": 255.3
+    },
+    {
+      "id": "mock-006-400 IM-2025-26-2",
+      "swimmer_id": "mock-006",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-400-im",
+      "time_seconds": 255.81
+    },
+    {
+      "id": "mock-006-400 IM-0",
+      "swimmer_id": "mock-006",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-400-im",
+      "time_seconds": 251.3
+    },
+    {
+      "id": "mock-006-400 IM-1",
+      "swimmer_id": "mock-006",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-400-im",
+      "time_seconds": 249.29
+    },
+    {
+      "id": "mock-006-400 IM-2",
+      "swimmer_id": "mock-006",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-400-im",
+      "time_seconds": 250.29
+    },
+    {
+      "id": "mock-006-200 Backstroke-2025-26-0",
+      "swimmer_id": "mock-006",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-200-backstroke",
+      "time_seconds": 120.54
+    },
+    {
+      "id": "mock-006-200 Backstroke-2025-26-1",
+      "swimmer_id": "mock-006",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-200-backstroke",
+      "time_seconds": 120.78
+    },
+    {
+      "id": "mock-006-200 Backstroke-2025-26-2",
+      "swimmer_id": "mock-006",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-200-backstroke",
+      "time_seconds": 119.94
+    },
+    {
+      "id": "mock-006-200 Backstroke-0",
+      "swimmer_id": "mock-006",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-200-backstroke",
+      "time_seconds": 117.6
+    },
+    {
+      "id": "mock-006-200 Backstroke-1",
+      "swimmer_id": "mock-006",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-200-backstroke",
+      "time_seconds": 116.42
+    },
+    {
+      "id": "mock-006-200 Backstroke-2",
+      "swimmer_id": "mock-006",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-200-backstroke",
+      "time_seconds": 116.31
+    },
+    {
+      "id": "mock-006-200 Breaststroke-2025-26-0",
+      "swimmer_id": "mock-006",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-200-breaststroke",
+      "time_seconds": 138.57
+    },
+    {
+      "id": "mock-006-200 Breaststroke-2025-26-1",
+      "swimmer_id": "mock-006",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-200-breaststroke",
+      "time_seconds": 138.02
+    },
+    {
+      "id": "mock-006-200 Breaststroke-2025-26-2",
+      "swimmer_id": "mock-006",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-200-breaststroke",
+      "time_seconds": 138.29
+    },
+    {
+      "id": "mock-006-200 Breaststroke-0",
+      "swimmer_id": "mock-006",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-200-breaststroke",
+      "time_seconds": 137.2
+    },
+    {
+      "id": "mock-006-200 Breaststroke-1",
+      "swimmer_id": "mock-006",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-200-breaststroke",
+      "time_seconds": 136.65
+    },
+    {
+      "id": "mock-006-200 Breaststroke-2",
+      "swimmer_id": "mock-006",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-200-breaststroke",
+      "time_seconds": 136.93
+    },
+    {
+      "id": "mock-007-100 Freestyle-2025-26-0",
+      "swimmer_id": "mock-007",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 58.24
+    },
+    {
+      "id": "mock-007-100 Freestyle-2025-26-1",
+      "swimmer_id": "mock-007",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 58.01
+    },
+    {
+      "id": "mock-007-100 Freestyle-2025-26-2",
+      "swimmer_id": "mock-007",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 58.13
+    },
+    {
+      "id": "mock-007-100 Freestyle-0",
+      "swimmer_id": "mock-007",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 57.1
+    },
+    {
+      "id": "mock-007-100 Freestyle-1",
+      "swimmer_id": "mock-007",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 56.64
+    },
+    {
+      "id": "mock-007-100 Freestyle-2",
+      "swimmer_id": "mock-007",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 56.87
+    },
+    {
+      "id": "mock-007-200 Freestyle-2025-26-0",
+      "swimmer_id": "mock-007",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 125.87
+    },
+    {
+      "id": "mock-007-200 Freestyle-2025-26-1",
+      "swimmer_id": "mock-007",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 126.12
+    },
+    {
+      "id": "mock-007-200 Freestyle-2025-26-2",
+      "swimmer_id": "mock-007",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 125.24
+    },
+    {
+      "id": "mock-007-200 Freestyle-0",
+      "swimmer_id": "mock-007",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 122.8
+    },
+    {
+      "id": "mock-007-200 Freestyle-1",
+      "swimmer_id": "mock-007",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 121.57
+    },
+    {
+      "id": "mock-007-200 Freestyle-2",
+      "swimmer_id": "mock-007",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 121.45
+    },
+    {
+      "id": "mock-007-500 Freestyle-2025-26-0",
+      "swimmer_id": "mock-007",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-500-freestyle",
+      "time_seconds": 329.66
+    },
+    {
+      "id": "mock-007-500 Freestyle-2025-26-1",
+      "swimmer_id": "mock-007",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-500-freestyle",
+      "time_seconds": 328.35
+    },
+    {
+      "id": "mock-007-500 Freestyle-2025-26-2",
+      "swimmer_id": "mock-007",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-500-freestyle",
+      "time_seconds": 329
+    },
+    {
+      "id": "mock-007-500 Freestyle-0",
+      "swimmer_id": "mock-007",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-500-freestyle",
+      "time_seconds": 326.4
+    },
+    {
+      "id": "mock-007-500 Freestyle-1",
+      "swimmer_id": "mock-007",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-500-freestyle",
+      "time_seconds": 325.09
+    },
+    {
+      "id": "mock-007-500 Freestyle-2",
+      "swimmer_id": "mock-007",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-500-freestyle",
+      "time_seconds": 325.75
+    },
+    {
+      "id": "mock-008-50 Freestyle-2025-26-0",
+      "swimmer_id": "mock-008",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-50-freestyle",
+      "time_seconds": 24.7
+    },
+    {
+      "id": "mock-008-50 Freestyle-2025-26-1",
+      "swimmer_id": "mock-008",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-50-freestyle",
+      "time_seconds": 24.75
+    },
+    {
+      "id": "mock-008-50 Freestyle-2025-26-2",
+      "swimmer_id": "mock-008",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-50-freestyle",
+      "time_seconds": 24.58
+    },
+    {
+      "id": "mock-008-50 Freestyle-0",
+      "swimmer_id": "mock-008",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-50-freestyle",
+      "time_seconds": 24.1
+    },
+    {
+      "id": "mock-008-50 Freestyle-1",
+      "swimmer_id": "mock-008",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-50-freestyle",
+      "time_seconds": 23.86
+    },
+    {
+      "id": "mock-008-50 Freestyle-2",
+      "swimmer_id": "mock-008",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-50-freestyle",
+      "time_seconds": 23.83
+    },
+    {
+      "id": "mock-008-100 Freestyle-2025-26-0",
+      "swimmer_id": "mock-008",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 53.13
+    },
+    {
+      "id": "mock-008-100 Freestyle-2025-26-1",
+      "swimmer_id": "mock-008",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 52.91
+    },
+    {
+      "id": "mock-008-100 Freestyle-2025-26-2",
+      "swimmer_id": "mock-008",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 53.02
+    },
+    {
+      "id": "mock-008-100 Freestyle-0",
+      "swimmer_id": "mock-008",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 52.6
+    },
+    {
+      "id": "mock-008-100 Freestyle-1",
+      "swimmer_id": "mock-008",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 52.39
+    },
+    {
+      "id": "mock-008-100 Freestyle-2",
+      "swimmer_id": "mock-008",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 52.49
+    },
+    {
+      "id": "mock-008-100 Butterfly-2025-26-0",
+      "swimmer_id": "mock-008",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 58.26
+    },
+    {
+      "id": "mock-008-100 Butterfly-2025-26-1",
+      "swimmer_id": "mock-008",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 58.38
+    },
+    {
+      "id": "mock-008-100 Butterfly-2025-26-2",
+      "swimmer_id": "mock-008",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 57.97
+    },
+    {
+      "id": "mock-008-100 Butterfly-0",
+      "swimmer_id": "mock-008",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 57.4
+    },
+    {
+      "id": "mock-008-100 Butterfly-1",
+      "swimmer_id": "mock-008",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 57.06
+    },
+    {
+      "id": "mock-008-100 Butterfly-2",
+      "swimmer_id": "mock-008",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 57.02
+    },
+    {
+      "id": "mock-008-200 Freestyle-2025-26-0",
+      "swimmer_id": "mock-008",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 119.54
+    },
+    {
+      "id": "mock-008-200 Freestyle-2025-26-1",
+      "swimmer_id": "mock-008",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 119.07
+    },
+    {
+      "id": "mock-008-200 Freestyle-2025-26-2",
+      "swimmer_id": "mock-008",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 119.3
+    },
+    {
+      "id": "mock-008-200 Freestyle-0",
+      "swimmer_id": "mock-008",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 117.2
+    },
+    {
+      "id": "mock-008-200 Freestyle-1",
+      "swimmer_id": "mock-008",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 116.26
+    },
+    {
+      "id": "mock-008-200 Freestyle-2",
+      "swimmer_id": "mock-008",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 116.73
+    },
+    {
+      "id": "mock-009-500 Freestyle-2025-26-0",
+      "swimmer_id": "mock-009",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-500-freestyle",
+      "time_seconds": 301.49
+    },
+    {
+      "id": "mock-009-500 Freestyle-2025-26-1",
+      "swimmer_id": "mock-009",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-500-freestyle",
+      "time_seconds": 300.28
+    },
+    {
+      "id": "mock-009-500 Freestyle-2025-26-2",
+      "swimmer_id": "mock-009",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-500-freestyle",
+      "time_seconds": 300.88
+    },
+    {
+      "id": "mock-009-500 Freestyle-0",
+      "swimmer_id": "mock-009",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-500-freestyle",
+      "time_seconds": 298.5
+    },
+    {
+      "id": "mock-009-500 Freestyle-1",
+      "swimmer_id": "mock-009",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-500-freestyle",
+      "time_seconds": 297.31
+    },
+    {
+      "id": "mock-009-500 Freestyle-2",
+      "swimmer_id": "mock-009",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-500-freestyle",
+      "time_seconds": 297.9
+    },
+    {
+      "id": "mock-009-1000 Freestyle-2025-26-0",
+      "swimmer_id": "mock-009",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-1000-freestyle",
+      "time_seconds": 628.59
+    },
+    {
+      "id": "mock-009-1000 Freestyle-2025-26-1",
+      "swimmer_id": "mock-009",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-1000-freestyle",
+      "time_seconds": 629.85
+    },
+    {
+      "id": "mock-009-1000 Freestyle-2025-26-2",
+      "swimmer_id": "mock-009",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-1000-freestyle",
+      "time_seconds": 625.45
+    },
+    {
+      "id": "mock-009-1000 Freestyle-0",
+      "swimmer_id": "mock-009",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-1000-freestyle",
+      "time_seconds": 619.3
+    },
+    {
+      "id": "mock-009-1000 Freestyle-1",
+      "swimmer_id": "mock-009",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-1000-freestyle",
+      "time_seconds": 615.58
+    },
+    {
+      "id": "mock-009-1000 Freestyle-2",
+      "swimmer_id": "mock-009",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-1000-freestyle",
+      "time_seconds": 615.21
+    },
+    {
+      "id": "mock-009-1650 Freestyle-2025-26-0",
+      "swimmer_id": "mock-009",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-1650-freestyle",
+      "time_seconds": 1062.43
+    },
+    {
+      "id": "mock-009-1650 Freestyle-2025-26-1",
+      "swimmer_id": "mock-009",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-1650-freestyle",
+      "time_seconds": 1058.18
+    },
+    {
+      "id": "mock-009-1650 Freestyle-2025-26-2",
+      "swimmer_id": "mock-009",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-1650-freestyle",
+      "time_seconds": 1060.31
+    },
+    {
+      "id": "mock-009-1650 Freestyle-0",
+      "swimmer_id": "mock-009",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-1650-freestyle",
+      "time_seconds": 1041.6
+    },
+    {
+      "id": "mock-009-1650 Freestyle-1",
+      "swimmer_id": "mock-009",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-1650-freestyle",
+      "time_seconds": 1033.27
+    },
+    {
+      "id": "mock-009-1650 Freestyle-2",
+      "swimmer_id": "mock-009",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-1650-freestyle",
+      "time_seconds": 1037.43
+    },
+    {
+      "id": "mock-010-100 Backstroke-2025-26-0",
+      "swimmer_id": "mock-010",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-100-backstroke",
+      "time_seconds": 62.32
+    },
+    {
+      "id": "mock-010-100 Backstroke-2025-26-1",
+      "swimmer_id": "mock-010",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-100-backstroke",
+      "time_seconds": 62.45
+    },
+    {
+      "id": "mock-010-100 Backstroke-2025-26-2",
+      "swimmer_id": "mock-010",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-100-backstroke",
+      "time_seconds": 62.01
+    },
+    {
+      "id": "mock-010-100 Backstroke-0",
+      "swimmer_id": "mock-010",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-100-backstroke",
+      "time_seconds": 61.4
+    },
+    {
+      "id": "mock-010-100 Backstroke-1",
+      "swimmer_id": "mock-010",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-100-backstroke",
+      "time_seconds": 61.03
+    },
+    {
+      "id": "mock-010-100 Backstroke-2",
+      "swimmer_id": "mock-010",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-100-backstroke",
+      "time_seconds": 60.99
+    },
+    {
+      "id": "mock-010-200 Backstroke-2025-26-0",
+      "swimmer_id": "mock-010",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-200-backstroke",
+      "time_seconds": 134.74
+    },
+    {
+      "id": "mock-010-200 Backstroke-2025-26-1",
+      "swimmer_id": "mock-010",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-200-backstroke",
+      "time_seconds": 134.2
+    },
+    {
+      "id": "mock-010-200 Backstroke-2025-26-2",
+      "swimmer_id": "mock-010",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-200-backstroke",
+      "time_seconds": 134.47
+    },
+    {
+      "id": "mock-010-200 Backstroke-0",
+      "swimmer_id": "mock-010",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-200-backstroke",
+      "time_seconds": 132.1
+    },
+    {
+      "id": "mock-010-200 Backstroke-1",
+      "swimmer_id": "mock-010",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-200-backstroke",
+      "time_seconds": 131.04
+    },
+    {
+      "id": "mock-010-200 Backstroke-2",
+      "swimmer_id": "mock-010",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-200-backstroke",
+      "time_seconds": 131.57
+    },
+    {
+      "id": "mock-010-200 IM-2025-26-0",
+      "swimmer_id": "mock-010",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-200-im",
+      "time_seconds": 140.63
+    },
+    {
+      "id": "mock-010-200 IM-2025-26-1",
+      "swimmer_id": "mock-010",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-200-im",
+      "time_seconds": 140.91
+    },
+    {
+      "id": "mock-010-200 IM-2025-26-2",
+      "swimmer_id": "mock-010",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-200-im",
+      "time_seconds": 139.93
+    },
+    {
+      "id": "mock-010-200 IM-0",
+      "swimmer_id": "mock-010",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-200-im",
+      "time_seconds": 137.2
+    },
+    {
+      "id": "mock-010-200 IM-1",
+      "swimmer_id": "mock-010",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-200-im",
+      "time_seconds": 135.83
+    },
+    {
+      "id": "mock-010-200 IM-2",
+      "swimmer_id": "mock-010",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-200-im",
+      "time_seconds": 135.69
+    },
+    {
+      "id": "mock-010-400 IM-2025-26-0",
+      "swimmer_id": "mock-010",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-400-im",
+      "time_seconds": 294.52
+    },
+    {
+      "id": "mock-010-400 IM-2025-26-1",
+      "swimmer_id": "mock-010",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-400-im",
+      "time_seconds": 293.34
+    },
+    {
+      "id": "mock-010-400 IM-2025-26-2",
+      "swimmer_id": "mock-010",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-400-im",
+      "time_seconds": 293.93
+    },
+    {
+      "id": "mock-010-400 IM-0",
+      "swimmer_id": "mock-010",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-400-im",
+      "time_seconds": 291.6
+    },
+    {
+      "id": "mock-010-400 IM-1",
+      "swimmer_id": "mock-010",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-400-im",
+      "time_seconds": 290.43
+    },
+    {
+      "id": "mock-010-400 IM-2",
+      "swimmer_id": "mock-010",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-400-im",
+      "time_seconds": 291.02
+    },
+    {
+      "id": "mock-011-100 Breaststroke-2025-26-0",
+      "swimmer_id": "mock-011",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-100-breaststroke",
+      "time_seconds": 62.02
+    },
+    {
+      "id": "mock-011-100 Breaststroke-2025-26-1",
+      "swimmer_id": "mock-011",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-100-breaststroke",
+      "time_seconds": 61.77
+    },
+    {
+      "id": "mock-011-100 Breaststroke-2025-26-2",
+      "swimmer_id": "mock-011",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-100-breaststroke",
+      "time_seconds": 61.89
+    },
+    {
+      "id": "mock-011-100 Breaststroke-0",
+      "swimmer_id": "mock-011",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-100-breaststroke",
+      "time_seconds": 60.8
+    },
+    {
+      "id": "mock-011-100 Breaststroke-1",
+      "swimmer_id": "mock-011",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-100-breaststroke",
+      "time_seconds": 60.31
+    },
+    {
+      "id": "mock-011-100 Breaststroke-2",
+      "swimmer_id": "mock-011",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-100-breaststroke",
+      "time_seconds": 60.56
+    },
+    {
+      "id": "mock-011-200 Breaststroke-2025-26-0",
+      "swimmer_id": "mock-011",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-200-breaststroke",
+      "time_seconds": 136.84
+    },
+    {
+      "id": "mock-011-200 Breaststroke-2025-26-1",
+      "swimmer_id": "mock-011",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-200-breaststroke",
+      "time_seconds": 137.11
+    },
+    {
+      "id": "mock-011-200 Breaststroke-2025-26-2",
+      "swimmer_id": "mock-011",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-200-breaststroke",
+      "time_seconds": 136.15
+    },
+    {
+      "id": "mock-011-200 Breaststroke-0",
+      "swimmer_id": "mock-011",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-200-breaststroke",
+      "time_seconds": 133.5
+    },
+    {
+      "id": "mock-011-200 Breaststroke-1",
+      "swimmer_id": "mock-011",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-200-breaststroke",
+      "time_seconds": 132.16
+    },
+    {
+      "id": "mock-011-200 Breaststroke-2",
+      "swimmer_id": "mock-011",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-200-breaststroke",
+      "time_seconds": 132.03
+    },
+    {
+      "id": "mock-011-200 IM-2025-26-0",
+      "swimmer_id": "mock-011",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-200-im",
+      "time_seconds": 122.11
+    },
+    {
+      "id": "mock-011-200 IM-2025-26-1",
+      "swimmer_id": "mock-011",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-200-im",
+      "time_seconds": 121.62
+    },
+    {
+      "id": "mock-011-200 IM-2025-26-2",
+      "swimmer_id": "mock-011",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-200-im",
+      "time_seconds": 121.86
+    },
+    {
+      "id": "mock-011-200 IM-0",
+      "swimmer_id": "mock-011",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-200-im",
+      "time_seconds": 120.9
+    },
+    {
+      "id": "mock-011-200 IM-1",
+      "swimmer_id": "mock-011",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-200-im",
+      "time_seconds": 120.42
+    },
+    {
+      "id": "mock-011-200 IM-2",
+      "swimmer_id": "mock-011",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-200-im",
+      "time_seconds": 120.66
+    },
+    {
+      "id": "mock-012-100 Butterfly-2025-26-0",
+      "swimmer_id": "mock-012",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 61.6
+    },
+    {
+      "id": "mock-012-100 Butterfly-2025-26-1",
+      "swimmer_id": "mock-012",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 61.73
+    },
+    {
+      "id": "mock-012-100 Butterfly-2025-26-2",
+      "swimmer_id": "mock-012",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 61.29
+    },
+    {
+      "id": "mock-012-100 Butterfly-0",
+      "swimmer_id": "mock-012",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 60.1
+    },
+    {
+      "id": "mock-012-100 Butterfly-1",
+      "swimmer_id": "mock-012",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 59.5
+    },
+    {
+      "id": "mock-012-100 Butterfly-2",
+      "swimmer_id": "mock-012",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 59.44
+    },
+    {
+      "id": "mock-012-200 Butterfly-2025-26-0",
+      "swimmer_id": "mock-012",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-200-butterfly",
+      "time_seconds": 135.14
+    },
+    {
+      "id": "mock-012-200 Butterfly-2025-26-1",
+      "swimmer_id": "mock-012",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-200-butterfly",
+      "time_seconds": 134.6
+    },
+    {
+      "id": "mock-012-200 Butterfly-2025-26-2",
+      "swimmer_id": "mock-012",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-200-butterfly",
+      "time_seconds": 134.87
+    },
+    {
+      "id": "mock-012-200 Butterfly-0",
+      "swimmer_id": "mock-012",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-200-butterfly",
+      "time_seconds": 133.8
+    },
+    {
+      "id": "mock-012-200 Butterfly-1",
+      "swimmer_id": "mock-012",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-200-butterfly",
+      "time_seconds": 133.26
+    },
+    {
+      "id": "mock-012-200 Butterfly-2",
+      "swimmer_id": "mock-012",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-200-butterfly",
+      "time_seconds": 133.53
+    },
+    {
+      "id": "mock-012-200 IM-2025-26-0",
+      "swimmer_id": "mock-012",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-200-im",
+      "time_seconds": 138.55
+    },
+    {
+      "id": "mock-012-200 IM-2025-26-1",
+      "swimmer_id": "mock-012",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-200-im",
+      "time_seconds": 138.82
+    },
+    {
+      "id": "mock-012-200 IM-2025-26-2",
+      "swimmer_id": "mock-012",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-200-im",
+      "time_seconds": 137.85
+    },
+    {
+      "id": "mock-012-200 IM-0",
+      "swimmer_id": "mock-012",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-200-im",
+      "time_seconds": 136.5
+    },
+    {
+      "id": "mock-012-200 IM-1",
+      "swimmer_id": "mock-012",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-200-im",
+      "time_seconds": 135.68
+    },
+    {
+      "id": "mock-012-200 IM-2",
+      "swimmer_id": "mock-012",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-200-im",
+      "time_seconds": 135.6
+    },
+    {
+      "id": "mock-012-400 IM-2025-26-0",
+      "swimmer_id": "mock-012",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-400-im",
+      "time_seconds": 293.66
+    },
+    {
+      "id": "mock-012-400 IM-2025-26-1",
+      "swimmer_id": "mock-012",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-400-im",
+      "time_seconds": 292.48
+    },
+    {
+      "id": "mock-012-400 IM-2025-26-2",
+      "swimmer_id": "mock-012",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-400-im",
+      "time_seconds": 293.07
+    },
+    {
+      "id": "mock-012-400 IM-0",
+      "swimmer_id": "mock-012",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-400-im",
+      "time_seconds": 287.9
+    },
+    {
+      "id": "mock-012-400 IM-1",
+      "swimmer_id": "mock-012",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-400-im",
+      "time_seconds": 285.6
+    },
+    {
+      "id": "mock-012-400 IM-2",
+      "swimmer_id": "mock-012",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-400-im",
+      "time_seconds": 286.75
+    },
+    {
+      "id": "mock-013-100 Freestyle-2025-26-0",
+      "swimmer_id": "mock-013",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 54.84
+    },
+    {
+      "id": "mock-013-100 Freestyle-2025-26-1",
+      "swimmer_id": "mock-013",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 54.62
+    },
+    {
+      "id": "mock-013-100 Freestyle-2025-26-2",
+      "swimmer_id": "mock-013",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 54.73
+    },
+    {
+      "id": "mock-013-100 Freestyle-0",
+      "swimmer_id": "mock-013",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 54.3
+    },
+    {
+      "id": "mock-013-100 Freestyle-1",
+      "swimmer_id": "mock-013",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 54.08
+    },
+    {
+      "id": "mock-013-100 Freestyle-2",
+      "swimmer_id": "mock-013",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 54.19
+    },
+    {
+      "id": "mock-013-200 Freestyle-2025-26-0",
+      "swimmer_id": "mock-013",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 120.18
+    },
+    {
+      "id": "mock-013-200 Freestyle-2025-26-1",
+      "swimmer_id": "mock-013",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 120.42
+    },
+    {
+      "id": "mock-013-200 Freestyle-2025-26-2",
+      "swimmer_id": "mock-013",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 119.58
+    },
+    {
+      "id": "mock-013-200 Freestyle-0",
+      "swimmer_id": "mock-013",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 118.4
+    },
+    {
+      "id": "mock-013-200 Freestyle-1",
+      "swimmer_id": "mock-013",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 117.69
+    },
+    {
+      "id": "mock-013-200 Freestyle-2",
+      "swimmer_id": "mock-013",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 117.62
+    },
+    {
+      "id": "mock-013-100 Backstroke-2025-26-0",
+      "swimmer_id": "mock-013",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-100-backstroke",
+      "time_seconds": 61.4
+    },
+    {
+      "id": "mock-013-100 Backstroke-2025-26-1",
+      "swimmer_id": "mock-013",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-100-backstroke",
+      "time_seconds": 61.16
+    },
+    {
+      "id": "mock-013-100 Backstroke-2025-26-2",
+      "swimmer_id": "mock-013",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-100-backstroke",
+      "time_seconds": 61.28
+    },
+    {
+      "id": "mock-013-100 Backstroke-0",
+      "swimmer_id": "mock-013",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-100-backstroke",
+      "time_seconds": 60.2
+    },
+    {
+      "id": "mock-013-100 Backstroke-1",
+      "swimmer_id": "mock-013",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-100-backstroke",
+      "time_seconds": 59.72
+    },
+    {
+      "id": "mock-013-100 Backstroke-2",
+      "swimmer_id": "mock-013",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-100-backstroke",
+      "time_seconds": 59.96
+    },
+    {
+      "id": "mock-013-100 Butterfly-2025-26-0",
+      "swimmer_id": "mock-013",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 60.58
+    },
+    {
+      "id": "mock-013-100 Butterfly-2025-26-1",
+      "swimmer_id": "mock-013",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 60.7
+    },
+    {
+      "id": "mock-013-100 Butterfly-2025-26-2",
+      "swimmer_id": "mock-013",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 60.27
+    },
+    {
+      "id": "mock-013-100 Butterfly-0",
+      "swimmer_id": "mock-013",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 59.1
+    },
+    {
+      "id": "mock-013-100 Butterfly-1",
+      "swimmer_id": "mock-013",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 58.51
+    },
+    {
+      "id": "mock-013-100 Butterfly-2",
+      "swimmer_id": "mock-013",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 58.45
+    },
+    {
+      "id": "mock-013-200 IM-2025-26-0",
+      "swimmer_id": "mock-013",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-200-im",
+      "time_seconds": 133.93
+    },
+    {
+      "id": "mock-013-200 IM-2025-26-1",
+      "swimmer_id": "mock-013",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-200-im",
+      "time_seconds": 133.39
+    },
+    {
+      "id": "mock-013-200 IM-2025-26-2",
+      "swimmer_id": "mock-013",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-200-im",
+      "time_seconds": 133.66
+    },
+    {
+      "id": "mock-013-200 IM-0",
+      "swimmer_id": "mock-013",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-200-im",
+      "time_seconds": 132.6
+    },
+    {
+      "id": "mock-013-200 IM-1",
+      "swimmer_id": "mock-013",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-200-im",
+      "time_seconds": 132.07
+    },
+    {
+      "id": "mock-013-200 IM-2",
+      "swimmer_id": "mock-013",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-200-im",
+      "time_seconds": 132.33
+    },
+    {
+      "id": "mock-014-50 Freestyle-2025-26-0",
+      "swimmer_id": "mock-014",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-50-freestyle",
+      "time_seconds": 22.13
+    },
+    {
+      "id": "mock-014-50 Freestyle-2025-26-1",
+      "swimmer_id": "mock-014",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-50-freestyle",
+      "time_seconds": 22.17
+    },
+    {
+      "id": "mock-014-50 Freestyle-2025-26-2",
+      "swimmer_id": "mock-014",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-50-freestyle",
+      "time_seconds": 22.02
+    },
+    {
+      "id": "mock-014-50 Freestyle-0",
+      "swimmer_id": "mock-014",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-50-freestyle",
+      "time_seconds": 21.8
+    },
+    {
+      "id": "mock-014-50 Freestyle-1",
+      "swimmer_id": "mock-014",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-50-freestyle",
+      "time_seconds": 21.67
+    },
+    {
+      "id": "mock-014-50 Freestyle-2",
+      "swimmer_id": "mock-014",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-50-freestyle",
+      "time_seconds": 21.66
+    },
+    {
+      "id": "mock-014-100 Freestyle-2025-26-0",
+      "swimmer_id": "mock-014",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 49.06
+    },
+    {
+      "id": "mock-014-100 Freestyle-2025-26-1",
+      "swimmer_id": "mock-014",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 48.87
+    },
+    {
+      "id": "mock-014-100 Freestyle-2025-26-2",
+      "swimmer_id": "mock-014",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 48.96
+    },
+    {
+      "id": "mock-014-100 Freestyle-0",
+      "swimmer_id": "mock-014",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 48.1
+    },
+    {
+      "id": "mock-014-100 Freestyle-1",
+      "swimmer_id": "mock-014",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 47.72
+    },
+    {
+      "id": "mock-014-100 Freestyle-2",
+      "swimmer_id": "mock-014",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 47.91
+    },
+    {
+      "id": "mock-014-100 Butterfly-2025-26-0",
+      "swimmer_id": "mock-014",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 53.71
+    },
+    {
+      "id": "mock-014-100 Butterfly-2025-26-1",
+      "swimmer_id": "mock-014",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 53.82
+    },
+    {
+      "id": "mock-014-100 Butterfly-2025-26-2",
+      "swimmer_id": "mock-014",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 53.44
+    },
+    {
+      "id": "mock-014-100 Butterfly-0",
+      "swimmer_id": "mock-014",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 52.4
+    },
+    {
+      "id": "mock-014-100 Butterfly-1",
+      "swimmer_id": "mock-014",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 51.88
+    },
+    {
+      "id": "mock-014-100 Butterfly-2",
+      "swimmer_id": "mock-014",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 51.82
+    },
+    {
+      "id": "mock-015-200 Freestyle-2025-26-0",
+      "swimmer_id": "mock-015",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 126.07
+    },
+    {
+      "id": "mock-015-200 Freestyle-2025-26-1",
+      "swimmer_id": "mock-015",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 125.57
+    },
+    {
+      "id": "mock-015-200 Freestyle-2025-26-2",
+      "swimmer_id": "mock-015",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 125.82
+    },
+    {
+      "id": "mock-015-200 Freestyle-0",
+      "swimmer_id": "mock-015",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 123.6
+    },
+    {
+      "id": "mock-015-200 Freestyle-1",
+      "swimmer_id": "mock-015",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 122.61
+    },
+    {
+      "id": "mock-015-200 Freestyle-2",
+      "swimmer_id": "mock-015",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 123.11
+    },
+    {
+      "id": "mock-015-500 Freestyle-2025-26-0",
+      "swimmer_id": "mock-015",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-500-freestyle",
+      "time_seconds": 333.84
+    },
+    {
+      "id": "mock-015-500 Freestyle-2025-26-1",
+      "swimmer_id": "mock-015",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-500-freestyle",
+      "time_seconds": 334.51
+    },
+    {
+      "id": "mock-015-500 Freestyle-2025-26-2",
+      "swimmer_id": "mock-015",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-500-freestyle",
+      "time_seconds": 332.17
+    },
+    {
+      "id": "mock-015-500 Freestyle-0",
+      "swimmer_id": "mock-015",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-500-freestyle",
+      "time_seconds": 325.7
+    },
+    {
+      "id": "mock-015-500 Freestyle-1",
+      "swimmer_id": "mock-015",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-500-freestyle",
+      "time_seconds": 322.44
+    },
+    {
+      "id": "mock-015-500 Freestyle-2",
+      "swimmer_id": "mock-015",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-500-freestyle",
+      "time_seconds": 322.12
+    },
+    {
+      "id": "mock-015-1650 Freestyle-2025-26-0",
+      "swimmer_id": "mock-015",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-1650-freestyle",
+      "time_seconds": 1135.54
+    },
+    {
+      "id": "mock-015-1650 Freestyle-2025-26-1",
+      "swimmer_id": "mock-015",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-1650-freestyle",
+      "time_seconds": 1131
+    },
+    {
+      "id": "mock-015-1650 Freestyle-2025-26-2",
+      "swimmer_id": "mock-015",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-1650-freestyle",
+      "time_seconds": 1133.27
+    },
+    {
+      "id": "mock-015-1650 Freestyle-0",
+      "swimmer_id": "mock-015",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-1650-freestyle",
+      "time_seconds": 1124.3
+    },
+    {
+      "id": "mock-015-1650 Freestyle-1",
+      "swimmer_id": "mock-015",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-1650-freestyle",
+      "time_seconds": 1119.8
+    },
+    {
+      "id": "mock-015-1650 Freestyle-2",
+      "swimmer_id": "mock-015",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-1650-freestyle",
+      "time_seconds": 1122.05
+    },
+    {
+      "id": "mock-015-400 IM-2025-26-0",
+      "swimmer_id": "mock-015",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-400-im",
+      "time_seconds": 291.1
+    },
+    {
+      "id": "mock-015-400 IM-2025-26-1",
+      "swimmer_id": "mock-015",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-400-im",
+      "time_seconds": 291.68
+    },
+    {
+      "id": "mock-015-400 IM-2025-26-2",
+      "swimmer_id": "mock-015",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-400-im",
+      "time_seconds": 289.65
+    },
+    {
+      "id": "mock-015-400 IM-0",
+      "swimmer_id": "mock-015",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-400-im",
+      "time_seconds": 286.8
+    },
+    {
+      "id": "mock-015-400 IM-1",
+      "swimmer_id": "mock-015",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-400-im",
+      "time_seconds": 285.08
+    },
+    {
+      "id": "mock-015-400 IM-2",
+      "swimmer_id": "mock-015",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-400-im",
+      "time_seconds": 284.91
+    },
+    {
+      "id": "mock-016-100 Backstroke-2025-26-0",
+      "swimmer_id": "mock-016",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-100-backstroke",
+      "time_seconds": 57.71
+    },
+    {
+      "id": "mock-016-100 Backstroke-2025-26-1",
+      "swimmer_id": "mock-016",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-100-backstroke",
+      "time_seconds": 57.82
+    },
+    {
+      "id": "mock-016-100 Backstroke-2025-26-2",
+      "swimmer_id": "mock-016",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-100-backstroke",
+      "time_seconds": 57.42
+    },
+    {
+      "id": "mock-016-100 Backstroke-0",
+      "swimmer_id": "mock-016",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-100-backstroke",
+      "time_seconds": 56.3
+    },
+    {
+      "id": "mock-016-100 Backstroke-1",
+      "swimmer_id": "mock-016",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-100-backstroke",
+      "time_seconds": 55.74
+    },
+    {
+      "id": "mock-016-100 Backstroke-2",
+      "swimmer_id": "mock-016",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-100-backstroke",
+      "time_seconds": 55.68
+    },
+    {
+      "id": "mock-016-200 Backstroke-2025-26-0",
+      "swimmer_id": "mock-016",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-200-backstroke",
+      "time_seconds": 122.41
+    },
+    {
+      "id": "mock-016-200 Backstroke-2025-26-1",
+      "swimmer_id": "mock-016",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-200-backstroke",
+      "time_seconds": 121.92
+    },
+    {
+      "id": "mock-016-200 Backstroke-2025-26-2",
+      "swimmer_id": "mock-016",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-200-backstroke",
+      "time_seconds": 122.17
+    },
+    {
+      "id": "mock-016-200 Backstroke-0",
+      "swimmer_id": "mock-016",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-200-backstroke",
+      "time_seconds": 121.2
+    },
+    {
+      "id": "mock-016-200 Backstroke-1",
+      "swimmer_id": "mock-016",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-200-backstroke",
+      "time_seconds": 120.72
+    },
+    {
+      "id": "mock-016-200 Backstroke-2",
+      "swimmer_id": "mock-016",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-200-backstroke",
+      "time_seconds": 120.96
+    },
+    {
+      "id": "mock-016-100 Freestyle-2025-26-0",
+      "swimmer_id": "mock-016",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 53.59
+    },
+    {
+      "id": "mock-016-100 Freestyle-2025-26-1",
+      "swimmer_id": "mock-016",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 53.7
+    },
+    {
+      "id": "mock-016-100 Freestyle-2025-26-2",
+      "swimmer_id": "mock-016",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 53.32
+    },
+    {
+      "id": "mock-016-100 Freestyle-0",
+      "swimmer_id": "mock-016",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 52.8
+    },
+    {
+      "id": "mock-016-100 Freestyle-1",
+      "swimmer_id": "mock-016",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 52.48
+    },
+    {
+      "id": "mock-016-100 Freestyle-2",
+      "swimmer_id": "mock-016",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 52.45
+    },
+    {
+      "id": "mock-017-100 Breaststroke-2025-26-0",
+      "swimmer_id": "mock-017",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-100-breaststroke",
+      "time_seconds": 69.08
+    },
+    {
+      "id": "mock-017-100 Breaststroke-2025-26-1",
+      "swimmer_id": "mock-017",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-100-breaststroke",
+      "time_seconds": 68.81
+    },
+    {
+      "id": "mock-017-100 Breaststroke-2025-26-2",
+      "swimmer_id": "mock-017",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-100-breaststroke",
+      "time_seconds": 68.95
+    },
+    {
+      "id": "mock-017-100 Breaststroke-0",
+      "swimmer_id": "mock-017",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-100-breaststroke",
+      "time_seconds": 68.4
+    },
+    {
+      "id": "mock-017-100 Breaststroke-1",
+      "swimmer_id": "mock-017",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-100-breaststroke",
+      "time_seconds": 68.13
+    },
+    {
+      "id": "mock-017-100 Breaststroke-2",
+      "swimmer_id": "mock-017",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-100-breaststroke",
+      "time_seconds": 68.26
+    },
+    {
+      "id": "mock-017-200 Breaststroke-2025-26-0",
+      "swimmer_id": "mock-017",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-200-breaststroke",
+      "time_seconds": 152.45
+    },
+    {
+      "id": "mock-017-200 Breaststroke-2025-26-1",
+      "swimmer_id": "mock-017",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-200-breaststroke",
+      "time_seconds": 152.76
+    },
+    {
+      "id": "mock-017-200 Breaststroke-2025-26-2",
+      "swimmer_id": "mock-017",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-200-breaststroke",
+      "time_seconds": 151.69
+    },
+    {
+      "id": "mock-017-200 Breaststroke-0",
+      "swimmer_id": "mock-017",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-200-breaststroke",
+      "time_seconds": 150.2
+    },
+    {
+      "id": "mock-017-200 Breaststroke-1",
+      "swimmer_id": "mock-017",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-200-breaststroke",
+      "time_seconds": 149.3
+    },
+    {
+      "id": "mock-017-200 Breaststroke-2",
+      "swimmer_id": "mock-017",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-200-breaststroke",
+      "time_seconds": 149.21
+    },
+    {
+      "id": "mock-017-200 IM-2025-26-0",
+      "swimmer_id": "mock-017",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-200-im",
+      "time_seconds": 140.56
+    },
+    {
+      "id": "mock-017-200 IM-2025-26-1",
+      "swimmer_id": "mock-017",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-200-im",
+      "time_seconds": 139.99
+    },
+    {
+      "id": "mock-017-200 IM-2025-26-2",
+      "swimmer_id": "mock-017",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-200-im",
+      "time_seconds": 140.27
+    },
+    {
+      "id": "mock-017-200 IM-0",
+      "swimmer_id": "mock-017",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-200-im",
+      "time_seconds": 137.8
+    },
+    {
+      "id": "mock-017-200 IM-1",
+      "swimmer_id": "mock-017",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-200-im",
+      "time_seconds": 136.7
+    },
+    {
+      "id": "mock-017-200 IM-2",
+      "swimmer_id": "mock-017",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-200-im",
+      "time_seconds": 137.25
+    },
+    {
+      "id": "mock-017-400 IM-2025-26-0",
+      "swimmer_id": "mock-017",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-400-im",
+      "time_seconds": 299.71
+    },
+    {
+      "id": "mock-017-400 IM-2025-26-1",
+      "swimmer_id": "mock-017",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-400-im",
+      "time_seconds": 300.31
+    },
+    {
+      "id": "mock-017-400 IM-2025-26-2",
+      "swimmer_id": "mock-017",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-400-im",
+      "time_seconds": 298.21
+    },
+    {
+      "id": "mock-017-400 IM-0",
+      "swimmer_id": "mock-017",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-400-im",
+      "time_seconds": 292.4
+    },
+    {
+      "id": "mock-017-400 IM-1",
+      "swimmer_id": "mock-017",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-400-im",
+      "time_seconds": 289.48
+    },
+    {
+      "id": "mock-017-400 IM-2",
+      "swimmer_id": "mock-017",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-400-im",
+      "time_seconds": 289.18
+    },
+    {
+      "id": "mock-018-100 Butterfly-2025-26-0",
+      "swimmer_id": "mock-018",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 54
+    },
+    {
+      "id": "mock-018-100 Butterfly-2025-26-1",
+      "swimmer_id": "mock-018",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 54.11
+    },
+    {
+      "id": "mock-018-100 Butterfly-2025-26-2",
+      "swimmer_id": "mock-018",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 53.73
+    },
+    {
+      "id": "mock-018-100 Butterfly-0",
+      "swimmer_id": "mock-018",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 53.2
+    },
+    {
+      "id": "mock-018-100 Butterfly-1",
+      "swimmer_id": "mock-018",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 52.88
+    },
+    {
+      "id": "mock-018-100 Butterfly-2",
+      "swimmer_id": "mock-018",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-100-butterfly",
+      "time_seconds": 52.85
+    },
+    {
+      "id": "mock-018-200 Butterfly-2025-26-0",
+      "swimmer_id": "mock-018",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-200-butterfly",
+      "time_seconds": 120.16
+    },
+    {
+      "id": "mock-018-200 Butterfly-2025-26-1",
+      "swimmer_id": "mock-018",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-200-butterfly",
+      "time_seconds": 119.68
+    },
+    {
+      "id": "mock-018-200 Butterfly-2025-26-2",
+      "swimmer_id": "mock-018",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-200-butterfly",
+      "time_seconds": 119.92
+    },
+    {
+      "id": "mock-018-200 Butterfly-0",
+      "swimmer_id": "mock-018",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-200-butterfly",
+      "time_seconds": 117.8
+    },
+    {
+      "id": "mock-018-200 Butterfly-1",
+      "swimmer_id": "mock-018",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-200-butterfly",
+      "time_seconds": 116.86
+    },
+    {
+      "id": "mock-018-200 Butterfly-2",
+      "swimmer_id": "mock-018",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-200-butterfly",
+      "time_seconds": 117.33
+    },
+    {
+      "id": "mock-018-200 Freestyle-2025-26-0",
+      "swimmer_id": "mock-018",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 113.36
+    },
+    {
+      "id": "mock-018-200 Freestyle-2025-26-1",
+      "swimmer_id": "mock-018",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 113.59
+    },
+    {
+      "id": "mock-018-200 Freestyle-2025-26-2",
+      "swimmer_id": "mock-018",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 112.8
+    },
+    {
+      "id": "mock-018-200 Freestyle-0",
+      "swimmer_id": "mock-018",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 110.6
+    },
+    {
+      "id": "mock-018-200 Freestyle-1",
+      "swimmer_id": "mock-018",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 109.49
+    },
+    {
+      "id": "mock-018-200 Freestyle-2",
+      "swimmer_id": "mock-018",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 109.38
+    },
+    {
+      "id": "mock-019-100 Freestyle-2025-26-0",
+      "swimmer_id": "mock-019",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 57.32
+    },
+    {
+      "id": "mock-019-100 Freestyle-2025-26-1",
+      "swimmer_id": "mock-019",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 57.09
+    },
+    {
+      "id": "mock-019-100 Freestyle-2025-26-2",
+      "swimmer_id": "mock-019",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 57.21
+    },
+    {
+      "id": "mock-019-100 Freestyle-0",
+      "swimmer_id": "mock-019",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 56.2
+    },
+    {
+      "id": "mock-019-100 Freestyle-1",
+      "swimmer_id": "mock-019",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 55.75
+    },
+    {
+      "id": "mock-019-100 Freestyle-2",
+      "swimmer_id": "mock-019",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-100-freestyle",
+      "time_seconds": 55.98
+    },
+    {
+      "id": "mock-019-200 Freestyle-2025-26-0",
+      "swimmer_id": "mock-019",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 124.33
+    },
+    {
+      "id": "mock-019-200 Freestyle-2025-26-1",
+      "swimmer_id": "mock-019",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 124.58
+    },
+    {
+      "id": "mock-019-200 Freestyle-2025-26-2",
+      "swimmer_id": "mock-019",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 123.71
+    },
+    {
+      "id": "mock-019-200 Freestyle-0",
+      "swimmer_id": "mock-019",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 121.3
+    },
+    {
+      "id": "mock-019-200 Freestyle-1",
+      "swimmer_id": "mock-019",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 120.09
+    },
+    {
+      "id": "mock-019-200 Freestyle-2",
+      "swimmer_id": "mock-019",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 119.97
+    },
+    {
+      "id": "mock-019-500 Freestyle-2025-26-0",
+      "swimmer_id": "mock-019",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-500-freestyle",
+      "time_seconds": 324.82
+    },
+    {
+      "id": "mock-019-500 Freestyle-2025-26-1",
+      "swimmer_id": "mock-019",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-500-freestyle",
+      "time_seconds": 323.52
+    },
+    {
+      "id": "mock-019-500 Freestyle-2025-26-2",
+      "swimmer_id": "mock-019",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-500-freestyle",
+      "time_seconds": 324.17
+    },
+    {
+      "id": "mock-019-500 Freestyle-0",
+      "swimmer_id": "mock-019",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-500-freestyle",
+      "time_seconds": 321.6
+    },
+    {
+      "id": "mock-019-500 Freestyle-1",
+      "swimmer_id": "mock-019",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-500-freestyle",
+      "time_seconds": 320.31
+    },
+    {
+      "id": "mock-019-500 Freestyle-2",
+      "swimmer_id": "mock-019",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-500-freestyle",
+      "time_seconds": 320.96
+    },
+    {
+      "id": "mock-019-200 Backstroke-2025-26-0",
+      "swimmer_id": "mock-019",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-200-backstroke",
+      "time_seconds": 134.39
+    },
+    {
+      "id": "mock-019-200 Backstroke-2025-26-1",
+      "swimmer_id": "mock-019",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-200-backstroke",
+      "time_seconds": 134.65
+    },
+    {
+      "id": "mock-019-200 Backstroke-2025-26-2",
+      "swimmer_id": "mock-019",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-200-backstroke",
+      "time_seconds": 133.71
+    },
+    {
+      "id": "mock-019-200 Backstroke-0",
+      "swimmer_id": "mock-019",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-200-backstroke",
+      "time_seconds": 132.4
+    },
+    {
+      "id": "mock-019-200 Backstroke-1",
+      "swimmer_id": "mock-019",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-200-backstroke",
+      "time_seconds": 131.61
+    },
+    {
+      "id": "mock-019-200 Backstroke-2",
+      "swimmer_id": "mock-019",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-200-backstroke",
+      "time_seconds": 131.53
+    },
+    {
+      "id": "mock-020-200 Freestyle-2025-26-0",
+      "swimmer_id": "mock-020",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 118.69
+    },
+    {
+      "id": "mock-020-200 Freestyle-2025-26-1",
+      "swimmer_id": "mock-020",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 118.93
+    },
+    {
+      "id": "mock-020-200 Freestyle-2025-26-2",
+      "swimmer_id": "mock-020",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 118.1
+    },
+    {
+      "id": "mock-020-200 Freestyle-0",
+      "swimmer_id": "mock-020",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 115.8
+    },
+    {
+      "id": "mock-020-200 Freestyle-1",
+      "swimmer_id": "mock-020",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 114.64
+    },
+    {
+      "id": "mock-020-200 Freestyle-2",
+      "swimmer_id": "mock-020",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-200-freestyle",
+      "time_seconds": 114.53
+    },
+    {
+      "id": "mock-020-100 Backstroke-2025-26-0",
+      "swimmer_id": "mock-020",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-100-backstroke",
+      "time_seconds": 58.48
+    },
+    {
+      "id": "mock-020-100 Backstroke-2025-26-1",
+      "swimmer_id": "mock-020",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-100-backstroke",
+      "time_seconds": 58.25
+    },
+    {
+      "id": "mock-020-100 Backstroke-2025-26-2",
+      "swimmer_id": "mock-020",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-100-backstroke",
+      "time_seconds": 58.36
+    },
+    {
+      "id": "mock-020-100 Backstroke-0",
+      "swimmer_id": "mock-020",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-100-backstroke",
+      "time_seconds": 57.9
+    },
+    {
+      "id": "mock-020-100 Backstroke-1",
+      "swimmer_id": "mock-020",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-100-backstroke",
+      "time_seconds": 57.67
+    },
+    {
+      "id": "mock-020-100 Backstroke-2",
+      "swimmer_id": "mock-020",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-100-backstroke",
+      "time_seconds": 57.78
+    },
+    {
+      "id": "mock-020-100 Breaststroke-2025-26-0",
+      "swimmer_id": "mock-020",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-100-breaststroke",
+      "time_seconds": 67.5
+    },
+    {
+      "id": "mock-020-100 Breaststroke-2025-26-1",
+      "swimmer_id": "mock-020",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-100-breaststroke",
+      "time_seconds": 67.63
+    },
+    {
+      "id": "mock-020-100 Breaststroke-2025-26-2",
+      "swimmer_id": "mock-020",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-100-breaststroke",
+      "time_seconds": 67.16
+    },
+    {
+      "id": "mock-020-100 Breaststroke-0",
+      "swimmer_id": "mock-020",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-100-breaststroke",
+      "time_seconds": 66.5
+    },
+    {
+      "id": "mock-020-100 Breaststroke-1",
+      "swimmer_id": "mock-020",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-100-breaststroke",
+      "time_seconds": 66.1
+    },
+    {
+      "id": "mock-020-100 Breaststroke-2",
+      "swimmer_id": "mock-020",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-100-breaststroke",
+      "time_seconds": 66.06
+    },
+    {
+      "id": "mock-020-200 IM-2025-26-0",
+      "swimmer_id": "mock-020",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-200-im",
+      "time_seconds": 130.87
+    },
+    {
+      "id": "mock-020-200 IM-2025-26-1",
+      "swimmer_id": "mock-020",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-200-im",
+      "time_seconds": 130.34
+    },
+    {
+      "id": "mock-020-200 IM-2025-26-2",
+      "swimmer_id": "mock-020",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-200-im",
+      "time_seconds": 130.6
+    },
+    {
+      "id": "mock-020-200 IM-0",
+      "swimmer_id": "mock-020",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-200-im",
+      "time_seconds": 128.3
+    },
+    {
+      "id": "mock-020-200 IM-1",
+      "swimmer_id": "mock-020",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-200-im",
+      "time_seconds": 127.27
+    },
+    {
+      "id": "mock-020-200 IM-2",
+      "swimmer_id": "mock-020",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-200-im",
+      "time_seconds": 127.79
+    },
+    {
+      "id": "mock-020-400 IM-2025-26-0",
+      "swimmer_id": "mock-020",
+      "meet_id": "meet-2025-09-06",
+      "event_id": "event-400-im",
+      "time_seconds": 281.46
+    },
+    {
+      "id": "mock-020-400 IM-2025-26-1",
+      "swimmer_id": "mock-020",
+      "meet_id": "meet-2025-09-20",
+      "event_id": "event-400-im",
+      "time_seconds": 282.03
+    },
+    {
+      "id": "mock-020-400 IM-2025-26-2",
+      "swimmer_id": "mock-020",
+      "meet_id": "meet-2025-10-04",
+      "event_id": "event-400-im",
+      "time_seconds": 280.06
+    },
+    {
+      "id": "mock-020-400 IM-0",
+      "swimmer_id": "mock-020",
+      "meet_id": "meet-2026-09-05",
+      "event_id": "event-400-im",
+      "time_seconds": 274.6
+    },
+    {
+      "id": "mock-020-400 IM-1",
+      "swimmer_id": "mock-020",
+      "meet_id": "meet-2026-09-19",
+      "event_id": "event-400-im",
+      "time_seconds": 271.85
+    },
+    {
+      "id": "mock-020-400 IM-2",
+      "swimmer_id": "mock-020",
+      "meet_id": "meet-2026-10-03",
+      "event_id": "event-400-im",
+      "time_seconds": 271.58
+    }
+  ],
+  "team_events": [
+    {
+      "id": "team-001",
+      "event_type": "PRACTICE",
+      "title": "Mock morning practice",
+      "weekday": "Monday",
+      "start_time": "06:00",
+      "end_time": "07:30"
+    },
+    {
+      "id": "team-002",
+      "event_type": "PRACTICE",
+      "title": "Mock technique practice",
+      "weekday": "Tuesday",
+      "start_time": "17:00",
+      "end_time": "18:30"
+    },
+    {
+      "id": "team-003",
+      "event_type": "PRACTICE",
+      "title": "Mock morning practice",
+      "weekday": "Wednesday",
+      "start_time": "06:00",
+      "end_time": "07:30"
+    },
+    {
+      "id": "team-004",
+      "event_type": "PRACTICE",
+      "title": "Mock race preparation",
+      "weekday": "Thursday",
+      "start_time": "17:00",
+      "end_time": "18:00"
+    },
+    {
+      "id": "team-005",
+      "event_type": "TEAM EVENT",
+      "title": "Mock team travel",
+      "weekday": "Friday",
+      "start_time": "17:00",
+      "end_time": "19:00"
+    },
+    {
+      "id": "team-006",
+      "event_type": "MEET",
+      "title": "Fictional Invitational",
+      "weekday": "Saturday",
+      "start_time": "10:00",
+      "end_time": "14:00"
+    }
+  ]
+}
